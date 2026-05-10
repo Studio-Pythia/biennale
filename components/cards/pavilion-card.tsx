@@ -10,6 +10,7 @@ import {
 } from "@/lib/data";
 import { getFlagEmoji } from "@/lib/country-flags";
 import { FUNDER_TYPE_COLORS } from "@/lib/funder-style";
+import { getOutletCoverageCount, PRESS_OUTLET_COUNT } from "@/lib/press";
 
 interface PavilionCardProps {
   pavilion: Pavilion;
@@ -31,6 +32,7 @@ export function PavilionCard({ pavilion, selected, onSelect }: PavilionCardProps
   const redFlagCount = pavilion.red_flags.length;
   const budgetLabel = formatBudget(pavilion.total_budget_amount_usd);
   const budgetMuted = !pavilion.total_budget_disclosed;
+  const pressCount = getOutletCoverageCount(pavilion.id);
 
   return (
     <motion.button
@@ -39,20 +41,20 @@ export function PavilionCard({ pavilion, selected, onSelect }: PavilionCardProps
       onClick={() => onSelect(pavilion.id)}
       whileHover={{ y: -2 }}
       transition={{ type: "spring", stiffness: 300, damping: 30 }}
-      className="text-left p-4 rounded-lg flex flex-col gap-3 h-full transition-colors"
+      className="text-left p-4 rounded-[var(--radius)] flex flex-col gap-3 h-full transition-all hover:bg-[var(--card-hover)]"
       style={{
         backgroundColor: "var(--card)",
         border: `1px solid ${selected ? "var(--primary)" : "var(--border)"}`,
         boxShadow: selected
-          ? "0 0 0 2px rgba(225, 29, 72, 0.25)"
-          : "none",
+          ? "0 0 0 1px rgba(225, 29, 72, 0.5), 0 8px 24px -8px rgba(225, 29, 72, 0.25)"
+          : "0 1px 0 rgba(255,255,255,0.02) inset",
       }}
       aria-pressed={selected}
     >
       <div className="flex items-start justify-between gap-3">
         <div className="flex items-start gap-3 min-w-0">
           <span
-            className="text-3xl leading-none flex-shrink-0"
+            className="text-[34px] leading-none flex-shrink-0"
             role="img"
             aria-label={pavilion.country}
           >
@@ -60,13 +62,13 @@ export function PavilionCard({ pavilion, selected, onSelect }: PavilionCardProps
           </span>
           <div className="min-w-0">
             <div
-              className="font-semibold truncate"
+              className="font-serif text-lg leading-tight font-semibold truncate"
               style={{ color: "var(--foreground)" }}
             >
               {pavilion.country}
             </div>
             <div
-              className="text-xs uppercase tracking-wider mt-0.5"
+              className="text-[10px] uppercase tracking-[0.12em] mt-1"
               style={{ color: "var(--muted-foreground)" }}
             >
               {pavilion.id} · {pavilion.grid_ref}
@@ -121,7 +123,7 @@ export function PavilionCard({ pavilion, selected, onSelect }: PavilionCardProps
       </div>
 
       <div
-        className="mt-auto pt-3 grid grid-cols-3 gap-2 text-xs"
+        className="mt-auto pt-3 grid grid-cols-4 gap-2 text-xs"
         style={{ borderTop: "1px dashed var(--border)" }}
       >
         <Cell label="Budget">
@@ -162,6 +164,20 @@ export function PavilionCard({ pavilion, selected, onSelect }: PavilionCardProps
               </span>
             )}
           </div>
+        </Cell>
+        <Cell label="Press">
+          <span
+            className="font-semibold"
+            style={{
+              color:
+                pressCount === 0
+                  ? "var(--muted-foreground)"
+                  : "var(--foreground)",
+            }}
+            title={`Covered by ${pressCount} of ${PRESS_OUTLET_COUNT} outlets`}
+          >
+            {pressCount}/{PRESS_OUTLET_COUNT}
+          </span>
         </Cell>
       </div>
     </motion.button>
