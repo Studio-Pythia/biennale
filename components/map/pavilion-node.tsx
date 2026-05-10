@@ -5,6 +5,7 @@ import { Handle, Position } from "@xyflow/react";
 import type { Pavilion } from "@/lib/types";
 import { getVenueColor, formatBudget } from "@/lib/data";
 import { useMapStore } from "@/lib/use-map-store";
+import { useZoom } from "./zoom-context";
 
 interface PavilionNodeProps {
   data: {
@@ -13,19 +14,21 @@ interface PavilionNodeProps {
   selected?: boolean;
 }
 
-// Fixed size for all nodes - consistent since most budgets are unknown
-const NODE_SIZE = 28;
+// Base size at zoom level 1
+const BASE_SIZE = 20;
+const MIN_SIZE = 10;
+const MAX_SIZE = 40;
 
 function PavilionNodeComponent({ data, selected }: PavilionNodeProps) {
   const { pavilion } = data;
   const selectedPavilionId = useMapStore((s) => s.selectedPavilionId);
   const highlightedFunder = useMapStore((s) => s.highlightedFunder);
+  const { inverseZoom } = useZoom();
 
   const isSelected = selectedPavilionId === pavilion.id || selected;
   const venueColor = getVenueColor(pavilion.venue);
   const hasRedFlags = pavilion.red_flags.length > 0;
 
-  // Check if this pavilion is connected to the highlighted funder
   const isHighlightedByFunder = highlightedFunder
     ? pavilion.private_funders.some(
         (f) => f.name.toLowerCase() === highlightedFunder.toLowerCase()
@@ -36,30 +39,37 @@ function PavilionNodeComponent({ data, selected }: PavilionNodeProps) {
   const hasBudget = budget !== null && budget > 0;
   const isDimmed = highlightedFunder && !isHighlightedByFunder;
 
+  // Calculate size based on zoom - nodes appear consistent on screen
+  const nodeSize = Math.min(MAX_SIZE, Math.max(MIN_SIZE, BASE_SIZE * inverseZoom));
+  const fontSize = Math.max(7, 9 * inverseZoom);
+  const flagSize = Math.max(4, 6 * inverseZoom);
+  const borderWidth = Math.max(1.5, 2 * inverseZoom);
+
   return (
     <div
       className="relative group cursor-pointer"
       style={{
         opacity: isDimmed ? 0.25 : 1,
-        transition: "opacity 0.2s ease, transform 0.15s ease",
-        transform: isSelected ? "scale(1.3)" : "scale(1)",
+        transition: "opacity 0.2s ease",
       }}
     >
       {/* Main node circle */}
       <div
-        className="flex items-center justify-center rounded-full border-2 font-bold transition-shadow duration-150"
+        className="flex items-center justify-center rounded-full font-bold"
         style={{
-          width: NODE_SIZE,
-          height: NODE_SIZE,
+          width: nodeSize,
+          height: nodeSize,
           backgroundColor: isSelected ? venueColor : "var(--card)",
-          borderColor: venueColor,
+          border: `${borderWidth}px solid ${venueColor}`,
           color: isSelected ? "#fff" : venueColor,
-          fontSize: "9px",
+          fontSize: `${fontSize}px`,
           boxShadow: isSelected
-            ? `0 0 12px ${venueColor}`
+            ? `0 0 ${8 * inverseZoom}px ${venueColor}`
             : isHighlightedByFunder
-            ? `0 0 8px ${venueColor}80`
+            ? `0 0 ${6 * inverseZoom}px ${venueColor}80`
             : `0 1px 3px rgba(0,0,0,0.3)`,
+          transform: isSelected ? "scale(1.15)" : "scale(1)",
+          transition: "transform 0.15s ease, box-shadow 0.15s ease",
         }}
       >
         <span className="truncate leading-none">{pavilion.id}</span>
@@ -68,31 +78,39 @@ function PavilionNodeComponent({ data, selected }: PavilionNodeProps) {
       {/* Red flag indicator */}
       {hasRedFlags && (
         <div
-          className="absolute -top-0.5 -right-0.5 w-2 h-2 rounded-full"
-          style={{ backgroundColor: "var(--primary)" }}
+          className="absolute rounded-full"
+          style={{
+            backgroundColor: "var(--primary)",
+            width: flagSize,
+            height: flagSize,
+            top: -flagSize * 0.2,
+            right: -flagSize * 0.2,
+          }}
           title={`${pavilion.red_flags.length} red flag(s)`}
         />
       )}
 
-      {/* Budget indicator ring for pavilions with known budgets */}
+      {/* Budget indicator ring */}
       {hasBudget && (
         <div
           className="absolute inset-0 rounded-full pointer-events-none"
           style={{
-            border: `1.5px solid ${venueColor}`,
+            border: `${Math.max(1, 1.5 * inverseZoom)}px solid ${venueColor}`,
             opacity: 0.4,
-            transform: "scale(1.4)",
+            transform: "scale(1.35)",
           }}
         />
       )}
 
-      {/* Hover tooltip */}
+      {/* Tooltip - counter-scaled for readability */}
       <div
-        className="absolute left-1/2 -translate-x-1/2 bottom-full mb-2 px-2.5 py-1.5 rounded text-[10px] whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-50"
+        className="absolute left-1/2 bottom-full mb-2 px-2.5 py-1.5 rounded text-[10px] whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-50"
         style={{
           backgroundColor: "var(--card)",
           border: "1px solid var(--border)",
           boxShadow: "0 2px 8px rgba(0,0,0,0.2)",
+          transform: `translateX(-50%) scale(${inverseZoom})`,
+          transformOrigin: "bottom center",
         }}
       >
         <div className="font-semibold" style={{ color: "var(--foreground)" }}>
@@ -111,7 +129,6 @@ function PavilionNodeComponent({ data, selected }: PavilionNodeProps) {
         )}
       </div>
 
-      {/* Hidden handles for edges */}
       <Handle type="target" position={Position.Top} className="invisible" />
       <Handle type="source" position={Position.Bottom} className="invisible" />
     </div>

@@ -2,6 +2,7 @@
 
 import { memo } from "react";
 import { getVenueColor } from "@/lib/data";
+import { useZoom } from "./zoom-context";
 
 interface VenueLabelNodeProps {
   data: {
@@ -16,13 +17,18 @@ interface VenueLabelNodeProps {
 function VenueLabelNodeComponent({ data }: VenueLabelNodeProps) {
   const { label, venue, count, isPositionNumber, isMainLabel } = data;
   const color = getVenueColor(venue);
+  const { inverseZoom } = useZoom();
 
   // Position numbers (Giardini 1-29)
   if (isPositionNumber) {
+    const size = 20 * inverseZoom;
     return (
       <div
-        className="w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold opacity-40"
+        className="rounded-full flex items-center justify-center font-bold opacity-40"
         style={{
+          width: size,
+          height: size,
+          fontSize: `${10 * inverseZoom}px`,
           backgroundColor: `${color}30`,
           color: color,
         }}
@@ -32,14 +38,16 @@ function VenueLabelNodeComponent({ data }: VenueLabelNodeProps) {
     );
   }
 
-  // Main venue area labels (GIARDINI, ARSENALE, OFF-SITE)
+  // Main venue area labels
   if (isMainLabel) {
     return (
       <div
-        className="px-6 py-3 rounded-xl text-xl font-bold tracking-wider uppercase opacity-80"
+        className="rounded-xl font-bold tracking-wider uppercase opacity-80"
         style={{
+          padding: `${10 * inverseZoom}px ${20 * inverseZoom}px`,
+          fontSize: `${18 * inverseZoom}px`,
           backgroundColor: `${color}15`,
-          border: `2px solid ${color}30`,
+          border: `${2 * inverseZoom}px solid ${color}30`,
           color: color,
         }}
       >
@@ -48,22 +56,28 @@ function VenueLabelNodeComponent({ data }: VenueLabelNodeProps) {
     );
   }
 
-  // Zone labels (Arsenale zones, counts)
+  // Zone labels
   return (
     <div
-      className="px-3 py-1.5 rounded-lg text-xs font-semibold"
+      className="rounded-lg font-semibold"
       style={{
+        padding: `${5 * inverseZoom}px ${10 * inverseZoom}px`,
+        fontSize: `${11 * inverseZoom}px`,
         backgroundColor: `${color}20`,
-        border: `1px solid ${color}40`,
+        border: `${1 * inverseZoom}px solid ${color}40`,
         color: color,
       }}
     >
-      <div className="flex items-center gap-2">
+      <div className="flex items-center" style={{ gap: `${6 * inverseZoom}px` }}>
         <span>{label}</span>
         {count !== undefined && count > 0 && (
           <span
-            className="text-xs px-1.5 py-0.5 rounded-full"
-            style={{ backgroundColor: `${color}30` }}
+            className="rounded-full"
+            style={{
+              backgroundColor: `${color}30`,
+              padding: `${2 * inverseZoom}px ${5 * inverseZoom}px`,
+              fontSize: `${9 * inverseZoom}px`,
+            }}
           >
             {count}
           </span>
