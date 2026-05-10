@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useMapStore } from "@/lib/use-map-store";
 import { formatBudget, getVenueColor, getSelectionMethodLabel } from "@/lib/data";
 import type { Pavilion } from "@/lib/types";
+import { getFlagEmoji } from "@/lib/country-flags";
 
 function FunderCard({
   funder,
@@ -108,28 +109,34 @@ export function DetailPanel({ pavilion }: DetailPanelProps) {
             className="p-4 flex items-start justify-between"
             style={{ borderBottom: "1px solid var(--border)" }}
           >
-            <div>
-              <div className="flex items-center gap-2">
-                <span
-                  className="w-3 h-3 rounded-full"
-                  style={{ backgroundColor: getVenueColor(pavilion.venue) }}
-                />
-                <span
-                  className="text-xs uppercase tracking-wider"
-                  style={{ color: getVenueColor(pavilion.venue) }}
+            <div className="flex items-start gap-3">
+              {/* Large flag emoji */}
+              <span className="text-4xl leading-none" role="img" aria-label={pavilion.country}>
+                {getFlagEmoji(pavilion.id)}
+              </span>
+              <div>
+                <div className="flex items-center gap-2">
+                  <span
+                    className="w-3 h-3 rounded-full"
+                    style={{ backgroundColor: getVenueColor(pavilion.venue) }}
+                  />
+                  <span
+                    className="text-xs uppercase tracking-wider"
+                    style={{ color: getVenueColor(pavilion.venue) }}
+                  >
+                    {pavilion.venue}
+                  </span>
+                </div>
+                <h2
+                  className="text-xl font-bold mt-1"
+                  style={{ color: "var(--foreground)" }}
                 >
-                  {pavilion.venue}
-                </span>
+                  {pavilion.country}
+                </h2>
+                <p className="text-sm" style={{ color: "var(--muted-foreground)" }}>
+                  {pavilion.grid_ref}
+                </p>
               </div>
-              <h2
-                className="text-xl font-bold mt-1"
-                style={{ color: "var(--foreground)" }}
-              >
-                {pavilion.country}
-              </h2>
-              <p className="text-sm" style={{ color: "var(--muted-foreground)" }}>
-                {pavilion.grid_ref}
-              </p>
             </div>
             <button
               onClick={() => selectPavilion(null)}
