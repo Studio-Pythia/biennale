@@ -21,6 +21,7 @@ import {
 } from "@/lib/use-map-store";
 import type { Pavilion } from "@/lib/types";
 import { getVenueColor } from "@/lib/data";
+import { GIARDINI_POSITIONS, ARSENALE_ZONES } from "@/lib/venue-coordinates";
 
 const nodeTypes = {
   pavilion: PavilionNode,
@@ -28,9 +29,17 @@ const nodeTypes = {
   mapImage: MapImageNode,
 };
 
-// The map image dimensions
+// The main Venice map image dimensions
 const MAP_WIDTH = 1566;
 const MAP_HEIGHT = 890;
+
+// Giardini detail map dimensions (cropped image)
+const GIARDINI_MAP_WIDTH = 1100;
+const GIARDINI_MAP_HEIGHT = 720;
+
+// Arsenale detail map dimensions (cropped image)
+const ARSENALE_MAP_WIDTH = 1100;
+const ARSENALE_MAP_HEIGHT = 700;
 
 // Grid coordinates on the map image (measured from the PNG)
 // Columns A-H: A starts at x=62, each column ~187px wide
@@ -177,8 +186,90 @@ function createNodesFromPavilions(
         });
       }
     });
+  } else if (currentView === "giardini") {
+    // Giardini detail view
+    nodes.push({
+      id: "map-background",
+      type: "mapImage",
+      position: { x: 0, y: 0 },
+      data: {
+        src: "/images/giardini-map-cropped.png",
+        width: GIARDINI_MAP_WIDTH,
+        height: GIARDINI_MAP_HEIGHT,
+      },
+      draggable: false,
+      selectable: false,
+      zIndex: 0,
+    });
+
+    // Add Giardini pavilions at their numbered positions
+    const giardiniPavilions = pavilions.filter(p => p.venue === "Giardini");
+    
+    giardiniPavilions.forEach((pavilion) => {
+      // Find the position number from grid_ref (e.g., "Giardini 20" -> 20)
+      const match = pavilion.grid_ref?.match(/Giardini (\d+)/i);
+      if (match) {
+        const posNum = parseInt(match[1]);
+        const pos = GIARDINI_POSITIONS[posNum];
+        if (pos) {
+          nodes.push({
+            id: pavilion.id,
+            type: "pavilion",
+            position: { x: pos.x, y: pos.y },
+            data: { pavilion },
+            draggable: false,
+            zIndex: 20,
+          });
+        }
+      }
+    });
+  } else if (currentView === "arsenale") {
+    // Arsenale detail view
+    nodes.push({
+      id: "map-background",
+      type: "mapImage",
+      position: { x: 0, y: 0 },
+      data: {
+        src: "/images/arsenale-map-cropped.png",
+        width: ARSENALE_MAP_WIDTH,
+        height: ARSENALE_MAP_HEIGHT,
+      },
+      draggable: false,
+      selectable: false,
+      zIndex: 0,
+    });
+
+    // Add Arsenale pavilions at their zone positions
+    const arsenalePavilions = pavilions.filter(p => p.venue === "Arsenale");
+    
+    arsenalePavilions.forEach((pavilion) => {
+      // Find the zone number from grid_ref (e.g., "Arsenale 2" -> 2)
+      const match = pavilion.grid_ref?.match(/Arsenale (\d)/i);
+      if (match) {
+        const zoneNum = parseInt(match[1]);
+        const zone = ARSENALE_ZONES[zoneNum];
+        if (zone) {
+          // Offset pavilions within the same zone to avoid overlap
+          const sameZonePavilions = arsenalePavilions.filter(p => {
+            const m = p.grid_ref?.match(/Arsenale (\d)/i);
+            return m && parseInt(m[1]) === zoneNum;
+          });
+          const indexInZone = sameZonePavilions.findIndex(p => p.id === pavilion.id);
+          const offsetX = (indexInZone % 4) * 40 - 60;
+          const offsetY = Math.floor(indexInZone / 4) * 40;
+          
+          nodes.push({
+            id: pavilion.id,
+            type: "pavilion",
+            position: { x: zone.x + offsetX, y: zone.y + offsetY },
+            data: { pavilion },
+            draggable: false,
+            zIndex: 20,
+          });
+        }
+      }
+    });
   }
-  // TODO: Add arsenale and giardini sub-map views when images are uploaded
 
   return nodes;
 }
