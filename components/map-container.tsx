@@ -1,10 +1,11 @@
 "use client";
 
-import { useEffect, useMemo, Suspense } from "react";
+import { useEffect, useMemo, useState, Suspense } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { VeniceMap } from "@/components/map/venice-map";
 import { FilterBar } from "@/components/map/filter-bar";
 import { DetailPanel } from "@/components/panels/detail-panel";
+import { ListView } from "@/components/panels/list-view";
 import { useMapStore, useFilteredPavilions } from "@/lib/use-map-store";
 import type { Pavilion } from "@/lib/types";
 
@@ -23,6 +24,7 @@ function MapContainerInner({
   const searchParams = useSearchParams();
   const { selectedPavilionId, selectPavilion } = useMapStore();
   const filteredPavilions = useFilteredPavilions();
+  const [isListViewOpen, setIsListViewOpen] = useState(false);
 
   // Calculate stats
   const stats = useMemo(() => {
@@ -79,6 +81,20 @@ function MapContainerInner({
           </p>
         </div>
         <div className="flex items-center gap-6">
+          {/* Directory Button */}
+          <button
+            onClick={() => setIsListViewOpen(true)}
+            className="flex items-center gap-2 px-3 py-1.5 rounded text-sm font-medium transition-colors hover:bg-[var(--muted)]"
+            style={{
+              backgroundColor: "var(--muted)",
+              color: "var(--foreground)",
+            }}
+          >
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01" />
+            </svg>
+            Directory
+          </button>
           {/* Stats */}
           <div className="flex items-center gap-4 text-xs">
             <div className="flex items-center gap-1.5">
@@ -151,6 +167,13 @@ function MapContainerInner({
           <DetailPanel pavilion={selectedPavilion} />
         </div>
       </div>
+
+      {/* List View Drawer */}
+      <ListView
+        pavilions={pavilions}
+        isOpen={isListViewOpen}
+        onClose={() => setIsListViewOpen(false)}
+      />
     </>
   );
 }
