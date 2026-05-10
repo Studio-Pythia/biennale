@@ -48,9 +48,11 @@ export const useMapStore = create<MapState>((set) => ({
   resetFilters: () => set({ filters: defaultFilters }),
 }));
 
-export function useFilteredPavilions() {
-  const { pavilions, filters, highlightedFunder } = useMapStore();
-
+export function filterPavilions(
+  pavilions: Pavilion[],
+  filters: MapFilters,
+  highlightedFunder: string | null
+) {
   return pavilions.filter((p) => {
     // Venue filter
     if (filters.venue !== "all" && p.venue !== filters.venue) return false;
@@ -86,8 +88,14 @@ export function useFilteredPavilions() {
     }
 
     // Funder highlight (doesn't filter, just for reference)
+    void highlightedFunder;
     return true;
   });
+}
+
+export function useFilteredPavilions() {
+  const { pavilions, filters, highlightedFunder } = useMapStore();
+  return filterPavilions(pavilions, filters, highlightedFunder);
 }
 
 export function getPavilionsByFunder(funderName: string, pavilions: Pavilion[]) {
