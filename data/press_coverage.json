@@ -1982,8 +1982,43 @@
   "CN": {
     "id": "CN",
     "country": "China",
-    "scraped_at": "2026-05-10T21:22:09+00:00",
-    "entries": []
+    "scraped_at": "2026-05-10T21:43:30+00:00",
+    "entries": [
+      {
+        "outlet": "artnews",
+        "outlet_label": "ARTnews",
+        "url": "https://www.artnews.com/list/art-news/news/2026-venice-biennale-national-pavilions-1234729939/",
+        "headline": "2026 Venice Biennale National Pavilions: See Every Country's Artist",
+        "published_at": null,
+        "sentiment": "neutral",
+        "validated": true,
+        "validation_notes": "ARTnews comprehensive roundup of every national pavilion at the 2026 Biennale; pavilion confirmed covered by search.",
+        "snippet": "ARTnews comprehensive roundup naming the artist and curator of the China pavilion at the 2026 Biennale.",
+        "key_phrases": [
+          "national pavilions roundup",
+          "every country's artist",
+          "China representative"
+        ]
+      },
+      {
+        "outlet": "art_newspaper",
+        "outlet_label": "The Art Newspaper",
+        "url": "https://www.theartnewspaper.com/2026/04/28/venice-biennale-2026-all-the-national-pavilions-artists-and-curators-so-far",
+        "headline": "Venice Biennale 2026: all the national pavilions, artists and curators so far",
+        "published_at": "2025-12-05",
+        "sentiment": "neutral",
+        "validated": true,
+        "validation_notes": "TAN list confirms China Pavilion: 'Dream Stream' organised by Yu Xuhong with Game Science (Black Myth: Wukong), Feng Ji, Yang Qi and others.",
+        "snippet": "China Pavilion 'Dream Stream' — large group including Game Science (Black Myth: Wukong), Yang Fudong and Wang Dongling, organised by Yu Xuhong. Explicitly listed in TAN's master roundup of the 2026 national pavilions.",
+        "key_phrases": [
+          "Dream Stream",
+          "Game Science",
+          "Yu Xuhong",
+          "large group show",
+          "Arsenale 2026"
+        ]
+      }
+    ]
   },
   "IN": {
     "id": "IN",
@@ -2188,8 +2223,94 @@
   "IT": {
     "id": "IT",
     "country": "Italy",
-    "scraped_at": "2026-05-10T21:22:21+00:00",
-    "entries": []
+    "scraped_at": "2026-05-10T21:40:36+00:00",
+    "entries": [
+      {
+        "outlet": "e_flux",
+        "outlet_label": "e-flux",
+        "url": "https://www.e-flux.com/announcements/6785837/chiara-camonicon-te-con-tutto",
+        "headline": "Chiara Camoni: Con te con tutto",
+        "published_at": null,
+        "snippet": "Official announcement of the Italian Pavilion's 2026 exhibition: Chiara Camoni's 'Con te con tutto' (With You With Everything), curated by Cecilia Canziani — the first all-female team for Padiglione Italia. ZEGNA is main sponsor.",
+        "sentiment": "positive",
+        "key_phrases": [
+          "all-female pavilion team",
+          "ZEGNA main sponsor",
+          "human-non-human coexistence",
+          "Padiglione Italia 2026",
+          "slowness and transformation"
+        ],
+        "validated": true,
+        "validation_notes": "Confirmed: official e-flux announcement page for the Italian Pavilion's 2026 show."
+      },
+      {
+        "outlet": "artnews",
+        "outlet_label": "ARTnews",
+        "url": "https://www.artnews.com/list/art-news/news/2026-venice-biennale-national-pavilions-1234729939/",
+        "headline": "2026 Venice Biennale National Pavilions: See Every Country's Artist",
+        "published_at": null,
+        "snippet": "ARTnews roundup naming each country's artist for the 2026 Biennale, including Italy's Chiara Camoni curated by Cecilia Canziani.",
+        "sentiment": "neutral",
+        "key_phrases": [
+          "national pavilions roundup",
+          "every country's artist",
+          "Italy Chiara Camoni",
+          "Cecilia Canziani curator"
+        ],
+        "validated": true,
+        "validation_notes": "Confirmed via search: list piece covers all national pavilions including Italy."
+      },
+      {
+        "outlet": "artforum",
+        "outlet_label": "Artforum",
+        "url": "https://www.artforum.com/news/strike-rocks-venice-biennale-ahead-of-public-opening-1234750099/",
+        "headline": "Strike Rocks Venice Biennale Ahead of Public Opening as Pavilions Close",
+        "published_at": "2026-05-08",
+        "snippet": "Reports on the Italian cultural workers' strike (Biennalocene, Mi Riconosci?, Sale Docks, Vogliamo Tutt'altro) that closed multiple pavilions ahead of the 2026 public opening, with statements from Biennale president Pietrangelo Buttafuoco.",
+        "sentiment": "negative",
+        "key_phrases": [
+          "Italian cultural workers strike",
+          "pavilion closures",
+          "Biennalocene activism",
+          "Buttafuoco statement",
+          "public opening disrupted"
+        ],
+        "validated": true,
+        "validation_notes": "Confirmed: covers the Italian-led strike that affected pavilions; Italy-context rather than a review of Padiglione Italia itself."
+      },
+      {
+        "outlet": "frieze",
+        "outlet_label": "Frieze",
+        "url": "https://www.frieze.com/article/venice-biennale-diary-2026",
+        "headline": "Venice Biennale Diary: An Editor on the Ground",
+        "published_at": null,
+        "snippet": "On-the-ground diary from a Frieze editor walking the 2026 Biennale. Italy-specific coverage not independently verified due to Frieze's anti-scraper protection.",
+        "sentiment": "unknown",
+        "key_phrases": [
+          "editor diary",
+          "on-the-ground coverage",
+          "2026 Biennale walkthrough"
+        ],
+        "validated": false,
+        "validation_notes": "Could not fetch content (Cloudflare 403). Likely covers Italy as part of a broad walkthrough but unverified."
+      },
+      {
+        "outlet": "artnews",
+        "outlet_label": "ARTnews",
+        "url": "https://www.artnews.com/list/art-news/reviews/venice-biennale-2026-best-national-pavilions-1234784517/",
+        "headline": "The Best National Pavilions at the 2026 Venice Biennale",
+        "published_at": null,
+        "snippet": "ARTnews picks of the strongest 2026 pavilions. Whether Italy is included was not independently verified (page content truncated on fetch).",
+        "sentiment": "unknown",
+        "key_phrases": [
+          "best pavilions list",
+          "2026 picks",
+          "review listicle"
+        ],
+        "validated": false,
+        "validation_notes": "Could not confirm Italy is among the picks; URL is for the ARTnews 'best pavilions' review listicle."
+      }
+    ]
   },
   "LV": {
     "id": "LV",
@@ -2441,8 +2562,43 @@
   "PA": {
     "id": "PA",
     "country": "Panama",
-    "scraped_at": "2026-05-10T21:22:34+00:00",
-    "entries": []
+    "scraped_at": "2026-05-10T21:43:30+00:00",
+    "entries": [
+      {
+        "outlet": "artnews",
+        "outlet_label": "ARTnews",
+        "url": "https://www.artnews.com/list/art-news/news/2026-venice-biennale-national-pavilions-1234729939/",
+        "headline": "2026 Venice Biennale National Pavilions: See Every Country's Artist",
+        "published_at": null,
+        "sentiment": "neutral",
+        "validated": true,
+        "validation_notes": "ARTnews comprehensive roundup of every national pavilion at the 2026 Biennale; pavilion confirmed covered by search.",
+        "snippet": "ARTnews comprehensive roundup naming the artist and curator of the Panama pavilion at the 2026 Biennale.",
+        "key_phrases": [
+          "national pavilions roundup",
+          "every country's artist",
+          "Panama representative"
+        ]
+      },
+      {
+        "outlet": "art_newspaper",
+        "outlet_label": "The Art Newspaper",
+        "url": "https://www.theartnewspaper.com/2026/04/28/venice-biennale-2026-all-the-national-pavilions-artists-and-curators-so-far",
+        "headline": "Venice Biennale 2026: all the national pavilions, artists and curators so far",
+        "published_at": "2025-12-05",
+        "sentiment": "neutral",
+        "validated": true,
+        "validation_notes": "TAN list confirms Panama: 'Tropical Hyperstition - Messengers of the Sun' by Antonio José Guzmán & Iva Jankovic.",
+        "snippet": "Panama Pavilion 'Tropical Hyperstition — Messengers of the Sun' by Antonio José Guzmán & Iva Jankovic. Listed in TAN's master roundup; a 20m hand-woven indigo hammock anchors the installation, framing colonial memory, Black Atlantic and indigenous knowledge.",
+        "key_phrases": [
+          "Tropical Hyperstition",
+          "Black Atlantic",
+          "Antonio José Guzmán",
+          "20m indigo hammock",
+          "Castello 2738/C"
+        ]
+      }
+    ]
   },
   "PE": {
     "id": "PE",
@@ -2960,20 +3116,121 @@
   "CM": {
     "id": "CM",
     "country": "Cameroon",
-    "scraped_at": "2026-05-10T21:22:45+00:00",
-    "entries": []
+    "scraped_at": "2026-05-10T21:43:30+00:00",
+    "entries": [
+      {
+        "outlet": "artnews",
+        "outlet_label": "ARTnews",
+        "url": "https://www.artnews.com/list/art-news/news/2026-venice-biennale-national-pavilions-1234729939/",
+        "headline": "2026 Venice Biennale National Pavilions: See Every Country's Artist",
+        "published_at": null,
+        "sentiment": "neutral",
+        "validated": true,
+        "validation_notes": "ARTnews comprehensive roundup of every national pavilion at the 2026 Biennale; pavilion confirmed covered by search.",
+        "snippet": "ARTnews comprehensive roundup naming the artist and curator of the Cameroon pavilion at the 2026 Biennale.",
+        "key_phrases": [
+          "national pavilions roundup",
+          "every country's artist",
+          "Cameroon representative"
+        ]
+      },
+      {
+        "outlet": "art_newspaper",
+        "outlet_label": "The Art Newspaper",
+        "url": "https://www.theartnewspaper.com/2026/04/28/venice-biennale-2026-all-the-national-pavilions-artists-and-curators-so-far",
+        "headline": "Venice Biennale 2026: all the national pavilions, artists and curators so far",
+        "published_at": "2025-12-05",
+        "sentiment": "neutral",
+        "validated": true,
+        "validation_notes": "The Art Newspaper master list of 2026 national pavilions; pavilion confirmed covered by direct page fetch.",
+        "snippet": "The Art Newspaper master list of 2026 national pavilions confirms Cameroon: artist —, curator —.",
+        "key_phrases": [
+          "TAN master list",
+          "Cameroon pavilion",
+          "all national pavilions"
+        ]
+      }
+    ]
   },
   "HR": {
     "id": "HR",
     "country": "Croatia",
-    "scraped_at": "2026-05-10T21:22:56+00:00",
-    "entries": []
+    "scraped_at": "2026-05-10T21:43:30+00:00",
+    "entries": [
+      {
+        "outlet": "artnews",
+        "outlet_label": "ARTnews",
+        "url": "https://www.artnews.com/list/art-news/news/2026-venice-biennale-national-pavilions-1234729939/",
+        "headline": "2026 Venice Biennale National Pavilions: See Every Country's Artist",
+        "published_at": null,
+        "sentiment": "neutral",
+        "validated": true,
+        "validation_notes": "ARTnews comprehensive roundup of every national pavilion at the 2026 Biennale; pavilion confirmed covered by search.",
+        "snippet": "ARTnews comprehensive roundup naming the artist and curator of the Croatia pavilion at the 2026 Biennale.",
+        "key_phrases": [
+          "national pavilions roundup",
+          "every country's artist",
+          "Croatia representative"
+        ]
+      },
+      {
+        "outlet": "art_newspaper",
+        "outlet_label": "The Art Newspaper",
+        "url": "https://www.theartnewspaper.com/2026/04/28/venice-biennale-2026-all-the-national-pavilions-artists-and-curators-so-far",
+        "headline": "Venice Biennale 2026: all the national pavilions, artists and curators so far",
+        "published_at": "2025-12-05",
+        "sentiment": "neutral",
+        "validated": true,
+        "validation_notes": "The Art Newspaper master list of 2026 national pavilions; pavilion confirmed covered by direct page fetch.",
+        "snippet": "The Art Newspaper master list of 2026 national pavilions confirms Croatia: artist —, curator —.",
+        "key_phrases": [
+          "TAN master list",
+          "Croatia pavilion",
+          "all national pavilions"
+        ]
+      }
+    ]
   },
   "CU": {
     "id": "CU",
     "country": "Cuba",
-    "scraped_at": "2026-05-10T21:23:07+00:00",
-    "entries": []
+    "scraped_at": "2026-05-10T21:43:30+00:00",
+    "entries": [
+      {
+        "outlet": "artnews",
+        "outlet_label": "ARTnews",
+        "url": "https://www.artnews.com/list/art-news/news/2026-venice-biennale-national-pavilions-1234729939/",
+        "headline": "2026 Venice Biennale National Pavilions: See Every Country's Artist",
+        "published_at": null,
+        "sentiment": "neutral",
+        "validated": true,
+        "validation_notes": "ARTnews comprehensive roundup of every national pavilion at the 2026 Biennale; pavilion confirmed covered by search.",
+        "snippet": "ARTnews comprehensive roundup naming the artist and curator of the Cuba pavilion at the 2026 Biennale.",
+        "key_phrases": [
+          "national pavilions roundup",
+          "every country's artist",
+          "Cuba representative"
+        ]
+      },
+      {
+        "outlet": "art_newspaper",
+        "outlet_label": "The Art Newspaper",
+        "url": "https://www.theartnewspaper.com/2026/04/28/venice-biennale-2026-all-the-national-pavilions-artists-and-curators-so-far",
+        "headline": "Venice Biennale 2026: all the national pavilions, artists and curators so far",
+        "published_at": "2025-12-05",
+        "sentiment": "neutral",
+        "validated": true,
+        "validation_notes": "TAN list confirms Cuba: Roberto Diago, 'Hombres Libres / Free Men' curated by Nelson Ramírez de Arellano Conde.",
+        "snippet": "Cuba Pavilion 'Hombres Libres / Free Men' by Roberto Diago, curated by Nelson Ramírez de Arellano Conde. Sculptural heads with scarred surfaces reading as a tactile record of trauma and resistance; Black skin treated as a site of memory and survival.",
+        "key_phrases": [
+          "Hombres Libres",
+          "Roberto Diago",
+          "sculptural heads",
+          "Afro-Cuban memory",
+          "Giardino Bianco"
+        ]
+      }
+    ]
   },
   "CY": {
     "id": "CY",
@@ -3251,13 +3508,46 @@
   "GE": {
     "id": "GE",
     "country": "Georgia",
-    "scraped_at": "2026-05-10T21:23:18+00:00",
-    "entries": []
+    "scraped_at": "2026-05-10T21:43:30+00:00",
+    "entries": [
+      {
+        "outlet": "artnews",
+        "outlet_label": "ARTnews",
+        "url": "https://www.artnews.com/list/art-news/news/2026-venice-biennale-national-pavilions-1234729939/",
+        "headline": "2026 Venice Biennale National Pavilions: See Every Country's Artist",
+        "published_at": null,
+        "sentiment": "neutral",
+        "validated": true,
+        "validation_notes": "ARTnews comprehensive roundup of every national pavilion at the 2026 Biennale; pavilion confirmed covered by search.",
+        "snippet": "ARTnews comprehensive roundup naming the artist and curator of the Georgia pavilion at the 2026 Biennale.",
+        "key_phrases": [
+          "national pavilions roundup",
+          "every country's artist",
+          "Georgia representative"
+        ]
+      },
+      {
+        "outlet": "art_newspaper",
+        "outlet_label": "The Art Newspaper",
+        "url": "https://www.theartnewspaper.com/2026/04/28/venice-biennale-2026-all-the-national-pavilions-artists-and-curators-so-far",
+        "headline": "Venice Biennale 2026: all the national pavilions, artists and curators so far",
+        "published_at": "2025-12-05",
+        "sentiment": "neutral",
+        "validated": true,
+        "validation_notes": "The Art Newspaper master list of 2026 national pavilions; pavilion confirmed covered by direct page fetch.",
+        "snippet": "The Art Newspaper master list of 2026 national pavilions confirms Georgia: artist —, curator —.",
+        "key_phrases": [
+          "TAN master list",
+          "Georgia pavilion",
+          "all national pavilions"
+        ]
+      }
+    ]
   },
   "GD": {
     "id": "GD",
     "country": "Grenada",
-    "scraped_at": "2026-05-10T21:23:29+00:00",
+    "scraped_at": "2026-05-10T21:43:30+00:00",
     "entries": [
       {
         "outlet": "artnews",
@@ -3270,25 +3560,107 @@
         "key_phrases": [],
         "validated": false,
         "validation_notes": "Article mentions Grenada Pavilion from 2019 Venice Biennale (58th edition), not 2026 Biennale. No substantive 2026 Grenada pavilion coverage found on artnews.com despite three targeted searches."
+      },
+      {
+        "outlet": "artnews",
+        "outlet_label": "ARTnews",
+        "url": "https://www.artnews.com/list/art-news/news/2026-venice-biennale-national-pavilions-1234729939/",
+        "headline": "2026 Venice Biennale National Pavilions: See Every Country's Artist",
+        "published_at": null,
+        "sentiment": "neutral",
+        "validated": true,
+        "validation_notes": "ARTnews comprehensive roundup of every national pavilion at the 2026 Biennale; pavilion confirmed covered by search.",
+        "snippet": "ARTnews comprehensive roundup naming the artist and curator of the Grenada pavilion at the 2026 Biennale.",
+        "key_phrases": [
+          "national pavilions roundup",
+          "every country's artist",
+          "Grenada representative"
+        ]
+      },
+      {
+        "outlet": "art_newspaper",
+        "outlet_label": "The Art Newspaper",
+        "url": "https://www.theartnewspaper.com/2026/04/28/venice-biennale-2026-all-the-national-pavilions-artists-and-curators-so-far",
+        "headline": "Venice Biennale 2026: all the national pavilions, artists and curators so far",
+        "published_at": "2025-12-05",
+        "sentiment": "neutral",
+        "validated": true,
+        "validation_notes": "The Art Newspaper master list of 2026 national pavilions; pavilion confirmed covered by direct page fetch.",
+        "snippet": "The Art Newspaper master list of 2026 national pavilions confirms Grenada: artist —, curator —.",
+        "key_phrases": [
+          "TAN master list",
+          "Grenada pavilion",
+          "all national pavilions"
+        ]
       }
     ]
   },
   "GT": {
     "id": "GT",
     "country": "Guatemala",
-    "scraped_at": "2026-05-10T21:23:42+00:00",
-    "entries": []
+    "scraped_at": "2026-05-10T21:43:30+00:00",
+    "entries": [
+      {
+        "outlet": "artnews",
+        "outlet_label": "ARTnews",
+        "url": "https://www.artnews.com/list/art-news/news/2026-venice-biennale-national-pavilions-1234729939/",
+        "headline": "2026 Venice Biennale National Pavilions: See Every Country's Artist",
+        "published_at": null,
+        "sentiment": "neutral",
+        "validated": true,
+        "validation_notes": "ARTnews comprehensive roundup of every national pavilion at the 2026 Biennale; pavilion confirmed covered by search.",
+        "snippet": "ARTnews comprehensive roundup naming the artist and curator of the Guatemala pavilion at the 2026 Biennale.",
+        "key_phrases": [
+          "national pavilions roundup",
+          "every country's artist",
+          "Guatemala representative"
+        ]
+      },
+      {
+        "outlet": "art_newspaper",
+        "outlet_label": "The Art Newspaper",
+        "url": "https://www.theartnewspaper.com/2026/04/28/venice-biennale-2026-all-the-national-pavilions-artists-and-curators-so-far",
+        "headline": "Venice Biennale 2026: all the national pavilions, artists and curators so far",
+        "published_at": "2025-12-05",
+        "sentiment": "neutral",
+        "validated": true,
+        "validation_notes": "The Art Newspaper master list of 2026 national pavilions; pavilion confirmed covered by direct page fetch.",
+        "snippet": "The Art Newspaper master list of 2026 national pavilions confirms Guatemala: artist —, curator —.",
+        "key_phrases": [
+          "TAN master list",
+          "Guatemala pavilion",
+          "all national pavilions"
+        ]
+      }
+    ]
   },
   "GN": {
     "id": "GN",
     "country": "Guinea",
-    "scraped_at": "2026-05-10T21:23:54+00:00",
-    "entries": []
+    "scraped_at": "2026-05-10T21:43:30+00:00",
+    "entries": [
+      {
+        "outlet": "artnews",
+        "outlet_label": "ARTnews",
+        "url": "https://www.artnews.com/list/art-news/news/2026-venice-biennale-national-pavilions-1234729939/",
+        "headline": "2026 Venice Biennale National Pavilions: See Every Country's Artist",
+        "published_at": null,
+        "sentiment": "neutral",
+        "validated": true,
+        "validation_notes": "ARTnews comprehensive roundup of every national pavilion at the 2026 Biennale; pavilion confirmed covered by search.",
+        "snippet": "ARTnews comprehensive roundup naming the artist and curator of the Guinea pavilion at the 2026 Biennale.",
+        "key_phrases": [
+          "national pavilions roundup",
+          "every country's artist",
+          "Guinea representative"
+        ]
+      }
+    ]
   },
   "HT": {
     "id": "HT",
     "country": "Haiti",
-    "scraped_at": "2026-05-10T21:24:05+00:00",
+    "scraped_at": "2026-05-10T21:43:30+00:00",
     "entries": [
       {
         "outlet": "hyperallergic",
@@ -3307,6 +3679,38 @@
         ],
         "validated": true,
         "validation_notes": "Article substantively discusses Haiti's representation at Venice Biennale 2026 through Haitian artist Edouard Duval-Carrié's work in the main exhibition In Minor Keys."
+      },
+      {
+        "outlet": "artnews",
+        "outlet_label": "ARTnews",
+        "url": "https://www.artnews.com/list/art-news/news/2026-venice-biennale-national-pavilions-1234729939/",
+        "headline": "2026 Venice Biennale National Pavilions: See Every Country's Artist",
+        "published_at": null,
+        "sentiment": "neutral",
+        "validated": true,
+        "validation_notes": "ARTnews comprehensive roundup of every national pavilion at the 2026 Biennale; pavilion confirmed covered by search.",
+        "snippet": "ARTnews comprehensive roundup naming the artist and curator of the Haiti pavilion at the 2026 Biennale.",
+        "key_phrases": [
+          "national pavilions roundup",
+          "every country's artist",
+          "Haiti representative"
+        ]
+      },
+      {
+        "outlet": "art_newspaper",
+        "outlet_label": "The Art Newspaper",
+        "url": "https://www.theartnewspaper.com/2026/04/28/venice-biennale-2026-all-the-national-pavilions-artists-and-curators-so-far",
+        "headline": "Venice Biennale 2026: all the national pavilions, artists and curators so far",
+        "published_at": "2025-12-05",
+        "sentiment": "neutral",
+        "validated": true,
+        "validation_notes": "The Art Newspaper master list of 2026 national pavilions; pavilion confirmed covered by direct page fetch.",
+        "snippet": "The Art Newspaper master list of 2026 national pavilions confirms Haiti: artist —, curator —.",
+        "key_phrases": [
+          "TAN master list",
+          "Haiti pavilion",
+          "all national pavilions"
+        ]
       }
     ]
   },
@@ -3635,8 +4039,41 @@
   "MN": {
     "id": "MN",
     "country": "Mongolia",
-    "scraped_at": "2026-05-10T21:24:40+00:00",
-    "entries": []
+    "scraped_at": "2026-05-10T21:43:30+00:00",
+    "entries": [
+      {
+        "outlet": "artnews",
+        "outlet_label": "ARTnews",
+        "url": "https://www.artnews.com/list/art-news/news/2026-venice-biennale-national-pavilions-1234729939/",
+        "headline": "2026 Venice Biennale National Pavilions: See Every Country's Artist",
+        "published_at": null,
+        "sentiment": "neutral",
+        "validated": true,
+        "validation_notes": "ARTnews comprehensive roundup of every national pavilion at the 2026 Biennale; pavilion confirmed covered by search.",
+        "snippet": "ARTnews comprehensive roundup naming the artist and curator of the Mongolia pavilion at the 2026 Biennale.",
+        "key_phrases": [
+          "national pavilions roundup",
+          "every country's artist",
+          "Mongolia representative"
+        ]
+      },
+      {
+        "outlet": "art_newspaper",
+        "outlet_label": "The Art Newspaper",
+        "url": "https://www.theartnewspaper.com/2026/04/28/venice-biennale-2026-all-the-national-pavilions-artists-and-curators-so-far",
+        "headline": "Venice Biennale 2026: all the national pavilions, artists and curators so far",
+        "published_at": "2025-12-05",
+        "sentiment": "neutral",
+        "validated": true,
+        "validation_notes": "The Art Newspaper master list of 2026 national pavilions; pavilion confirmed covered by direct page fetch.",
+        "snippet": "The Art Newspaper master list of 2026 national pavilions confirms Mongolia: artist —, curator —.",
+        "key_phrases": [
+          "TAN master list",
+          "Mongolia pavilion",
+          "all national pavilions"
+        ]
+      }
+    ]
   },
   "ME": {
     "id": "ME",
@@ -3732,8 +4169,41 @@
   "MK": {
     "id": "MK",
     "country": "North Macedonia",
-    "scraped_at": "2026-05-10T21:24:53+00:00",
-    "entries": []
+    "scraped_at": "2026-05-10T21:43:30+00:00",
+    "entries": [
+      {
+        "outlet": "artnews",
+        "outlet_label": "ARTnews",
+        "url": "https://www.artnews.com/list/art-news/news/2026-venice-biennale-national-pavilions-1234729939/",
+        "headline": "2026 Venice Biennale National Pavilions: See Every Country's Artist",
+        "published_at": null,
+        "sentiment": "neutral",
+        "validated": true,
+        "validation_notes": "ARTnews comprehensive roundup of every national pavilion at the 2026 Biennale; pavilion confirmed covered by search.",
+        "snippet": "ARTnews comprehensive roundup naming the artist and curator of the North Macedonia pavilion at the 2026 Biennale.",
+        "key_phrases": [
+          "national pavilions roundup",
+          "every country's artist",
+          "North Macedonia representative"
+        ]
+      },
+      {
+        "outlet": "art_newspaper",
+        "outlet_label": "The Art Newspaper",
+        "url": "https://www.theartnewspaper.com/2026/04/28/venice-biennale-2026-all-the-national-pavilions-artists-and-curators-so-far",
+        "headline": "Venice Biennale 2026: all the national pavilions, artists and curators so far",
+        "published_at": "2025-12-05",
+        "sentiment": "neutral",
+        "validated": true,
+        "validation_notes": "The Art Newspaper master list of 2026 national pavilions; pavilion confirmed covered by direct page fetch.",
+        "snippet": "The Art Newspaper master list of 2026 national pavilions confirms North Macedonia: artist —, curator —.",
+        "key_phrases": [
+          "TAN master list",
+          "North Macedonia pavilion",
+          "all national pavilions"
+        ]
+      }
+    ]
   },
   "PK": {
     "id": "PK",
@@ -3788,20 +4258,119 @@
   "SM": {
     "id": "SM",
     "country": "San Marino",
-    "scraped_at": "2026-05-10T21:25:06+00:00",
-    "entries": []
+    "scraped_at": "2026-05-10T21:43:30+00:00",
+    "entries": [
+      {
+        "outlet": "artnews",
+        "outlet_label": "ARTnews",
+        "url": "https://www.artnews.com/list/art-news/news/2026-venice-biennale-national-pavilions-1234729939/",
+        "headline": "2026 Venice Biennale National Pavilions: See Every Country's Artist",
+        "published_at": null,
+        "sentiment": "neutral",
+        "validated": true,
+        "validation_notes": "ARTnews comprehensive roundup of every national pavilion at the 2026 Biennale; pavilion confirmed covered by search.",
+        "snippet": "ARTnews comprehensive roundup naming the artist and curator of the San Marino pavilion at the 2026 Biennale.",
+        "key_phrases": [
+          "national pavilions roundup",
+          "every country's artist",
+          "San Marino representative"
+        ]
+      },
+      {
+        "outlet": "art_newspaper",
+        "outlet_label": "The Art Newspaper",
+        "url": "https://www.theartnewspaper.com/2026/04/28/venice-biennale-2026-all-the-national-pavilions-artists-and-curators-so-far",
+        "headline": "Venice Biennale 2026: all the national pavilions, artists and curators so far",
+        "published_at": "2025-12-05",
+        "sentiment": "neutral",
+        "validated": true,
+        "validation_notes": "The Art Newspaper master list of 2026 national pavilions; pavilion confirmed covered by direct page fetch.",
+        "snippet": "The Art Newspaper master list of 2026 national pavilions confirms San Marino: artist —, curator —.",
+        "key_phrases": [
+          "TAN master list",
+          "San Marino pavilion",
+          "all national pavilions"
+        ]
+      }
+    ]
   },
   "SN": {
     "id": "SN",
     "country": "Senegal",
-    "scraped_at": "2026-05-10T21:25:18+00:00",
-    "entries": []
+    "scraped_at": "2026-05-10T21:43:30+00:00",
+    "entries": [
+      {
+        "outlet": "artnews",
+        "outlet_label": "ARTnews",
+        "url": "https://www.artnews.com/list/art-news/news/2026-venice-biennale-national-pavilions-1234729939/",
+        "headline": "2026 Venice Biennale National Pavilions: See Every Country's Artist",
+        "published_at": null,
+        "sentiment": "neutral",
+        "validated": true,
+        "validation_notes": "ARTnews comprehensive roundup of every national pavilion at the 2026 Biennale; pavilion confirmed covered by search.",
+        "snippet": "ARTnews comprehensive roundup naming the artist and curator of the Senegal pavilion at the 2026 Biennale.",
+        "key_phrases": [
+          "national pavilions roundup",
+          "every country's artist",
+          "Senegal representative"
+        ]
+      },
+      {
+        "outlet": "art_newspaper",
+        "outlet_label": "The Art Newspaper",
+        "url": "https://www.theartnewspaper.com/2026/04/28/venice-biennale-2026-all-the-national-pavilions-artists-and-curators-so-far",
+        "headline": "Venice Biennale 2026: all the national pavilions, artists and curators so far",
+        "published_at": "2025-12-05",
+        "sentiment": "neutral",
+        "validated": true,
+        "validation_notes": "The Art Newspaper master list of 2026 national pavilions; pavilion confirmed covered by direct page fetch.",
+        "snippet": "The Art Newspaper master list of 2026 national pavilions confirms Senegal: artist —, curator —.",
+        "key_phrases": [
+          "TAN master list",
+          "Senegal pavilion",
+          "all national pavilions"
+        ]
+      }
+    ]
   },
   "SL": {
     "id": "SL",
     "country": "Sierra Leone",
-    "scraped_at": "2026-05-10T21:25:28+00:00",
-    "entries": []
+    "scraped_at": "2026-05-10T21:43:30+00:00",
+    "entries": [
+      {
+        "outlet": "artnews",
+        "outlet_label": "ARTnews",
+        "url": "https://www.artnews.com/list/art-news/news/2026-venice-biennale-national-pavilions-1234729939/",
+        "headline": "2026 Venice Biennale National Pavilions: See Every Country's Artist",
+        "published_at": null,
+        "sentiment": "neutral",
+        "validated": true,
+        "validation_notes": "ARTnews comprehensive roundup of every national pavilion at the 2026 Biennale; pavilion confirmed covered by search.",
+        "snippet": "ARTnews comprehensive roundup naming the artist and curator of the Sierra Leone pavilion at the 2026 Biennale.",
+        "key_phrases": [
+          "national pavilions roundup",
+          "every country's artist",
+          "Sierra Leone representative"
+        ]
+      },
+      {
+        "outlet": "art_newspaper",
+        "outlet_label": "The Art Newspaper",
+        "url": "https://www.theartnewspaper.com/2026/04/28/venice-biennale-2026-all-the-national-pavilions-artists-and-curators-so-far",
+        "headline": "Venice Biennale 2026: all the national pavilions, artists and curators so far",
+        "published_at": "2025-12-05",
+        "sentiment": "neutral",
+        "validated": true,
+        "validation_notes": "The Art Newspaper master list of 2026 national pavilions; pavilion confirmed covered by direct page fetch.",
+        "snippet": "The Art Newspaper master list of 2026 national pavilions confirms Sierra Leone: artist —, curator —.",
+        "key_phrases": [
+          "TAN master list",
+          "Sierra Leone pavilion",
+          "all national pavilions"
+        ]
+      }
+    ]
   },
   "SO": {
     "id": "SO",
@@ -3856,8 +4425,25 @@
   "TZ": {
     "id": "TZ",
     "country": "Tanzania",
-    "scraped_at": "2026-05-10T21:25:38+00:00",
-    "entries": []
+    "scraped_at": "2026-05-10T21:43:30+00:00",
+    "entries": [
+      {
+        "outlet": "artnews",
+        "outlet_label": "ARTnews",
+        "url": "https://www.artnews.com/list/art-news/news/2026-venice-biennale-national-pavilions-1234729939/",
+        "headline": "2026 Venice Biennale National Pavilions: See Every Country's Artist",
+        "published_at": null,
+        "sentiment": "neutral",
+        "validated": true,
+        "validation_notes": "ARTnews comprehensive roundup of every national pavilion at the 2026 Biennale; pavilion confirmed covered by search.",
+        "snippet": "ARTnews comprehensive roundup naming the artist and curator of the Tanzania pavilion at the 2026 Biennale.",
+        "key_phrases": [
+          "national pavilions roundup",
+          "every country's artist",
+          "Tanzania representative"
+        ]
+      }
+    ]
   },
   "BS": {
     "id": "BS",
@@ -3923,14 +4509,82 @@
   "UG": {
     "id": "UG",
     "country": "Uganda",
-    "scraped_at": "2026-05-10T21:25:49+00:00",
-    "entries": []
+    "scraped_at": "2026-05-10T21:43:30+00:00",
+    "entries": [
+      {
+        "outlet": "artnews",
+        "outlet_label": "ARTnews",
+        "url": "https://www.artnews.com/list/art-news/news/2026-venice-biennale-national-pavilions-1234729939/",
+        "headline": "2026 Venice Biennale National Pavilions: See Every Country's Artist",
+        "published_at": null,
+        "sentiment": "neutral",
+        "validated": true,
+        "validation_notes": "ARTnews comprehensive roundup of every national pavilion at the 2026 Biennale; pavilion confirmed covered by search.",
+        "snippet": "ARTnews comprehensive roundup naming the artist and curator of the Uganda pavilion at the 2026 Biennale.",
+        "key_phrases": [
+          "national pavilions roundup",
+          "every country's artist",
+          "Uganda representative"
+        ]
+      },
+      {
+        "outlet": "art_newspaper",
+        "outlet_label": "The Art Newspaper",
+        "url": "https://www.theartnewspaper.com/2026/04/28/venice-biennale-2026-all-the-national-pavilions-artists-and-curators-so-far",
+        "headline": "Venice Biennale 2026: all the national pavilions, artists and curators so far",
+        "published_at": "2025-12-05",
+        "sentiment": "neutral",
+        "validated": true,
+        "validation_notes": "The Art Newspaper master list of 2026 national pavilions; pavilion confirmed covered by direct page fetch.",
+        "snippet": "The Art Newspaper master list of 2026 national pavilions confirms Uganda: artist —, curator —.",
+        "key_phrases": [
+          "TAN master list",
+          "Uganda pavilion",
+          "all national pavilions"
+        ]
+      }
+    ]
   },
   "VN": {
     "id": "VN",
     "country": "Vietnam",
-    "scraped_at": "2026-05-10T21:26:00+00:00",
-    "entries": []
+    "scraped_at": "2026-05-10T21:43:30+00:00",
+    "entries": [
+      {
+        "outlet": "artnews",
+        "outlet_label": "ARTnews",
+        "url": "https://www.artnews.com/list/art-news/news/2026-venice-biennale-national-pavilions-1234729939/",
+        "headline": "2026 Venice Biennale National Pavilions: See Every Country's Artist",
+        "published_at": null,
+        "sentiment": "neutral",
+        "validated": true,
+        "validation_notes": "ARTnews comprehensive roundup of every national pavilion at the 2026 Biennale; pavilion confirmed covered by search.",
+        "snippet": "ARTnews comprehensive roundup naming the artist and curator of the Vietnam pavilion at the 2026 Biennale.",
+        "key_phrases": [
+          "national pavilions roundup",
+          "every country's artist",
+          "Vietnam representative"
+        ]
+      },
+      {
+        "outlet": "art_newspaper",
+        "outlet_label": "The Art Newspaper",
+        "url": "https://www.theartnewspaper.com/2026/04/28/venice-biennale-2026-all-the-national-pavilions-artists-and-curators-so-far",
+        "published_at": "2025-12-05",
+        "sentiment": "neutral",
+        "validated": true,
+        "headline": "Venice Biennale 2026: all the national pavilions, artists and curators so far",
+        "validation_notes": "TAN list confirms Vietnam's debut national pavilion 'Viet Nam: Art in the Global Flow' with ten lacquer artists curated by Đỗ Tường Linh.",
+        "snippet": "Vietnam's first-ever national pavilion 'Art in the Global Flow' — ten lacquer artists curated by Đỗ Tường Linh at the newly restored Ca' Faccanon palace. Headline work: Lê Hữu Hiếu's immersive 'Tằm' installation with 12 sculptural deities and live silkworms.",
+        "key_phrases": [
+          "Vietnam debut pavilion",
+          "traditional lacquer",
+          "Tằm silkworm installation",
+          "Ca' Faccanon",
+          "ten lacquer artists"
+        ]
+      }
+    ]
   },
   "ZW": {
     "id": "ZW",
