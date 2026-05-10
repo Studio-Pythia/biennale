@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Every Pavilion is a State Op — Venice Biennale 2026</title>
+<meta name="description" content="A financing-and-architecture map of the 2026 Venice Biennale: who funds what, who selects, who shows.">
+<meta property="og:title" content="Every Pavilion is a State Op">
+<meta property="og:description" content="A financing-and-architecture map of the 2026 Venice Biennale.">
+<meta property="og:type" content="article">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="masthead">
+  <div class="masthead-inner">
+    <div class="kicker">Venice Biennale · 61st International Art Exhibition · 9 May – 22 November 2026</div>
+    <h1>Every Pavilion is a State Op</h1>
+    <p class="dek">A financing-and-architecture map of the 2026 Biennale. Who pays, who picks, who shows. The art comes second.</p>
+    <div class="byline">By Russ Jones · 10 May 2026</div>
+  </div>
+</header>
+
+<main>
+
+<section class="essay essay-top">
+  <div class="essay-inner">
+    <p class="lede">The 2026 Biennale will be remembered for what it stopped doing. The Golden Lion was abolished in late April after the international jury resigned over Russia and Israel being allowed to compete. Italy's own Culture Minister boycotted the opening for the first time in the institution's 131-year history. On 8 May the cultural workers walked off — also a first. The European Commission cut €2 million from the Foundation. By the time the public was let in on 9 May, the only prize left was a public email vote announced on closing day.</p>
+
+    <p>This is the year to stop talking about the art and start looking at the wiring. Every state pavilion is a state op. The British Council pays the British Council's curator to pick a British artist to mount British self-criticism in a Giardini building owned by Britain. Russia's commissioner is the daughter of a deputy director of Rostec, the state defence conglomerate. The US pavilion is handled by a brand-new nonprofit founded after the Mellon and Ford Foundations stopped showing up, funded by Trump's Secretary of the Navy. Austria's bathroom-fixture sponsor, Laufen, is literally embedded in the artwork.</p>
+
+    <p>The interesting question isn't "art or propaganda?" It's: which of these governance shapes can survive the attention economy that the institution itself has now collapsed back into? Three archetypes are visible. <strong>Austria</strong> ran a meritocratic open call — fifty-four submissions, three-stage expert jury, minister rubber-stamps. Output: <em>SEAWORLD VENICE</em>, a flooded pavilion with naked performers tolling a salvaged church bell, a closed-loop sewage tank fed by the Biennale's own toilets, two-hour queues. <strong>The British Council</strong> has been picking the British artist itself for seventy-plus years; the 2026 commission went to a 71-year-old Turner Prize laureate, funded jointly by the Council, Frieze, and Cork Street Galleries — and yes, Frieze is the same magazine that published an op-ed in February 2025 arguing the pavilion should go to a younger artist. <strong>The Holy See</strong> signed a three-year deal with Intesa Sanpaolo in 2024 covering the next two Biennales, freeing its curators (Hans Ulrich Obrist, Ben Vickers, Soundwalk Collective this year) from chasing money and letting them take over a hidden Carmelite garden in Cannaregio with Brian Eno, FKA twigs and Patti Smith.</p>
+
+    <p>Below: every participating pavilion, what it cost, and where the money came from. Lay the architecture next to the money and the output stops being a mystery.</p>
+  </div>
+</section>
+
+<section class="map-section" id="map">
+  <div class="map-header">
+    <h2>The Map</h2>
+    <p class="map-caption">Each circle is a national pavilion. Size scales with disclosed budget where known, with named-donor count as a fallback. Colour shows the selection method. Hover for a quick card; click for the full data panel.</p>
+    <div class="legend">
+      <div class="legend-section">
+        <span class="legend-label">Selection method:</span>
+        <span class="legend-chip" data-method="open_call"><span class="dot dot-open"></span>Open call</span>
+        <span class="legend-chip" data-method="panel"><span class="dot dot-panel"></span>Expert panel</span>
+        <span class="legend-chip" data-method="ministerial"><span class="dot dot-ministerial"></span>Ministerial</span>
+        <span class="legend-chip" data-method="nonprofit"><span class="dot dot-nonprofit"></span>Nonprofit</span>
+        <span class="legend-chip" data-method="other"><span class="dot dot-other"></span>Other / unknown</span>
+      </div>
+      <div class="legend-section">
+        <span class="legend-label">Size:</span>
+        <span class="legend-chip"><span class="dot-scale dot-scale-s"></span>Smaller budget</span>
+        <span class="legend-chip"><span class="dot-scale dot-scale-l"></span>Larger budget</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="map-container">
+    <div class="map-zone" id="zone-giardini">
+      <h3 class="zone-title">Giardini</h3>
+      <svg class="venue-map" id="map-giardini" viewBox="0 0 1000 700" preserveAspectRatio="xMidYMid meet" aria-label="Giardini map"></svg>
+    </div>
+    <div class="map-zone" id="zone-arsenale">
+      <h3 class="zone-title">Arsenale</h3>
+      <svg class="venue-map" id="map-arsenale" viewBox="0 0 1200 500" preserveAspectRatio="xMidYMid meet" aria-label="Arsenale map"></svg>
+    </div>
+    <div class="map-zone" id="zone-offsite">
+      <h3 class="zone-title">Off-site (Cannaregio · Castello · San Marco · Dorsoduro · Mestre)</h3>
+      <svg class="venue-map" id="map-offsite" viewBox="0 0 1200 350" preserveAspectRatio="xMidYMid meet" aria-label="Off-site map"></svg>
+    </div>
+  </div>
+
+  <aside class="detail-panel" id="detail-panel" aria-hidden="true">
+    <button class="detail-close" id="detail-close" aria-label="Close detail">&times;</button>
+    <div class="detail-content" id="detail-content"></div>
+  </aside>
+</section>
+
+<section class="essay essay-mid">
+  <div class="essay-inner">
+    <h2>The donor web</h2>
+    <p>What you cannot see by walking the Giardini is who keeps showing up across multiple pavilions. Move around the graph. Lines connect a funder to every pavilion it backs, and an artist to the commercial gallery that represents them. Where a gallery also funds the pavilion of its own artist — Galerie Thaddaeus Ropac for Florentina Holzinger at Austria — the triangle closes. Where a luxury house, a bank, or a state-aligned individual funds in multiple places, the constellation is the soft-power apparatus that the discrete pavilion view obscures.</p>
+  </div>
+  <div class="graph-container">
+    <svg id="donor-graph" viewBox="0 0 1200 700" preserveAspectRatio="xMidYMid meet" aria-label="Donor and artist relationship graph"></svg>
+    <div class="graph-legend">
+      <span><span class="graph-dot graph-dot-pavilion"></span>Pavilion</span>
+      <span><span class="graph-dot graph-dot-individual"></span>Individual donor</span>
+      <span><span class="graph-dot graph-dot-corporate"></span>Corporate sponsor</span>
+      <span><span class="graph-dot graph-dot-foundation"></span>Foundation</span>
+      <span><span class="graph-dot graph-dot-gallery"></span>Commercial gallery</span>
+    </div>
+  </div>
+</section>
+
+<section class="table-section" id="table">
+  <div class="table-header">
+    <h2>Every pavilion, sortable</h2>
+    <p>~99 national presentations at the 2026 Biennale. Click any column header to sort. Click any row to expand the full record. Empty cells are not always missing data — many pavilions deliberately do not disclose financing.</p>
+    <div class="table-controls">
+      <input type="search" id="table-search" placeholder="Filter pavilions, artists, curators, funders…" aria-label="Filter table">
+      <select id="venue-filter" aria-label="Filter by venue">
+        <option value="">All venues</option>
+        <option value="Giardini">Giardini</option>
+        <option value="Arsenale">Arsenale</option>
+        <option value="off-site">Off-site</option>
+      </select>
+      <select id="method-filter" aria-label="Filter by selection method">
+        <option value="">All selection methods</option>
+        <option value="open_call">Open call</option>
+        <option value="panel">Expert panel</option>
+        <option value="ministerial">Ministerial</option>
+        <option value="nonprofit">Nonprofit</option>
+        <option value="other">Other</option>
+      </select>
+    </div>
+  </div>
+  <div class="table-wrap">
+    <table id="pavilion-table">
+      <thead>
+        <tr>
+          <th data-sort="country">Country</th>
+          <th data-sort="venue">Venue</th>
+          <th data-sort="artist_name">Artist</th>
+          <th data-sort="curator_name">Curator</th>
+          <th data-sort="commissioning_body">Commissioner</th>
+          <th data-sort="selection_method">Selection</th>
+          <th data-sort="total_budget_amount_usd" class="num">Budget (USD)</th>
+          <th data-sort="funder_count" class="num">Funders</th>
+        </tr>
+      </thead>
+      <tbody id="pavilion-tbody"></tbody>
+    </table>
+  </div>
+</section>
+
+<section class="essay essay-bottom">
+  <div class="essay-inner">
+    <h2>Where to draw the line</h2>
+    <p>The May 8 strike's central demand was the removal of Israel's pavilion. The jury that resigned tried to bar Russia and Israel from award consideration on the grounds that their leaders are under ICC investigation. The Foundation overruled them — citing inclusion — and replaced the prize with a public vote nobody on the jury would put their name to. Buttafuoco's defence: any country with diplomatic relations with Italy can show up.</p>
+
+    <p>The honest position is that there isn't one. Once you admit every pavilion is a state op, drawing the line at war or genocide is a moral choice you have to argue, not a structural conclusion you can read off the wiring. Russia's pavilion is a Rostec-adjacent rave. Britain's is a Turner Prize laureate diagnosing British loathing of the Other, funded by an art fair that earlier called for the commission to go elsewhere. The US is an apolitical sculptor commissioned by a Mar-a-Lago-connected nonprofit. The Holy See is a Patti Smith inauguration in a Carmelite garden, paid for by Italy's largest bank on a three-year deal. Austria is a flooded pavilion with a sewage tank funded partly by the artist's own dealer.</p>
+
+    <p>If you think one of these is meaningfully different in kind from the others, the wiring is what you have to defend. The map is here so you can see what you're defending.</p>
+
+    <p class="essay-note">Data sources are linked from each row in the table. Methodology and uncertainties at the bottom of this page. <a href="#methodology">Read the notes</a>.</p>
+  </div>
+</section>
+
+<section class="methodology" id="methodology">
+  <div class="essay-inner">
+    <h2>Methodology &amp; uncertainties</h2>
+    <p>Data was assembled in early May 2026 from official pavilion sites, commissioning institutions' press releases, the Biennale's own catalogue at labiennale.org, and reporting in Artnet, Frieze, ArtReview, Hyperallergic, Artforum, Apollo, e-flux and the relevant national press for each country. Most pavilions do not publicly disclose total budgets — Italy is one of the few that does. Where a budget cell is empty, treat that as a finding, not an absence: opacity is part of what the map shows.</p>
+    <p>Donor-pavilion edges are drawn only where named in primary or reputable secondary sources. Where a name appeared in only one source or only at a benefit event, it is annotated as such. The "upside-down crucifix" detail in the Pussy Riot intervention at the Russian Pavilion could not be verified across sources and is not represented. The international jury chair Solange Farkas, members Zoe Butt, Elvira Dyangani Ose, Marta Kuzma and Giovanna Zapperi resigned together on 30 April 2026.</p>
+    <p>Three deaths shape the edition: <strong>Koyo Kouoh</strong> (1967–2025), curator of the main exhibition <em>In Minor Keys</em>, died May 2025 of liver cancer before installing the show; <strong>Henrike Naumann</strong> (1984–2026), one of two German Pavilion artists, died February 2026; <strong>Alexander Kluge</strong> (1932–2026), filmmaker, died earlier in 2026 — his final twelve-station film is in the Holy See pavilion.</p>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div>Venice Biennale 2026 · Financing Map</div>
+    <div>By <a href="https://russ-jones.com">Russ Jones</a> · Built 10 May 2026</div>
+  </div>
+</footer>
+
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script src="main.js" type="module"></script>
+</body>
+</html>
