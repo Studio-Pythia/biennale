@@ -10,80 +10,100 @@
  */
 
 // Giardini pavilion positions (numbered 1-29 from the official map)
-export const GIARDINI_POSITIONS: Record<number, { x: number; y: number; label: string }> = {
-  1: { x: 920, y: 520, label: "Spain" },
-  2: { x: 950, y: 480, label: "Belgium" },
-  3: { x: 980, y: 440, label: "Netherlands" },
-  4: { x: 1020, y: 400, label: "Central Pavilion" },
-  5: { x: 1060, y: 380, label: "Finland" },
-  6: { x: 1100, y: 360, label: "Hungary" },
-  7: { x: 1080, y: 480, label: "United States" },
-  8: { x: 1100, y: 520, label: "Nordic Countries" },
-  9: { x: 1060, y: 540, label: "Denmark" },
-  10: { x: 1040, y: 500, label: "Qatar" },
-  11: { x: 1000, y: 560, label: "Switzerland" },
-  12: { x: 1020, y: 580, label: "Russia" },
-  13: { x: 1060, y: 600, label: "Japan" },
-  14: { x: 1100, y: 620, label: "Korea" },
-  15: { x: 1140, y: 600, label: "Germany" },
-  16: { x: 1180, y: 620, label: "Canada" },
-  17: { x: 1220, y: 580, label: "Great Britain" },
-  18: { x: 1200, y: 520, label: "France" },
-  19: { x: 1180, y: 500, label: "Czech & Slovak Rep." },
-  20: { x: 1220, y: 480, label: "Australia" },
-  21: { x: 1200, y: 440, label: "Uruguay" },
-  22: { x: 1180, y: 420, label: "Brazil" },
-  23: { x: 1140, y: 380, label: "Austria" },
-  24: { x: 1160, y: 340, label: "Serbia" },
-  25: { x: 1200, y: 360, label: "Egypt" },
-  26: { x: 1240, y: 380, label: "Venice Pavilion" },
-  27: { x: 1240, y: 420, label: "Poland" },
-  28: { x: 1280, y: 400, label: "Romania" },
-  29: { x: 1280, y: 360, label: "Greece" },
+// Coordinates are relative to giardini-detail-map.png image
+// The image shows pavilions 1-29 arranged in the gardens with yellow building footprints
+export const GIARDINI_POSITIONS: Record<number, { x: number; y: number; label: string; countryCode: string }> = {
+  1:  { x: 255, y: 410, label: "Spain", countryCode: "ES" },
+  2:  { x: 220, y: 330, label: "Belgium", countryCode: "BE" },
+  3:  { x: 260, y: 270, label: "Netherlands", countryCode: "NL" },
+  4:  { x: 380, y: 215, label: "Central Pavilion", countryCode: "" }, // Main exhibition
+  5:  { x: 450, y: 200, label: "Finland", countryCode: "FI" },
+  6:  { x: 530, y: 180, label: "Hungary", countryCode: "HU" },
+  7:  { x: 530, y: 330, label: "United States", countryCode: "US" },
+  8:  { x: 460, y: 370, label: "Nordic Countries", countryCode: "NO" }, // Norway+Sweden+Finland shared
+  9:  { x: 410, y: 420, label: "Denmark", countryCode: "DK" },
+  10: { x: 440, y: 320, label: "Qatar", countryCode: "QA" },
+  11: { x: 350, y: 480, label: "Switzerland", countryCode: "CH" },
+  12: { x: 420, y: 490, label: "Russia", countryCode: "RU" },
+  13: { x: 530, y: 500, label: "Japan", countryCode: "JP" },
+  14: { x: 600, y: 500, label: "Korea", countryCode: "KR" },
+  15: { x: 680, y: 480, label: "Germany", countryCode: "DE" },
+  16: { x: 780, y: 490, label: "Canada", countryCode: "CA" },
+  17: { x: 820, y: 410, label: "Great Britain", countryCode: "GB" },
+  18: { x: 720, y: 380, label: "France", countryCode: "FR" },
+  19: { x: 680, y: 380, label: "Czech & Slovak Rep.", countryCode: "CZ" },
+  20: { x: 720, y: 330, label: "Australia", countryCode: "AU" },
+  21: { x: 680, y: 290, label: "Uruguay", countryCode: "UY" },
+  22: { x: 620, y: 230, label: "Brazil", countryCode: "BR" },
+  23: { x: 540, y: 120, label: "Austria", countryCode: "AT" },
+  24: { x: 600, y: 100, label: "Serbia", countryCode: "RS" },
+  25: { x: 680, y: 130, label: "Egypt", countryCode: "EG" },
+  26: { x: 720, y: 180, label: "Venice Pavilion", countryCode: "" },
+  27: { x: 750, y: 210, label: "Poland", countryCode: "PL" },
+  28: { x: 800, y: 180, label: "Romania", countryCode: "RO" },
+  29: { x: 820, y: 240, label: "Greece", countryCode: "GR" },
 };
 
+// Get Giardini position number for a country code
+export function getGiardiniPosition(countryCode: string): number | null {
+  for (const [pos, data] of Object.entries(GIARDINI_POSITIONS)) {
+    if (data.countryCode === countryCode) {
+      return parseInt(pos);
+    }
+  }
+  return null;
+}
+
 // Arsenale building zones (numbered 1-6 from the official map)
-export const ARSENALE_ZONES: Record<number, { x: number; y: number; label: string; countries: string[] }> = {
+// Coordinates are relative to the arsenale-detail-map.png image (1024x890 approx)
+export const ARSENALE_ZONES: Record<number, { x: number; y: number; label: string; countryCodes: string[] }> = {
   1: { 
-    x: 780, y: 620, 
+    x: 340, y: 430, 
     label: "Corderie", 
-    countries: ["In Minor Keys (Central Exhibition)"] 
+    countryCodes: [] // Central Exhibition "In Minor Keys" - no individual pavilions
   },
   2: { 
-    x: 820, y: 580, 
+    x: 420, y: 360, 
     label: "Artiglierie",
-    countries: [
-      "Chile", "India", "Ireland", "Latvia", "Lebanon", "Malta", 
-      "Philippines", "Morocco", "Oman", "Slovenia", "Timor Leste",
-      "Armenia", "Bahamas", "Kyrgyz Republic", "Lithuania", "Montenegro",
-      "North Macedonia", "Pakistan", "Saudi Arabia", "Turkey", "Ukraine"
+    countryCodes: [
+      "CL", "IN", "IE", "LV", "LB", "MT", 
+      "PH", "MA", "OM", "SI", "TL"
     ]
   },
   3: { 
-    x: 860, y: 540, 
+    x: 450, y: 320, 
     label: "Sale d'Armi",
-    countries: [
-      "Albania", "Argentina", "Luxembourg", "Israel", "Mexico", 
-      "Peru", "Saudi Arabia", "Singapore", "Turkey", "Ukraine", 
-      "UAE", "Syria", "Kosovo"
+    countryCodes: [
+      "AL", "AR", "LU", "IL", "MX", 
+      "PE", "SA", "SG", "TR", "UA", "AE"
     ]
   },
   4: { 
-    x: 900, y: 500, 
+    x: 520, y: 190, 
     label: "Tese del Cinquecento",
-    countries: ["Uzbekistan"] 
+    countryCodes: ["UZ"]
   },
   5: { 
-    x: 940, y: 460, 
+    x: 560, y: 200, 
     label: "Padiglione Italia",
-    countries: ["Italy"] 
+    countryCodes: ["IT"]
   },
   6: { 
-    x: 980, y: 420, 
+    x: 600, y: 160, 
     label: "Magazzino delle cisterne",
-    countries: ["China"] 
+    countryCodes: ["CN"]
   },
 };
+
+// Get Arsenale zone number for a country code
+export function getArsenaleZone(countryCode: string): number | null {
+  for (const [zone, data] of Object.entries(ARSENALE_ZONES)) {
+    if (data.countryCodes.includes(countryCode)) {
+      return parseInt(zone);
+    }
+  }
+  return null;
+}
 
 // Grid reference to coordinate mapping for off-site venues
 // Based on the full Venice city map grid (columns 1-6, rows A-H)
@@ -237,6 +257,29 @@ export const COUNTRY_GRID_REFS: Record<string, string> = {
   "ZW": "45 F4", // Zimbabwe
 };
 
+// Map image dimensions (from Main map.png)
+const MAP_WIDTH = 1566;
+const MAP_HEIGHT = 890;
+
+// Grid coordinates on the map image
+// Columns A-H start at x=62, each column ~187px wide
+// Rows 1-6 start at y=30, each row ~143px tall
+const GRID = {
+  colStart: 62,
+  colWidth: 187,
+  rowStart: 30,
+  rowHeight: 143,
+};
+
+// Convert grid column letter and row number to map coordinates
+function gridToMapCoords(col: string, row: number): { x: number; y: number } {
+  const colIndex = col.toUpperCase().charCodeAt(0) - 'A'.charCodeAt(0);
+  return {
+    x: GRID.colStart + colIndex * GRID.colWidth + GRID.colWidth / 2,
+    y: GRID.rowStart + (row - 1) * GRID.rowHeight + GRID.rowHeight / 2,
+  };
+}
+
 // Parse grid reference to get coordinates
 // Format examples: "Giardini 20", "Arsenale 3", "4 C4", "42 E2 + 42 D2"
 export function parseGridRef(gridRef: string): { x: number; y: number } | null {
@@ -258,13 +301,13 @@ export function parseGridRef(gridRef: string): { x: number; y: number } | null {
   
   // Check for Arsenale Militare (special case for Armenia)
   if (gridRef.toLowerCase().includes("arsenale militare")) {
-    // Position near Arsenale area
-    return { x: 750, y: 580 };
+    // Position near Arsenale area on the main map (G3 area)
+    return gridToMapCoords("G", 3);
   }
   
-  // Off the map (San Servolo island, etc.)
+  // Off the map (San Servolo island, etc.) - position bottom left
   if (gridRef.toLowerCase().includes("off the map") || gridRef.toLowerCase().includes("san servolo")) {
-    return { x: 200, y: 700 };
+    return { x: 150, y: MAP_HEIGHT - 100 };
   }
   
   // Check for grid reference (e.g., "4 C4", "42 E2", "20 H4")
@@ -272,31 +315,14 @@ export function parseGridRef(gridRef: string): { x: number; y: number } | null {
   const gridMatch = gridRef.match(/(\d+)\s+([A-H])(\d)/i);
   if (gridMatch) {
     const [, , col, row] = gridMatch;
-    // Convert grid to coordinates
-    // Columns A-H map to x positions across Venice (west to east)
-    // Rows 1-6 map to y positions (north to south)
-    const colIndex = col.toUpperCase().charCodeAt(0) - 'A'.charCodeAt(0); // 0-7
-    const rowIndex = parseInt(row) - 1; // 0-5
-    
-    // Map to canvas coordinates
-    // Venice map is roughly 1600x900, with off-site venues scattered across the city
-    // The grid covers the main Venice area (not Giardini/Arsenale which are in the east)
-    return {
-      x: 150 + colIndex * 70, // A=150, B=220, C=290, D=360, E=430, F=500, G=570, H=640
-      y: 250 + rowIndex * 80, // Row 1=250, 2=330, 3=410, 4=490, 5=570, 6=650
-    };
+    return gridToMapCoords(col, parseInt(row));
   }
   
   // If nothing matched, try to extract just a grid code without the entry number
   const simpleGridMatch = gridRef.match(/([A-H])(\d)/i);
   if (simpleGridMatch) {
     const [, col, row] = simpleGridMatch;
-    const colIndex = col.toUpperCase().charCodeAt(0) - 'A'.charCodeAt(0);
-    const rowIndex = parseInt(row) - 1;
-    return {
-      x: 150 + colIndex * 70,
-      y: 250 + rowIndex * 80,
-    };
+    return gridToMapCoords(col, parseInt(row));
   }
   
   return null;
