@@ -16,25 +16,47 @@ import "@xyflow/react/dist/style.css";
 
 import { PavilionNode } from "./pavilion-node";
 import { VenueLabelNode } from "./venue-label-node";
+import { MapBackgroundNode } from "./map-background-node";
 import {
   useMapStore,
   getPavilionsByFunder,
 } from "@/lib/use-map-store";
 import type { Pavilion } from "@/lib/types";
-import { getVenueColor, getPavilionCoords, getGiardiniPositions, getArsenaleZones } from "@/lib/data";
+import { getVenueColor, getPavilionCoords } from "@/lib/data";
 
 const nodeTypes = {
   pavilion: PavilionNode,
   venueLabel: VenueLabelNode,
+  mapBackground: MapBackgroundNode,
 };
 
-// Scaling factor to spread nodes across the canvas
-const SCALE = 1.5;
-const OFFSET_X = -200;
-const OFFSET_Y = -100;
+// Layout configuration for the three venue areas
+const LAYOUT = {
+  // Giardini area (bottom right) - matches the official numbered map
+  giardini: {
+    x: 900,
+    y: 400,
+    width: 600,
+    height: 400,
+  },
+  // Arsenale area (center right)
+  arsenale: {
+    x: 600,
+    y: 350,
+    width: 400,
+    height: 300,
+  },
+  // Off-site venues (left side - Venice city)
+  offsite: {
+    x: 50,
+    y: 100,
+    width: 500,
+    height: 600,
+  },
+};
 
 // Pre-compute stable jitter values per pavilion ID
-function getStableJitter(id: string): { x: number; y: number } {
+function getStableJitter(id: string, maxSpread: number = 30): { x: number; y: number } {
   let hash = 0;
   for (let i = 0; i < id.length; i++) {
     const char = id.charCodeAt(i);
@@ -42,69 +64,72 @@ function getStableJitter(id: string): { x: number; y: number } {
     hash = hash & hash;
   }
   return {
-    x: ((hash % 60) - 30),
-    y: (((hash >> 8) % 60) - 30),
+    x: ((hash % (maxSpread * 2)) - maxSpread),
+    y: (((hash >> 8) % (maxSpread * 2)) - maxSpread),
   };
 }
 
 function createNodesFromPavilions(pavilions: Pavilion[]): Node[] {
   const nodes: Node[] = [];
 
-  // Add Giardini position labels
-  const giardiniPositions = getGiardiniPositions();
-  Object.entries(giardiniPositions).forEach(([num, pos]) => {
-    nodes.push({
-      id: `giardini-pos-${num}`,
-      type: "venueLabel",
-      position: {
-        x: pos.x * SCALE + OFFSET_X - 10,
-        y: pos.y * SCALE + OFFSET_Y - 40,
-      },
-      data: {
-        label: num,
-        venue: "Giardini",
-        isPositionNumber: true,
-      },
-      draggable: false,
-      selectable: false,
-    });
+  // Add background map images
+  nodes.push({
+    id: "bg-venice",
+    type: "mapBackground",
+    position: { x: LAYOUT.offsite.x - 20, y: LAYOUT.offsite.y - 50 },
+    data: {
+      imageUrl: "/images/venice-map.jpg",
+      width: LAYOUT.offsite.width + 100,
+      height: LAYOUT.offsite.height + 100,
+      label: "Venice City",
+    },
+    draggable: false,
+    selectable: false,
+    zIndex: -10,
   });
 
-  // Add Arsenale zone labels
-  const arsenaleZones = getArsenaleZones();
-  Object.entries(arsenaleZones).forEach(([num, zone]) => {
-    nodes.push({
-      id: `arsenale-zone-${num}`,
-      type: "venueLabel",
-      position: {
-        x: zone.x * SCALE + OFFSET_X,
-        y: zone.y * SCALE + OFFSET_Y - 50,
-      },
-      data: {
-        label: zone.label,
-        venue: "Arsenale",
-        count: zone.countries.length,
-      },
-      draggable: false,
-      selectable: false,
-    });
+  nodes.push({
+    id: "bg-giardini",
+    type: "mapBackground",
+    position: { x: LAYOUT.giardini.x - 50, y: LAYOUT.giardini.y - 80 },
+    data: {
+      imageUrl: "/images/giardini-map.jpg",
+      width: LAYOUT.giardini.width + 100,
+      height: LAYOUT.giardini.height + 160,
+      label: "Giardini della Biennale",
+    },
+    draggable: false,
+    selectable: false,
+    zIndex: -10,
+  });
+
+  nodes.push({
+    id: "bg-arsenale",
+    type: "mapBackground",
+    position: { x: LAYOUT.arsenale.x - 30, y: LAYOUT.arsenale.y - 50 },
+    data: {
+      imageUrl: "/images/arsenale-map.jpg",
+      width: LAYOUT.arsenale.width + 60,
+      height: LAYOUT.arsenale.height + 100,
+      label: "Arsenale",
+    },
+    draggable: false,
+    selectable: false,
+    zIndex: -10,
   });
 
   // Add main venue area labels
   const venueLabels = [
-    { id: "venue-giardini", label: "GIARDINI", x: 1100, y: 300, venue: "Giardini" },
-    { id: "venue-arsenale", label: "ARSENALE", x: 850, y: 450, venue: "Arsenale" },
-    { id: "venue-offsite", label: "OFF-SITE VENUES", x: 400, y: 300, venue: "Off-site" },
+    { id: "venue-giardini", label: "GIARDINI", x: LAYOUT.giardini.x + 200, y: LAYOUT.giardini.y - 40, venue: "Giardini" as const },
+    { id: "venue-arsenale", label: "ARSENALE", x: LAYOUT.arsenale.x + 150, y: LAYOUT.arsenale.y - 20, venue: "Arsenale" as const },
+    { id: "venue-offsite", label: "OFF-SITE VENUES", x: LAYOUT.offsite.x + 180, y: LAYOUT.offsite.y, venue: "Off-site" as const },
   ];
 
   venueLabels.forEach((v) => {
     nodes.push({
       id: v.id,
       type: "venueLabel",
-      position: {
-        x: v.x * SCALE + OFFSET_X,
-        y: v.y * SCALE + OFFSET_Y,
-      },
+      position: { x: v.x, y: v.y },
       data: {
         label: v.label,
         venue: v.venue,
@@ -112,24 +137,80 @@ function createNodesFromPavilions(pavilions: Pavilion[]): Node[] {
       },
       draggable: false,
       selectable: false,
+      zIndex: 5,
     });
   });
 
-  // Add pavilion nodes using accurate coordinates
-  pavilions.forEach((pavilion) => {
-    const coords = getPavilionCoords(pavilion);
-    
-    // Use stable jitter based on ID instead of random
-    const jitter = getStableJitter(pavilion.id);
+  // Group pavilions by venue for positioning
+  const giardiniPavilions = pavilions.filter(p => p.venue === "Giardini");
+  const arsenalePavilions = pavilions.filter(p => p.venue === "Arsenale");
+  const offsitePavilions = pavilions.filter(p => p.venue === "Off-site");
+
+  // Position Giardini pavilions in a grid layout
+  giardiniPavilions.forEach((pavilion, index) => {
+    const cols = 6;
+    const row = Math.floor(index / cols);
+    const col = index % cols;
+    const jitter = getStableJitter(pavilion.id, 15);
     
     nodes.push({
       id: pavilion.id,
       type: "pavilion",
       position: {
-        x: coords.x * SCALE + OFFSET_X + jitter.x,
-        y: coords.y * SCALE + OFFSET_Y + jitter.y,
+        x: LAYOUT.giardini.x + col * 80 + jitter.x,
+        y: LAYOUT.giardini.y + row * 70 + jitter.y,
       },
       data: { pavilion },
+      zIndex: 10,
+    });
+  });
+
+  // Position Arsenale pavilions in rows
+  arsenalePavilions.forEach((pavilion, index) => {
+    const cols = 5;
+    const row = Math.floor(index / cols);
+    const col = index % cols;
+    const jitter = getStableJitter(pavilion.id, 12);
+    
+    nodes.push({
+      id: pavilion.id,
+      type: "pavilion",
+      position: {
+        x: LAYOUT.arsenale.x + col * 70 + jitter.x,
+        y: LAYOUT.arsenale.y + row * 60 + jitter.y,
+      },
+      data: { pavilion },
+      zIndex: 10,
+    });
+  });
+
+  // Position off-site pavilions scattered across the city area
+  offsitePavilions.forEach((pavilion, index) => {
+    // Try to use grid_ref coordinates, fall back to spread layout
+    const coords = getPavilionCoords(pavilion);
+    const jitter = getStableJitter(pavilion.id, 20);
+    
+    // If coords came from grid_ref, use them; otherwise spread in the offsite area
+    let x: number, y: number;
+    if (pavilion.grid_ref && !pavilion.grid_ref.toLowerCase().includes("off the map")) {
+      // Scale grid coordinates to fit in offsite area
+      x = LAYOUT.offsite.x + (coords.x * 0.8);
+      y = LAYOUT.offsite.y + (coords.y * 0.6);
+    } else {
+      // Spread across the offsite area
+      const cols = 6;
+      const row = Math.floor(index / cols);
+      const col = index % cols;
+      x = LAYOUT.offsite.x + col * 75 + jitter.x;
+      y = LAYOUT.offsite.y + 80 + row * 65 + jitter.y;
+    }
+    
+    nodes.push({
+      id: pavilion.id,
+      type: "pavilion",
+      position: { x, y },
+      data: { pavilion },
+      zIndex: 10,
     });
   });
 
@@ -140,7 +221,6 @@ function createFunderEdges(funderName: string, pavilions: Pavilion[]): Edge[] {
   const connectedPavilions = getPavilionsByFunder(funderName, pavilions);
   const edges: Edge[] = [];
 
-  // Create edges between all connected pavilions to show the network
   for (let i = 0; i < connectedPavilions.length; i++) {
     for (let j = i + 1; j < connectedPavilions.length; j++) {
       edges.push({
@@ -171,10 +251,8 @@ export function VeniceMap({ pavilions: allPavilions }: VeniceMapProps) {
   const filters = useMapStore((s) => s.filters);
   const pavilionsInStore = useMapStore((s) => s.pavilions);
   
-  // Track if we've initialized
   const initialized = useRef(false);
 
-  // Initialize store with pavilions only once
   useEffect(() => {
     if (!initialized.current && allPavilions.length > 0) {
       setPavilions(allPavilions);
@@ -182,30 +260,18 @@ export function VeniceMap({ pavilions: allPavilions }: VeniceMapProps) {
     }
   }, [allPavilions, setPavilions]);
 
-  // Filter pavilions with useMemo to avoid recalculating on every render
+  // Filter pavilions
   const filteredPavilions = useMemo(() => {
     const source = pavilionsInStore.length > 0 ? pavilionsInStore : allPavilions;
     
     return source.filter((p) => {
-      // Venue filter
       if (filters.venue !== "all" && p.venue !== filters.venue) return false;
-
-      // Selection method filter
-      if (
-        filters.selectionMethod !== "all" &&
-        p.selection_method !== filters.selectionMethod
-      )
-        return false;
-
-      // Red flags filter
+      if (filters.selectionMethod !== "all" && p.selection_method !== filters.selectionMethod) return false;
       if (filters.redFlagsOnly && p.red_flags.length === 0) return false;
 
-      // Budget filter
       const budget = p.total_budget_amount_usd || 0;
-      if (budget < filters.budgetRange[0] || budget > filters.budgetRange[1])
-        return false;
+      if (budget < filters.budgetRange[0] || budget > filters.budgetRange[1]) return false;
 
-      // Search filter
       if (filters.search) {
         const searchLower = filters.search.toLowerCase();
         const searchableText = [
@@ -224,7 +290,6 @@ export function VeniceMap({ pavilions: allPavilions }: VeniceMapProps) {
     });
   }, [pavilionsInStore, allPavilions, filters]);
 
-  // Create a stable key for filtered pavilions
   const filteredIds = useMemo(
     () => filteredPavilions.map((p) => p.id).join(","),
     [filteredPavilions]
@@ -246,13 +311,11 @@ export function VeniceMap({ pavilions: allPavilions }: VeniceMapProps) {
   const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
   const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
 
-  // Update nodes when filters change (using stable filteredIds)
   useEffect(() => {
     setNodes(createNodesFromPavilions(filteredPavilions));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [filteredIds, setNodes]);
 
-  // Update edges when highlighted funder changes
   useEffect(() => {
     if (highlightedFunder) {
       setEdges(createFunderEdges(highlightedFunder, allPavilions));
@@ -286,26 +349,28 @@ export function VeniceMap({ pavilions: allPavilions }: VeniceMapProps) {
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
         nodeTypes={nodeTypes as any}
         fitView
-        fitViewOptions={{ padding: 0.3 }}
-        minZoom={0.3}
-        maxZoom={3}
+        fitViewOptions={{ padding: 0.2 }}
+        minZoom={0.2}
+        maxZoom={4}
         proOptions={{ hideAttribution: true }}
       >
         <Background
           variant={BackgroundVariant.Dots}
-          gap={30}
+          gap={40}
           size={1}
           color="var(--border)"
         />
         <Controls showInteractive={false} />
         <MiniMap
           nodeColor={(node) => {
-            if (node.type === "venueLabel") return "transparent";
+            if (node.type === "venueLabel" || node.type === "mapBackground") return "transparent";
             const pavilion = (node.data as { pavilion: Pavilion }).pavilion;
             return getVenueColor(pavilion.venue);
           }}
-          maskColor="rgba(0, 0, 0, 0.7)"
+          maskColor="rgba(0, 0, 0, 0.8)"
           style={{ backgroundColor: "var(--card)" }}
+          pannable
+          zoomable
         />
       </ReactFlow>
     </div>

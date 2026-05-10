@@ -2,8 +2,19 @@ import type { Pavilion } from "./types";
 import pavilionsData from "@/data/pavilions.json";
 import { GIARDINI_POSITIONS, ARSENALE_ZONES, parseGridRef, getVenueType } from "./venue-coordinates";
 
+// Normalize venue value to handle case differences in data
+function normalizeVenue(venue: string): "Giardini" | "Arsenale" | "Off-site" {
+  const lower = venue.toLowerCase();
+  if (lower === "giardini") return "Giardini";
+  if (lower === "arsenale") return "Arsenale";
+  return "Off-site"; // includes "off-site", "Off-site", etc.
+}
+
 export function getPavilions(): Pavilion[] {
-  return pavilionsData as Pavilion[];
+  return (pavilionsData as Pavilion[]).map(p => ({
+    ...p,
+    venue: normalizeVenue(p.venue),
+  }));
 }
 
 export function getPavilionById(id: string): Pavilion | undefined {
