@@ -115,8 +115,15 @@ def build_prompt(country: str, outlet_key: str) -> str:
     outlet = OUTLETS[outlet_key]
     return f"""Find the most relevant article published by {outlet["label"]} (host: {outlet["host"]}) about the {country} national pavilion at the Venice Biennale 2026.
 
-Use the web_search tool with a site-restricted query, e.g.:
-  site:{outlet["host"]} "{country}" pavilion Biennale 2026
+Use the web_search tool with site-restricted queries. Try MULTIPLE phrasings if the first returns nothing — press writers vary by country. Examples for {country}:
+  site:{outlet["host"]} {country} pavilion Biennale 2026
+  site:{outlet["host"]} {country} pavilion Venice 2026
+  site:{outlet["host"]} "{country} Pavilion"
+  (If {country} has a common adjectival/demonym form like "Italian" or "Chinese" or "Cuban", also try)
+  site:{outlet["host"]} <demonym> pavilion Biennale 2026
+  site:{outlet["host"]} Padiglione [native-language country name] Biennale 2026   (when relevant)
+
+Use up to 3 searches. Pick the single best matching article on {outlet["host"]}.
 
 Then return EXACTLY this JSON object:
 {{
