@@ -61,42 +61,41 @@ async function boot() {
 // Maps
 // ------------------------------------------
 function renderMaps() {
-  drawGiardini();
-  drawArsenale();
-  drawOffsite();
+  drawVenice();
+  drawDetail('map-giardini-detail', 'assets/giardini-detail.jpg', 'Giardini', 720, 720);
+  drawDetail('map-arsenale-detail', 'assets/arsenale-detail.jpg', 'Arsenale', 720, 720);
 }
 
-function drawGiardini() {
-  const svg = document.getElementById('map-giardini');
-  svg.innerHTML = giardiniBaseSVG();
+function drawVenice() {
+  const svg = document.getElementById('map-venice');
+  svg.innerHTML = veniceBaseSVG();
 
   const g = document.createElementNS('http://www.w3.org/2000/svg', 'g');
   g.setAttribute('class', 'pavilion-nodes');
   svg.appendChild(g);
 
-  DATA.filter(p => p.venue === 'Giardini').forEach(p => placeNode(p, g));
+  DATA.forEach(p => placeNode(p, g));
 }
 
-function drawArsenale() {
-  const svg = document.getElementById('map-arsenale');
-  svg.innerHTML = arsenaleBaseSVG();
-
+function drawDetail(svgId, imageHref, venueFilter, w, h) {
+  const svg = document.getElementById(svgId);
+  if (!svg) return;
+  svg.innerHTML = `
+    <rect class="venue-water" x="0" y="0" width="${w}" height="${h}"/>
+    <image href="${imageHref}" x="0" y="0" width="${w}" height="${h}"
+           preserveAspectRatio="xMidYMid meet" onerror="this.remove()"/>
+    <text class="venue-region-label" x="${w/2}" y="${h - 12}" text-anchor="middle" font-size="10" opacity="0.6">
+      Save the ${venueFilter} detail map at assets/${venueFilter.toLowerCase()}-detail.jpg
+    </text>
+  `;
+  // Detail-map nodes use detail_coords if present; otherwise we skip on this layer.
   const g = document.createElementNS('http://www.w3.org/2000/svg', 'g');
   g.setAttribute('class', 'pavilion-nodes');
   svg.appendChild(g);
-
-  DATA.filter(p => p.venue === 'Arsenale').forEach(p => placeNode(p, g));
-}
-
-function drawOffsite() {
-  const svg = document.getElementById('map-offsite');
-  svg.innerHTML = offsiteBaseSVG();
-
-  const g = document.createElementNS('http://www.w3.org/2000/svg', 'g');
-  g.setAttribute('class', 'pavilion-nodes');
-  svg.appendChild(g);
-
-  DATA.filter(p => p.venue === 'off-site').forEach(p => placeNode(p, g));
+  DATA.filter(p => p.venue === venueFilter && p.detail_coords).forEach(p => {
+    const tmp = { ...p, coords: p.detail_coords };
+    placeNode(tmp, g);
+  });
 }
 
 function placeNode(p, parent) {
@@ -203,7 +202,7 @@ function renderDetail(p) {
     <h3 class="country-name">${escape(p.country)}</h3>
     ${p.show_title ? `<div class="show-title">${escape(p.show_title)}</div>` : ''}
     <dl>
-      <dt>Venue</dt><dd>${escape(p.venue)}${p.venue_label ? ' · ' + escape(p.venue_label) : ''}</dd>
+      <dt>Venue</dt><dd>${escape(p.venue)}${p.venue_label ? ' · ' + escape(p.venue_label) : ''}${p.grid_ref ? ` <span style="color:var(--ink-faint); font-family:var(--mono); font-size:0.8em;">[${escape(p.grid_ref)}]</span>` : ''}</dd>
       <dt>Artist</dt><dd>${escape(p.artist_name || '—')}${p.artist_born ? `<br><span style="font-size:0.85rem; color:var(--ink-soft);">born ${escape(p.artist_born)}${p.artist_based ? ', based ' + escape(p.artist_based) : ''}</span>` : ''}</dd>
       ${p.artist_gallery ? `<dt>Artist's gallery</dt><dd>${escape(p.artist_gallery)}</dd>` : ''}
       <dt>Curator</dt><dd>${escape(p.curator_name || '—')}${p.curator_affiliation ? `<br><span style="font-size:0.85rem; color:var(--ink-soft);">${escape(p.curator_affiliation)}</span>` : ''}</dd>
@@ -443,55 +442,99 @@ function escape(s) {
 }
 
 // ------------------------------------------
-// Map base SVGs (stylised schematics)
+// Map base SVG (stylised Venice silhouette)
 // ------------------------------------------
-function giardiniBaseSVG() {
+function veniceBaseSVG() {
   return `
-    <defs>
-      <pattern id="paths-pattern" width="40" height="40" patternUnits="userSpaceOnUse">
-        <path d="M0 20 L40 20 M20 0 L20 40" stroke="#d8d2c2" stroke-width="0.5"/>
-      </pattern>
-    </defs>
-    <rect class="venue-water" x="0" y="0" width="1000" height="700"/>
-    <path class="venue-ground" d="M40 80 L960 80 L960 600 Q900 640 800 640 L200 640 Q100 640 40 600 Z"/>
-    <path d="M40 80 L960 80 L960 600 Q900 640 800 640 L200 640 Q100 640 40 600 Z" fill="none" stroke="#a89e85" stroke-width="1.5"/>
-    <text class="venue-region-label" x="500" y="110" text-anchor="middle">Giardini di Castello</text>
-    <line x1="160" y1="180" x2="840" y2="180" stroke="#d8d2c2" stroke-dasharray="3,4" stroke-width="0.5"/>
-    <line x1="160" y1="320" x2="840" y2="320" stroke="#d8d2c2" stroke-dasharray="3,4" stroke-width="0.5"/>
-    <line x1="160" y1="460" x2="840" y2="460" stroke="#d8d2c2" stroke-dasharray="3,4" stroke-width="0.5"/>
-    <text x="500" y="180" font-family="JetBrains Mono" font-size="9" fill="#a89e85" text-anchor="middle" dy="-4">main path</text>
-  `;
-}
+    <!-- water / lagoon -->
+    <rect class="venue-water" x="0" y="0" width="1320" height="660"/>
 
-function arsenaleBaseSVG() {
-  return `
-    <rect class="venue-water" x="0" y="0" width="1200" height="500"/>
-    <path class="venue-ground" d="M30 100 L1170 100 L1170 360 L30 360 Z"/>
-    <path d="M30 100 L1170 100 L1170 360 L30 360 Z" fill="none" stroke="#a89e85" stroke-width="1.5"/>
-    <text class="venue-region-label" x="600" y="80" text-anchor="middle">Arsenale · Sale d'Armi · Corderie · Tese</text>
-    <text class="venue-region-label" x="600" y="400" text-anchor="middle" font-size="9">Italy Pavilion · Tese delle Vergini →</text>
-    <line x1="200" y1="100" x2="200" y2="360" stroke="#d8d2c2" stroke-dasharray="2,3" stroke-width="0.5"/>
-    <line x1="400" y1="100" x2="400" y2="360" stroke="#d8d2c2" stroke-dasharray="2,3" stroke-width="0.5"/>
-    <line x1="600" y1="100" x2="600" y2="360" stroke="#d8d2c2" stroke-dasharray="2,3" stroke-width="0.5"/>
-    <line x1="800" y1="100" x2="800" y2="360" stroke="#d8d2c2" stroke-dasharray="2,3" stroke-width="0.5"/>
-    <line x1="1000" y1="100" x2="1000" y2="360" stroke="#d8d2c2" stroke-dasharray="2,3" stroke-width="0.5"/>
-  `;
-}
+    <!-- If assets/venice-map.jpg exists, use it as the base map (real Biennale 2026 map).
+         The hand-drawn schematic below remains as a fallback when the image is absent. -->
+    <image href="assets/venice-map.jpg" x="0" y="0" width="1320" height="660"
+           preserveAspectRatio="xMidYMid slice" onerror="this.remove()"/>
 
-function offsiteBaseSVG() {
-  return `
-    <rect class="venue-water" x="0" y="0" width="1200" height="350"/>
-    <text class="venue-region-label" x="150" y="40" text-anchor="middle">Cannaregio</text>
-    <text class="venue-region-label" x="400" y="40" text-anchor="middle">San Marco</text>
-    <text class="venue-region-label" x="650" y="40" text-anchor="middle">Castello (off-site)</text>
-    <text class="venue-region-label" x="900" y="40" text-anchor="middle">Dorsoduro / S. Polo</text>
-    <text class="venue-region-label" x="1100" y="40" text-anchor="middle">Mestre</text>
-    <path class="venue-ground" d="M30 70 L290 70 L290 300 L30 300 Z" />
-    <path class="venue-ground" d="M310 70 L530 70 L530 300 L310 300 Z" />
-    <path class="venue-ground" d="M550 70 L780 70 L780 300 L550 300 Z" />
-    <path class="venue-ground" d="M800 70 L1030 70 L1030 300 L800 300 Z" />
-    <path class="venue-ground" d="M1050 70 L1170 70 L1170 300 L1050 300 Z" />
-    <path d="M30 70 L290 70 L290 300 L30 300 Z M310 70 L530 70 L530 300 L310 300 Z M550 70 L780 70 L780 300 L550 300 Z M800 70 L1030 70 L1030 300 L800 300 Z M1050 70 L1170 70 L1170 300 L1050 300 Z" fill="none" stroke="#a89e85" stroke-width="1"/>
+    <!-- Mestre (mainland, top-right inset) -->
+    <path class="venue-ground" d="M1230 130 L1320 130 L1320 280 L1240 280 L1230 130 Z"/>
+    <path d="M1230 130 L1320 130 L1320 280 L1240 280 L1230 130 Z" fill="none" stroke="#a89e85" stroke-width="0.7"/>
+    <text class="venue-region-label" x="1280" y="170" text-anchor="middle" font-size="10">Mestre</text>
+
+    <!-- San Michele (cemetery island, NE) -->
+    <path class="venue-ground" d="M620 60 L720 50 L740 80 L730 110 L680 120 L620 110 Z"/>
+    <path d="M620 60 L720 50 L740 80 L730 110 L680 120 L620 110 Z" fill="none" stroke="#a89e85" stroke-width="0.7"/>
+    <text class="venue-region-label" x="680" y="45" text-anchor="middle" font-size="10">San Michele</text>
+
+    <!-- Venice main island: a single complex blob -->
+    <path class="venue-ground" d="
+      M60 280
+      L80 220 L130 195 L210 175 L290 160 L370 145 L430 165
+      L490 145 L530 160 L560 195 L600 170 L640 185 L680 165
+      L720 180 L780 165 L850 175 L920 165 L1000 180 L1070 200
+      L1110 230 L1130 270
+      L1150 320 L1160 360 L1140 400 L1100 425 L1030 440
+      L960 445 L880 450 L810 460 L740 465 L680 480 L620 488
+      L560 495 L490 488 L420 488 L350 478 L290 472 L220 460
+      L150 440 L90 410 L60 360 Z"/>
+    <path d="
+      M60 280
+      L80 220 L130 195 L210 175 L290 160 L370 145 L430 165
+      L490 145 L530 160 L560 195 L600 170 L640 185 L680 165
+      L720 180 L780 165 L850 175 L920 165 L1000 180 L1070 200
+      L1110 230 L1130 270
+      L1150 320 L1160 360 L1140 400 L1100 425 L1030 440
+      L960 445 L880 450 L810 460 L740 465 L680 480 L620 488
+      L560 495 L490 488 L420 488 L350 478 L290 472 L220 460
+      L150 440 L90 410 L60 360 Z" fill="none" stroke="#a89e85" stroke-width="1"/>
+
+    <!-- Grand Canal as a thicker white S-curve -->
+    <path d="M80 280 Q200 320 330 310 Q420 305 470 340 Q520 380 600 360 Q670 345 720 380 Q790 420 870 410 L1000 410"
+          fill="none" stroke="#f6f3ec" stroke-width="6" stroke-linecap="round" opacity="0.85"/>
+
+    <!-- internal canal hatching (suggestive, not literal) -->
+    <g stroke="#e6e0cf" stroke-width="0.6" fill="none" opacity="0.7">
+      <path d="M150 220 L180 280"/>
+      <path d="M260 200 L290 270"/>
+      <path d="M380 200 L410 290"/>
+      <path d="M460 240 L500 320"/>
+      <path d="M570 240 L590 330"/>
+      <path d="M650 250 L680 360"/>
+      <path d="M780 240 L810 360"/>
+      <path d="M870 240 L900 380"/>
+      <path d="M970 240 L990 380"/>
+      <path d="M120 380 L260 410"/>
+      <path d="M340 410 L520 440"/>
+      <path d="M620 440 L800 450"/>
+    </g>
+
+    <!-- Arsenale (highlighted in accent) -->
+    <path d="M955 270 L1085 270 L1095 290 L1085 310 L1100 330 L1100 360 L1085 380 L1010 390 L955 380 L955 340 L975 320 L955 295 Z"
+          fill="rgba(185,28,28,0.14)" stroke="var(--accent)" stroke-width="2"/>
+    <text class="venue-region-label" x="1020" y="262" text-anchor="middle" fill="var(--accent)" font-weight="600" font-size="11">Arsenale</text>
+
+    <!-- Giardini (pentagon, highlighted) -->
+    <path d="M1170 410 L1310 415 L1320 480 L1280 555 L1180 560 L1165 480 Z"
+          fill="rgba(185,28,28,0.10)" stroke="var(--accent)" stroke-width="2"/>
+    <text class="venue-region-label" x="1240" y="500" text-anchor="middle" fill="var(--accent)" font-weight="600" font-size="11">Giardini</text>
+
+    <!-- San Giorgio Maggiore (small island below San Marco) -->
+    <path class="venue-ground" d="M650 530 L740 530 L755 555 L730 575 L660 575 L645 555 Z"/>
+    <path d="M650 530 L740 530 L755 555 L730 575 L660 575 L645 555 Z" fill="none" stroke="#a89e85" stroke-width="0.7"/>
+    <text class="venue-region-label" x="700" y="560" text-anchor="middle" font-size="9">San Giorgio Maggiore</text>
+
+    <!-- Giudecca (long thin southern island) -->
+    <path class="venue-ground" d="M180 570 L860 555 L900 575 L850 605 L240 615 L170 600 Z"/>
+    <path d="M180 570 L860 555 L900 575 L850 605 L240 615 L170 600 Z" fill="none" stroke="#a89e85" stroke-width="0.7"/>
+    <text class="venue-region-label" x="500" y="595" text-anchor="middle" font-size="10">Giudecca</text>
+
+    <!-- District labels on the main island -->
+    <text class="venue-region-label" x="260" y="220" font-size="11" text-anchor="middle" opacity="0.7">Cannaregio</text>
+    <text class="venue-region-label" x="500" y="265" font-size="11" text-anchor="middle" opacity="0.7">San Marco</text>
+    <text class="venue-region-label" x="380" y="320" font-size="11" text-anchor="middle" opacity="0.7">San Polo</text>
+    <text class="venue-region-label" x="320" y="430" font-size="11" text-anchor="middle" opacity="0.7">Dorsoduro</text>
+    <text class="venue-region-label" x="820" y="420" font-size="11" text-anchor="middle" opacity="0.7">Castello</text>
+    <text class="venue-region-label" x="500" y="385" font-size="9" text-anchor="middle" opacity="0.55" font-style="italic">Rialto</text>
+    <text class="venue-region-label" x="610" y="430" font-size="9" text-anchor="middle" opacity="0.55" font-style="italic">Piazza San Marco</text>
+    <text class="venue-region-label" x="180" y="320" font-size="9" text-anchor="middle" opacity="0.55" font-style="italic">Canal Grande</text>
   `;
 }
 

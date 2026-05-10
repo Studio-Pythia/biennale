@@ -6,8 +6,8 @@
     "venue": "Giardini",
     "venue_label": "Australia Pavilion (Denton Corker Marshall, 2015 — only 21st-century Giardini pavilion)",
     "coords": {
-      "x": 470,
-      "y": 230
+      "x": 1235.8,
+      "y": 459.3
     },
     "pavilion_owner": "Creative Australia (built 2015 via public-private partnership led by Simon Mordant)",
     "artist_name": "Khaled Sabsabi",
@@ -46,7 +46,8 @@
       "https://creative.gov.au/venice-biennale-2026-exhibition",
       "https://artreview.com/khaled-sabsabi-reinstated-to-represent-australia-at-2026-venice-biennale/",
       "https://www.theartnewspaper.com/2025/07/02/khaled-sabsabi-reinstated-as-australias-representative-at-the-2026-venice-biennale"
-    ]
+    ],
+    "grid_ref": "Giardini 20"
   },
   {
     "id": "AT",
@@ -55,8 +56,8 @@
     "venue": "Giardini",
     "venue_label": "Austrian Pavilion (Hoffmann/Kramreiter, 1934)",
     "coords": {
-      "x": 470,
-      "y": 470
+      "x": 1235.8,
+      "y": 510.7
     },
     "pavilion_owner": "Republic of Austria",
     "artist_name": "Florentina Holzinger",
@@ -125,7 +126,8 @@
       "https://whitewall.art/art/nora-swantje-almes-curator-of-the-austrian-pavilion-at-the-venice-biennale-2026/",
       "https://www.seaworldvenice.at/thank-you",
       "https://www.finestresullarte.info/en/contemporary-art/images-of-the-austria-pavilion-the-most-talked-about-pavilion-at-the-2026-biennale"
-    ]
+    ],
+    "grid_ref": "Giardini 23"
   },
   {
     "id": "BE",
@@ -134,8 +136,8 @@
     "venue": "Giardini",
     "venue_label": "Belgian Pavilion (Sneyers, 1907 — first foreign pavilion erected at the Giardini)",
     "coords": {
-      "x": 700,
-      "y": 380
+      "x": 1268.0,
+      "y": 491.4
     },
     "pavilion_owner": "Kingdom of Belgium (rotating between Flemish Community and Fédération Wallonie-Bruxelles)",
     "artist_name": "Miet Warlop",
@@ -202,7 +204,8 @@
       "https://www.belgianpavilion.be/en",
       "https://www.belganewsagency.eu/belgian-pavilion-shuts-as-part-of-venice-biennale-boycott-over-israel",
       "https://hyperallergic.com/historic-strike-disrupts-venice-biennale/"
-    ]
+    ],
+    "grid_ref": "Giardini 2"
   },
   {
     "id": "BR",
@@ -211,8 +214,8 @@
     "venue": "Giardini",
     "venue_label": "Brazilian Pavilion (restored 2024-2026)",
     "coords": {
-      "x": 720,
-      "y": 430
+      "x": 1270.8,
+      "y": 502.1
     },
     "pavilion_owner": "Itamaraty (MRE) — Brazilian state; operationally controlled by Fundação Bienal de São Paulo",
     "artist_name": "Adriana Varejão; Rosana Paulino",
@@ -252,7 +255,8 @@
       "https://bienal.org.br/en/curatorial-project-biennale-arte-2026/",
       "https://www.artnews.com/art-news/news/rosana-paulino-adriana-varejao-brazil-2026-venice-biennale-1234756247/",
       "https://artafricamagazine.org/nobody-can-handle-me-brazil-rewrites-the-pavilion-as-living-memory/"
-    ]
+    ],
+    "grid_ref": "Giardini 22"
   },
   {
     "id": "CA",
@@ -261,8 +265,8 @@
     "venue": "Giardini",
     "venue_label": "Canada Pavilion (BBPR, 1957)",
     "coords": {
-      "x": 540,
-      "y": 280
+      "x": 1245.6,
+      "y": 470.0
     },
     "pavilion_owner": "Government of Canada",
     "artist_name": "Abbas Akhavan",
@@ -330,7 +334,8 @@
       "https://www.gallery.ca/for-professionals/media/press-releases/abbas-akhavan-entre-chien-et-loup",
       "https://www.gallery.ca/for-professionals/media/press-releases/10-million-canadian-artists-in-venice-endowment-closed",
       "https://www.theglobeandmail.com/culture/art-and-architecture/article-abbas-akhavans-venice-biennale-installation-is-evocative-without-ever/"
-    ]
+    ],
+    "grid_ref": "Giardini 16"
   },
   {
     "id": "CZSK",
@@ -339,8 +344,8 @@
     "venue": "Giardini",
     "venue_label": "Czech and Slovak Pavilion (Otakar Novotný, 1926)",
     "coords": {
-      "x": 250,
-      "y": 530
+      "x": 1205.0,
+      "y": 523.6
     },
     "pavilion_owner": "Czech Republic (administered by National Gallery Prague); shared with Slovakia 2:1",
     "artist_name": "Jakub Jansa; Alex Selmeci & Tomáš Kocka Jusko",
@@ -378,7 +383,8 @@
     "sources": [
       "https://www.labiennale.org/en/art/2026/czech-republic-and-slovak-republic",
       "https://labiennale.ngprague.cz/"
-    ]
+    ],
+    "grid_ref": "Giardini 19"
   },
   {
     "id": "DK",
@@ -387,8 +393,8 @@
     "venue": "Giardini",
     "venue_label": "Danish Pavilion",
     "coords": {
-      "x": 340,
-      "y": 510
+      "x": 1217.6,
+      "y": 519.3
     },
     "pavilion_owner": "Kingdom of Denmark (operated by Danish Arts Foundation)",
     "artist_name": "Maja Malou Lyse",
@@ -415,7 +421,8 @@
     "sources": [
       "https://www.kunst.dk/english/art-forms/visual-arts/maja-malou-lyses-things-to-come-at-la-biennale-di-venezia",
       "https://www.artforum.com/features/maja-malou-lyse-1000-words-thomas-patier-1234749621/"
-    ]
+    ],
+    "grid_ref": "Giardini 9"
   },
   {
     "id": "EG",
@@ -424,8 +431,8 @@
     "venue": "Giardini",
     "venue_label": "Giardini",
     "coords": {
-      "x": 690,
-      "y": 470
+      "x": 1266.6,
+      "y": 510.7
     },
     "pavilion_owner": "Republic of Egypt",
     "artist_name": "Armen Agop",
@@ -455,7 +462,8 @@
     ],
     "sources": [
       "https://egyptpavilionvenicebiennale2026.com/"
-    ]
+    ],
+    "grid_ref": "Giardini 25"
   },
   {
     "id": "FI",
@@ -464,8 +472,8 @@
     "venue": "Giardini",
     "venue_label": "Alvar & Elissa Aalto Pavilion (1956 — 70th anniversary)",
     "coords": {
-      "x": 380,
-      "y": 470
+      "x": 1223.2,
+      "y": 510.7
     },
     "pavilion_owner": "Republic of Finland",
     "artist_name": "Jenna Sutela",
@@ -537,7 +545,8 @@
     "sources": [
       "https://frame-finland.fi/en/pavilion-of-finland-aeolian-suite-jenna-sutela/",
       "https://www.labiennale.org/en/art/2026/finland"
-    ]
+    ],
+    "grid_ref": "Giardini 5"
   },
   {
     "id": "FR",
@@ -546,8 +555,8 @@
     "venue": "Giardini",
     "venue_label": "French Pavilion (1912; reopened 2026 after renovation)",
     "coords": {
-      "x": 600,
-      "y": 270
+      "x": 1254.0,
+      "y": 467.9
     },
     "pavilion_owner": "Republic of France (operated by Institut français)",
     "artist_name": "Yto Barrada",
@@ -623,7 +632,8 @@
       "https://www.institutfrancais.com/en/french-pavilion-venice-biennale",
       "https://www.lejournaldesarts.fr/creation/combien-coute-le-pavillon-francais-la-biennale-de-venise-125038",
       "https://www.theartnewspaper.com/2026/05/06/our-pick-of-the-best-pavilions-at-the-61st-venice-biennale"
-    ]
+    ],
+    "grid_ref": "Giardini 18"
   },
   {
     "id": "DE",
@@ -632,8 +642,8 @@
     "venue": "Giardini",
     "venue_label": "German Pavilion (1938 Ernst Haiger redesign)",
     "coords": {
-      "x": 580,
-      "y": 220
+      "x": 1251.2,
+      "y": 457.1
     },
     "pavilion_owner": "Federal Republic of Germany",
     "artist_name": "Henrike Naumann (1984–2026, posthumous) and Sung Tieu",
@@ -686,7 +696,8 @@
       "https://www.ifa.de/en/press-release/german-pavilion-at-biennale-arte-2026-ruin/",
       "https://news.artnet.com/art-world/germany-pavillion-venice-biennale-2770229",
       "https://www.frieze.com/article/venice-biennale-2026-national-pavilions-review-whos-afraid-meaning"
-    ]
+    ],
+    "grid_ref": "Giardini 15"
   },
   {
     "id": "GR",
@@ -695,8 +706,8 @@
     "venue": "Giardini",
     "venue_label": "Greek Pavilion (1934)",
     "coords": {
-      "x": 800,
-      "y": 410
+      "x": 1282.0,
+      "y": 497.9
     },
     "pavilion_owner": "Hellenic Republic (Ministry of Culture)",
     "artist_name": "Andreas Angelidakis",
@@ -769,7 +780,8 @@
     "sources": [
       "https://www.onassis.org/news/onassis-culture-at-the-61st-venice-biennale",
       "https://neon.org.gr/en/exhibition/escape-room-andreas-angelidakis/"
-    ]
+    ],
+    "grid_ref": "Giardini 29"
   },
   {
     "id": "HU",
@@ -778,8 +790,8 @@
     "venue": "Giardini",
     "venue_label": "Hungarian Pavilion (Géza Maróti, 1909)",
     "coords": {
-      "x": 760,
-      "y": 460
+      "x": 1276.4,
+      "y": 508.6
     },
     "pavilion_owner": "Hungary (managed by Ludwig Museum, Budapest)",
     "artist_name": "Endre Koronczi",
@@ -815,7 +827,8 @@
     ],
     "sources": [
       "https://www.ludwigmuseum.hu/en/velencei-biennale/2026/palyazat-eredmenye"
-    ]
+    ],
+    "grid_ref": "Giardini 6"
   },
   {
     "id": "JP",
@@ -824,8 +837,8 @@
     "venue": "Giardini",
     "venue_label": "Japan Pavilion (Yoshizaka, 1956; renovated Toyo Ito 2014, 2025)",
     "coords": {
-      "x": 530,
-      "y": 320
+      "x": 1244.2,
+      "y": 478.6
     },
     "pavilion_owner": "The Japan Foundation",
     "artist_name": "Ei Arakawa-Nash",
@@ -869,7 +882,8 @@
     "sources": [
       "https://venezia-biennale-japan.jpf.go.jp/e/art/2026-en",
       "https://www.theartnewspaper.com/2026/05/05/mind-the-baby-visitors-to-the-japanese-venice-biennale-pavilion-will-be-asked-to-look-after-dolls"
-    ]
+    ],
+    "grid_ref": "Giardini 13"
   },
   {
     "id": "NL",
@@ -878,8 +892,8 @@
     "venue": "Giardini",
     "venue_label": "Rietveld Pavilion (1954)",
     "coords": {
-      "x": 750,
-      "y": 330
+      "x": 1275.0,
+      "y": 480.7
     },
     "pavilion_owner": "Kingdom of the Netherlands",
     "artist_name": "Dries Verhoeven",
@@ -932,7 +946,8 @@
     "sources": [
       "https://www.mondriaanfonds.nl/en/current/news/dries-verhoeven-selected-as-dutch-entry-for-the-61st-international-art-exhibition-la-biennale-di-venezia/",
       "https://www.theartnewspaper.com/2026/05/06/i-wanted-to-catch-the-desperation-dries-verhoeven-on-turning-the-dutch-pavilion-into-a-bunker-for-the-venice-biennale"
-    ]
+    ],
+    "grid_ref": "Giardini 3"
   },
   {
     "id": "NORDIC",
@@ -941,8 +956,8 @@
     "venue": "Giardini",
     "venue_label": "Nordic Pavilion (Sverre Fehn, 1962)",
     "coords": {
-      "x": 510,
-      "y": 510
+      "x": 1241.4,
+      "y": 519.3
     },
     "pavilion_owner": "La Biennale di Venezia (custodianship rotates among Sweden, Norway, Finland)",
     "artist_name": "Klara Kristalova; Benjamin Orlow; Tori Wrånes",
@@ -1002,7 +1017,8 @@
     "sources": [
       "https://oca.no/news/first-details-and-title-of-nordic-countries-pavilion-exhibition-announced-for-the-61st-international-art-exhibition-la-biennale-di-venezia",
       "https://kunstkritikk.com/myths-and-fables-in-the-nordic-pavilion/"
-    ]
+    ],
+    "grid_ref": "Giardini 8"
   },
   {
     "id": "PL",
@@ -1011,8 +1027,8 @@
     "venue": "Giardini",
     "venue_label": "Polish Pavilion (Brenno Del Giudice, 1932; Sant'Elena island)",
     "coords": {
-      "x": 290,
-      "y": 480
+      "x": 1210.6,
+      "y": 512.9
     },
     "pavilion_owner": "Republic of Poland",
     "artist_name": "Bogna Burska and Daniel Kotowski (with Chór w Ruchu / Choir in Motion)",
@@ -1050,7 +1066,8 @@
     "sources": [
       "https://labiennale.art.pl/en/competition/2026-2/",
       "https://www.theartnewspaper.com/2026/05/07/polish-pavilion-explores-fluidity-of-language-with-film-recorded-underwater"
-    ]
+    ],
+    "grid_ref": "Giardini 27"
   },
   {
     "id": "QA",
@@ -1059,8 +1076,8 @@
     "venue": "Giardini",
     "venue_label": "Giardini (temporary structure on site of future permanent pavilion by Lina Ghotmeh — first new Giardini pavilion since South Korea 1995)",
     "coords": {
-      "x": 580,
-      "y": 580
+      "x": 1251.2,
+      "y": 534.3
     },
     "pavilion_owner": "State of Qatar / Qatar Museums",
     "artist_name": "Rirkrit Tiravanija (lead), with Sophia Al-Maria, Tarek Atoui, Alia Farid, chef Fadi Kattan",
@@ -1091,7 +1108,8 @@
     "sources": [
       "https://www.e-flux.com/announcements/6787242/untitled-2026-a-gathering-of-remarkable-people",
       "https://www.artforum.com/news/rirkrit-tiravanija-to-rep-qatar-at-2026-venice-biennale-1234747592/"
-    ]
+    ],
+    "grid_ref": "Giardini 10"
   },
   {
     "id": "RO",
@@ -1100,8 +1118,8 @@
     "venue": "Giardini",
     "venue_label": "Giardini (1938) + New Gallery of the Romanian Institute, Palazzo Correr, Cannaregio",
     "coords": {
-      "x": 740,
-      "y": 480
+      "x": 1273.6,
+      "y": 512.9
     },
     "pavilion_owner": "Romania",
     "artist_name": "Anca Benera and Arnold Estefán",
@@ -1132,7 +1150,8 @@
     ],
     "sources": [
       "https://curatorial.ro/en/art/romania-at-the-venice-biennale-2026-black-seas-scores-for-the-sonic-eye-from-science-to-sculptural-visual-sound-installation/"
-    ]
+    ],
+    "grid_ref": "Giardini 28"
   },
   {
     "id": "RU",
@@ -1141,8 +1160,8 @@
     "venue": "Giardini",
     "venue_label": "Russia Pavilion (Shchusev, 1913–14; Russia owns the building)",
     "coords": {
-      "x": 590,
-      "y": 320
+      "x": 1252.6,
+      "y": 478.6
     },
     "pavilion_owner": "Russian Federation",
     "artist_name": "Group show (~38 musicians, performers, philosophers)",
@@ -1177,7 +1196,8 @@
       "https://news.artnet.com/art-world/pussy-riot-venice-2770643",
       "https://www.artforum.com/news/russias-venice-pavilion-will-be-closed-to-public-1234749023/",
       "https://meduza.io/en/feature/2026/03/11/russia-s-return-to-the-venice-biennale-has-triggered-backlash-and-a-threat-to-pull-e-u-funding-meduza-explains-how-the-forum-was-designed-for-soft-power-from-the-start"
-    ]
+    ],
+    "grid_ref": "Giardini 12"
   },
   {
     "id": "RS",
@@ -1186,8 +1206,8 @@
     "venue": "Giardini",
     "venue_label": "Giardini (former Yugoslav pavilion, 1938)",
     "coords": {
-      "x": 290,
-      "y": 540
+      "x": 1210.6,
+      "y": 525.7
     },
     "pavilion_owner": "Republic of Serbia (Ministry of Culture)",
     "artist_name": "Predrag (Pedja) Đaković",
@@ -1220,7 +1240,8 @@
     "sources": [
       "https://ocula.com/magazine/art-news/serbia-artists-cultural-workers-venice-petition/",
       "https://www.artnews.com/art-news/news/petition-protests-serbia-venice-biennale-pick-1234766104/"
-    ]
+    ],
+    "grid_ref": "Giardini 24"
   },
   {
     "id": "KR",
@@ -1229,8 +1250,8 @@
     "venue": "Giardini",
     "venue_label": "Korean Pavilion (Kim/Mancuso, 1995)",
     "coords": {
-      "x": 460,
-      "y": 290
+      "x": 1234.4,
+      "y": 472.1
     },
     "pavilion_owner": "Republic of Korea (operated by ARKO)",
     "artist_name": "Goen Choi (b. 1985); Hyeree Ro (b. 1987, Seoul)",
@@ -1260,7 +1281,8 @@
       "https://www.e-flux.com/announcements/6784541/team-and-vision-for-2026-korean-pavilion",
       "https://www.koreaherald.com/article/10698417",
       "https://www.theartnewspaper.com/2026/05/06/our-pick-of-the-best-pavilions-at-the-61st-venice-biennale"
-    ]
+    ],
+    "grid_ref": "Giardini 14"
   },
   {
     "id": "ES",
@@ -1269,8 +1291,8 @@
     "venue": "Giardini",
     "venue_label": "Spanish Pavilion (reopened 2026 after 2025 renovation)",
     "coords": {
-      "x": 720,
-      "y": 340
+      "x": 1270.8,
+      "y": 482.9
     },
     "pavilion_owner": "Government of Spain (Ministerio de Asuntos Exteriores via AECID)",
     "artist_name": "Oriol Vilanova",
@@ -1311,7 +1333,8 @@
       "https://www.accioncultural.es/en/spain-pavilion-at-the-61st-venice-art-biennale-2026",
       "https://en.ara.cat/culture/the-spanish-pavilion-at-the-venice-art-biennale-intervened-strike-pressures-and-crossed-orders_1_5731126.html",
       "https://www.frieze.com/article/venice-biennale-2026-national-pavilions-review-whos-afraid-meaning"
-    ]
+    ],
+    "grid_ref": "Giardini 1"
   },
   {
     "id": "CH",
@@ -1320,8 +1343,8 @@
     "venue": "Giardini",
     "venue_label": "Swiss Pavilion (Bruno Giacometti, 1952)",
     "coords": {
-      "x": 290,
-      "y": 480
+      "x": 1210.6,
+      "y": 512.9
     },
     "pavilion_owner": "Swiss Confederation (managed by Pro Helvetia)",
     "artist_name": "Nina Wakeford with Miriam Laura Leonardi, Lithic Alliance, Yul Tomatala",
@@ -1349,7 +1372,8 @@
     ],
     "sources": [
       "https://prohelvetia.ch/en/whats-on/the-swiss-pavilion-exhibition-at-venice-art-biennale-2026/"
-    ]
+    ],
+    "grid_ref": "Giardini 11"
   },
   {
     "id": "GB",
@@ -1358,8 +1382,8 @@
     "venue": "Giardini",
     "venue_label": "British Pavilion (with stair entry)",
     "coords": {
-      "x": 530,
-      "y": 200
+      "x": 1244.2,
+      "y": 452.9
     },
     "pavilion_owner": "British Council / UK government",
     "artist_name": "Lubaina Himid CBE RA",
@@ -1427,7 +1451,8 @@
       "https://www.frieze.com/article/frieze-support-lubaina-himids-british-pavilion-2026-venice-biennale",
       "https://www.frieze.com/article/venice-biennale-2026-give-british-pavilion-young-artist",
       "https://fadmagazine.com/2026/03/23/lubaina-himid-cork-street-galleries-venice-biennale-2026/"
-    ]
+    ],
+    "grid_ref": "Giardini 17"
   },
   {
     "id": "US",
@@ -1436,8 +1461,8 @@
     "venue": "Giardini",
     "venue_label": "US Pavilion",
     "coords": {
-      "x": 660,
-      "y": 280
+      "x": 1262.4,
+      "y": 470.0
     },
     "pavilion_owner": "Solomon R. Guggenheim Foundation (since 1986)",
     "artist_name": "Alma Allen",
@@ -1493,7 +1518,8 @@
       "https://hyperallergic.com/a-whole-lot-of-nothing-at-the-us-pavilion/",
       "https://hyperallergic.com/the-us-pavilion-is-taking-online-donations/",
       "https://www.theartnewspaper.com/2025/05/06/us-pavilion-2026-venice-biennale-delays-doubt"
-    ]
+    ],
+    "grid_ref": "Giardini 7"
   },
   {
     "id": "UY",
@@ -1502,8 +1528,8 @@
     "venue": "Giardini",
     "venue_label": "Giardini (since 1960)",
     "coords": {
-      "x": 200,
-      "y": 580
+      "x": 1198.0,
+      "y": 534.3
     },
     "pavilion_owner": "Republic of Uruguay",
     "artist_name": "Margaret Whyte",
@@ -1529,7 +1555,8 @@
     "red_flags": [],
     "sources": [
       "https://artreview.com/margaret-whyte-on-representing-uruguay-at-the-61st-venice-biennale/"
-    ]
+    ],
+    "grid_ref": "Giardini 21"
   },
   {
     "id": "VE",
@@ -1538,8 +1565,8 @@
     "venue": "Giardini",
     "venue_label": "Giardini (Carlo Scarpa, 1954-56) — reportedly dormant for 2026",
     "coords": {
-      "x": 660,
-      "y": 580
+      "x": 1262.4,
+      "y": 534.3
     },
     "pavilion_owner": "Bolivarian Republic of Venezuela",
     "artist_name": null,
@@ -1567,7 +1594,8 @@
     ],
     "sources": [
       "https://en.wikipedia.org/wiki/Venezuelan_pavilion"
-    ]
+    ],
+    "grid_ref": "off the map"
   },
   {
     "id": "AL",
@@ -1576,8 +1604,8 @@
     "venue": "Arsenale",
     "venue_label": "Arsenale",
     "coords": {
-      "x": 520,
-      "y": 230
+      "x": 1020.7,
+      "y": 326.0
     },
     "pavilion_owner": "Republic of Albania (rented)",
     "artist_name": "Genti Korini",
@@ -1603,7 +1631,8 @@
     "red_flags": [],
     "sources": [
       "https://albanianpavilion2026.com/"
-    ]
+    ],
+    "grid_ref": "Arsenale 3"
   },
   {
     "id": "AR",
@@ -1612,8 +1641,8 @@
     "venue": "Arsenale",
     "venue_label": "Sale d'Armi",
     "coords": {
-      "x": 240,
-      "y": 230
+      "x": 988.0,
+      "y": 326.0
     },
     "pavilion_owner": "La Biennale di Venezia (Argentine concession via MFA)",
     "artist_name": "Matías Duville",
@@ -1649,7 +1678,8 @@
     ],
     "sources": [
       "https://www.artforum.com/features/matias-duville-venice-biennale-1000-words-thomas-patier-1234749330/"
-    ]
+    ],
+    "grid_ref": "Arsenale 3"
   },
   {
     "id": "AM",
@@ -1658,8 +1688,8 @@
     "venue": "Arsenale",
     "venue_label": "Tesa 41, Arsenale Militare (since 2015)",
     "coords": {
-      "x": 560,
-      "y": 230
+      "x": 1025.3,
+      "y": 326.0
     },
     "pavilion_owner": "Leased space within La Biennale's Arsenale Militare",
     "artist_name": "Zadik Zadikian",
@@ -1687,7 +1717,8 @@
     ],
     "sources": [
       "https://armenianpavilion2026.org/"
-    ]
+    ],
+    "grid_ref": "1 G3"
   },
   {
     "id": "AZ",
@@ -1696,8 +1727,8 @@
     "venue": "Arsenale",
     "venue_label": "Campo della Tana 2124/A (Arsenale-adjacent, Heydar Aliyev Foundation lease since 2007)",
     "coords": {
-      "x": 600,
-      "y": 230
+      "x": 1030.0,
+      "y": 326.0
     },
     "pavilion_owner": "Long-term leased premises secured by the Heydar Aliyev Foundation",
     "artist_name": "Faig Ahmed",
@@ -1735,7 +1766,8 @@
     ],
     "sources": [
       "https://www.azerbaijanvenicebiennale.com/"
-    ]
+    ],
+    "grid_ref": "2 G4"
   },
   {
     "id": "CL",
@@ -1744,8 +1776,8 @@
     "venue": "Arsenale",
     "venue_label": "Sala dell'Isolotto, Sale d'Armi",
     "coords": {
-      "x": 240,
-      "y": 270
+      "x": 988.0,
+      "y": 334.0
     },
     "pavilion_owner": "La Biennale di Venezia",
     "artist_name": "Norton Maza",
@@ -1796,7 +1828,8 @@
     ],
     "sources": [
       "https://www.cultura.gob.cl/actualidad/entre-aplausos-chile-inaugura-pabellon-inter-reality-en-la-61-bienal-de-venecia/"
-    ]
+    ],
+    "grid_ref": "Arsenale 2"
   },
   {
     "id": "CN",
@@ -1805,8 +1838,8 @@
     "venue": "Arsenale",
     "venue_label": "Magazzino delle Cisterne and Tese, Arsenale (since 2005)",
     "coords": {
-      "x": 1020,
-      "y": 230
+      "x": 1079.0,
+      "y": 326.0
     },
     "pavilion_owner": "La Biennale (long-term concession to China since 2005)",
     "artist_name": "Group of 20+ incl. Xu Jiang, Wang Dongling, Yang Fudong, Game Science (Black Myth: Wukong), Lining Yao, Mou Sen",
@@ -1847,7 +1880,8 @@
     "sources": [
       "https://www.labiennale.org/en/news/national-participations-and-collateral-events-biennale-arte-2026",
       "https://www.artrabbit.com/events/china-pavilion-2026-dream-stream"
-    ]
+    ],
+    "grid_ref": "Arsenale 6"
   },
   {
     "id": "IN",
@@ -1856,8 +1890,8 @@
     "venue": "Arsenale",
     "venue_label": "Isolotto, Arsenale (return after 7-year absence)",
     "coords": {
-      "x": 720,
-      "y": 230
+      "x": 1044.0,
+      "y": 326.0
     },
     "pavilion_owner": "La Biennale di Venezia",
     "artist_name": "Alwar Balasubramaniam (Bala), Ranjani Shettar, Sumakshi Singh, Skarma Sonam Tashi, Asim Waqif",
@@ -1901,7 +1935,8 @@
     ],
     "sources": [
       "https://www.theartnewspaper.com/2026/04/28/venice-biennale-2026-all-the-national-pavilions-artists-and-curators-so-far"
-    ]
+    ],
+    "grid_ref": "Arsenale 2"
   },
   {
     "id": "IE",
@@ -1910,8 +1945,8 @@
     "venue": "Arsenale",
     "venue_label": "Arsenale (Artiglierie; consistent slot since 2005)",
     "coords": {
-      "x": 760,
-      "y": 230
+      "x": 1048.7,
+      "y": 326.0
     },
     "pavilion_owner": "La Biennale di Venezia",
     "artist_name": "Isabel Nolan",
@@ -1948,7 +1983,8 @@
     ],
     "sources": [
       "https://irelandatvenice2026.ie/"
-    ]
+    ],
+    "grid_ref": "Arsenale 2"
   },
   {
     "id": "IL",
@@ -1957,8 +1993,8 @@
     "venue": "Arsenale",
     "venue_label": "Arsenale (relocated from Giardini pavilion, which is closed for renovation)",
     "coords": {
-      "x": 920,
-      "y": 230
+      "x": 1067.3,
+      "y": 326.0
     },
     "pavilion_owner": "State of Israel (permanent Giardini pavilion under renovation; 2026 in Arsenale)",
     "artist_name": "Belu-Simion Fainaru",
@@ -1994,7 +2030,8 @@
       "https://hyperallergic.com/hundreds-protest-israels-genocide-pavilion-at-venice-biennale/",
       "https://hyperallergic.com/israeli-pavilion-artist-made-legal-threats-before-venice-biennale-jury-resigned/",
       "https://www.theartnewspaper.com/2026/04/28/israels-foreign-ministry-accuses-venice-biennales-jury-of-politicising-exhibition"
-    ]
+    ],
+    "grid_ref": "Arsenale 3"
   },
   {
     "id": "IT",
@@ -2003,8 +2040,8 @@
     "venue": "Arsenale",
     "venue_label": "Tese delle Vergini, Arsenale",
     "coords": {
-      "x": 1100,
-      "y": 230
+      "x": 1088.3,
+      "y": 326.0
     },
     "pavilion_owner": "Italian Ministry of Culture (DGCC)",
     "artist_name": "Chiara Camoni",
@@ -2045,7 +2082,8 @@
     "red_flags": [],
     "sources": [
       "https://www.finestresullarte.info/en/contemporary-art/this-is-what-the-italy-2026-pavilion-looks-like-images-from-with-you-with-everything-by-chiara-camoni"
-    ]
+    ],
+    "grid_ref": "Arsenale 5"
   },
   {
     "id": "LV",
@@ -2054,8 +2092,8 @@
     "venue": "Arsenale",
     "venue_label": "Arsenale (Sale d'Armi area)",
     "coords": {
-      "x": 1060,
-      "y": 270
+      "x": 1083.7,
+      "y": 334.0
     },
     "pavilion_owner": "La Biennale di Venezia (Arsenale leasehold)",
     "artist_name": "MAREUNROL'S (Mārīte Mastiņa-Pēterkopa & Rolands Pēterkops) with Bruno Birmanis archival",
@@ -2083,7 +2121,8 @@
     ],
     "sources": [
       "https://lcca.lv/en/exhibitions/the-latvian-pavilion-venice-biennale/"
-    ]
+    ],
+    "grid_ref": "Arsenale 2"
   },
   {
     "id": "LB",
@@ -2092,8 +2131,8 @@
     "venue": "Arsenale",
     "venue_label": "Arsenale",
     "coords": {
-      "x": 800,
-      "y": 230
+      "x": 1053.3,
+      "y": 326.0
     },
     "pavilion_owner": "La Biennale di Venezia",
     "artist_name": "Nabil Nahas",
@@ -2129,7 +2168,8 @@
     ],
     "sources": [
       "https://www.lebanesepavilionvenice.com/"
-    ]
+    ],
+    "grid_ref": "Arsenale 2"
   },
   {
     "id": "LU",
@@ -2138,8 +2178,8 @@
     "venue": "Arsenale",
     "venue_label": "Sale d'Armi 1st floor (long-term lease)",
     "coords": {
-      "x": 840,
-      "y": 230
+      "x": 1058.0,
+      "y": 326.0
     },
     "pavilion_owner": "Long-term lease via Kultur | lx",
     "artist_name": "Aline Bouvy",
@@ -2166,7 +2206,8 @@
     "red_flags": [],
     "sources": [
       "https://venicebiennale.kulturlx.lu/en/biennale-2026/"
-    ]
+    ],
+    "grid_ref": "Arsenale 3"
   },
   {
     "id": "MT",
@@ -2175,8 +2216,8 @@
     "venue": "Arsenale",
     "venue_label": "Artiglierie, Arsenale (~270 sqm)",
     "coords": {
-      "x": 480,
-      "y": 230
+      "x": 1016.0,
+      "y": 326.0
     },
     "pavilion_owner": "La Biennale di Venezia",
     "artist_name": "Adrian MM Abela; Charlie Cauchi; Raphael Vella",
@@ -2203,7 +2244,8 @@
     "red_flags": [],
     "sources": [
       "https://artscouncilmalta.gov.mt/en/maltas-official-participation-in-the-2026-venice-biennale-and-gwangju-biennale-revealed/"
-    ]
+    ],
+    "grid_ref": "Arsenale 2"
   },
   {
     "id": "MX",
@@ -2212,8 +2254,8 @@
     "venue": "Arsenale",
     "venue_label": "Sale d'Armi (concession since 2013)",
     "coords": {
-      "x": 280,
-      "y": 240
+      "x": 992.7,
+      "y": 328.0
     },
     "pavilion_owner": "La Biennale di Venezia (concession: INBAL/Secretaría de Cultura)",
     "artist_name": "RojoNegro Collective (María Sosa and Noé Martínez)",
@@ -2239,7 +2281,8 @@
     "red_flags": [],
     "sources": [
       "https://www.bonart.cat/en/n/45715/the-rojonegro-collective-will-represent-mexico-at-the-venice-biennale"
-    ]
+    ],
+    "grid_ref": "Arsenale 3"
   },
   {
     "id": "MA",
@@ -2248,8 +2291,8 @@
     "venue": "Arsenale",
     "venue_label": "Artiglierie, Arsenale",
     "coords": {
-      "x": 440,
-      "y": 230
+      "x": 1011.3,
+      "y": 326.0
     },
     "pavilion_owner": "La Biennale di Venezia (Arsenale leasehold)",
     "artist_name": "Amina Agueznay",
@@ -2279,7 +2322,8 @@
     ],
     "sources": [
       "https://artafricamagazine.org/morocco-announces-its-first-national-pavilion-at-the-arsenale-for-the-61st-venice-biennale/"
-    ]
+    ],
+    "grid_ref": "Arsenale 2"
   },
   {
     "id": "OM",
@@ -2288,8 +2332,8 @@
     "venue": "Arsenale",
     "venue_label": "Arsenale (third Biennale outing)",
     "coords": {
-      "x": 1040,
-      "y": 230
+      "x": 1081.3,
+      "y": 326.0
     },
     "pavilion_owner": "Leased from La Biennale di Venezia",
     "artist_name": "Haitham Al Busafi",
@@ -2318,7 +2362,8 @@
     ],
     "sources": [
       "https://www.muscatdaily.com/2026/05/07/oman-launches-pavilion-at-venice-international-art-biennale/"
-    ]
+    ],
+    "grid_ref": "Arsenale 2"
   },
   {
     "id": "PA",
@@ -2327,8 +2372,8 @@
     "venue": "Arsenale",
     "venue_label": "Tesa 42, Arsenale",
     "coords": {
-      "x": 360,
-      "y": 240
+      "x": 1002.0,
+      "y": 328.0
     },
     "pavilion_owner": "La Biennale di Venezia (rented Tesa)",
     "artist_name": "Antonio José Guzmán & Iva Jankovic",
@@ -2373,7 +2418,8 @@
     ],
     "sources": [
       "https://heni.com/news/article/panama-pavilion-opens-tropical-hyperstition-by-guzman-and-jankovic-at-61st-venice-biennale"
-    ]
+    ],
+    "grid_ref": "34 G3"
   },
   {
     "id": "PE",
@@ -2382,8 +2428,8 @@
     "venue": "Arsenale",
     "venue_label": "Arsenale",
     "coords": {
-      "x": 320,
-      "y": 240
+      "x": 997.3,
+      "y": 328.0
     },
     "pavilion_owner": "La Biennale di Venezia",
     "artist_name": "Sara Flores",
@@ -2419,7 +2465,8 @@
     ],
     "sources": [
       "https://www.whitecube.com/news/sara-flores-to-represent-peru-at-the-61st-venice-biennale"
-    ]
+    ],
+    "grid_ref": "Arsenale 3"
   },
   {
     "id": "PH",
@@ -2428,8 +2475,8 @@
     "venue": "Arsenale",
     "venue_label": "Artiglierie, Arsenale",
     "coords": {
-      "x": 880,
-      "y": 230
+      "x": 1062.7,
+      "y": 326.0
     },
     "pavilion_owner": "La Biennale di Venezia",
     "artist_name": "Jon Cuyson",
@@ -2460,7 +2507,8 @@
     ],
     "sources": [
       "https://www.artasiapacific.com/news/jon-cuyson-to-represent-the-philippines-in-2026-venice-biennale/"
-    ]
+    ],
+    "grid_ref": "Arsenale 2"
   },
   {
     "id": "SA",
@@ -2469,8 +2517,8 @@
     "venue": "Arsenale",
     "venue_label": "Sale d'Armi, Arsenale",
     "coords": {
-      "x": 360,
-      "y": 230
+      "x": 1002.0,
+      "y": 326.0
     },
     "pavilion_owner": "Allocated/leased Arsenale space",
     "artist_name": "Dana Awartani",
@@ -2510,7 +2558,8 @@
       "https://saudipavilion.org/art/dana-awartani-to-represent-saudi-arabia-at-biennale-arte-2026/",
       "https://www.artforum.com/features/dana-awartani-venice-biennale-1000words-pablo-larios-1234749973/",
       "https://www.arabnews.com/node/2642620/saudi-arabia"
-    ]
+    ],
+    "grid_ref": "Arsenale 3"
   },
   {
     "id": "SG",
@@ -2519,8 +2568,8 @@
     "venue": "Arsenale",
     "venue_label": "Sale d'Armi 2nd floor (long-term lease since 2015)",
     "coords": {
-      "x": 920,
-      "y": 230
+      "x": 1067.3,
+      "y": 326.0
     },
     "pavilion_owner": "Long-term lease held by Singapore (NAC)",
     "artist_name": "Amanda Heng Liang Ngim",
@@ -2548,7 +2597,8 @@
     "red_flags": [],
     "sources": [
       "https://www.singaporeartmuseum.sg/art-events/exhibitions/venice-biennale-2026"
-    ]
+    ],
+    "grid_ref": "Arsenale 3"
   },
   {
     "id": "SI",
@@ -2557,8 +2607,8 @@
     "venue": "Arsenale",
     "venue_label": "Arsenale (transitional space)",
     "coords": {
-      "x": 960,
-      "y": 230
+      "x": 1072.0,
+      "y": 326.0
     },
     "pavilion_owner": "Republic of Slovenia (organised by Moderna galerija Ljubljana)",
     "artist_name": "Nonument Group (Tomšič, Bricelj Baraga, Grabar, Kosec)",
@@ -2584,7 +2634,8 @@
     "red_flags": [],
     "sources": [
       "https://www.mg-lj.si/en/events/4219/at-the-61st-venice-biennale-slovenia-will-be-represented-by-the-project-of-the-nonument-group-collective/"
-    ]
+    ],
+    "grid_ref": "Arsenale 2"
   },
   {
     "id": "TL",
@@ -2593,8 +2644,8 @@
     "venue": "Arsenale",
     "venue_label": "Arsenale (first time, previously off-site 2024)",
     "coords": {
-      "x": 1000,
-      "y": 230
+      "x": 1076.7,
+      "y": 326.0
     },
     "pavilion_owner": "La Biennale di Venezia",
     "artist_name": "Verónica Pereira Maia, Etson Caminha, Juventino Madeira",
@@ -2622,7 +2673,8 @@
     ],
     "sources": [
       "https://artreview.com/venice-biennale-2026-national-pavilion-highlights/"
-    ]
+    ],
+    "grid_ref": "Arsenale 2"
   },
   {
     "id": "TR",
@@ -2631,8 +2683,8 @@
     "venue": "Arsenale",
     "venue_label": "Sale d'Armi (long-lease 2014-2034)",
     "coords": {
-      "x": 400,
-      "y": 230
+      "x": 1006.7,
+      "y": 326.0
     },
     "pavilion_owner": "20-year Sale d'Armi lease held by IKSV on behalf of Türkiye",
     "artist_name": "Nilbar Güreş",
@@ -2698,7 +2750,8 @@
     ],
     "sources": [
       "https://www.iksv.org/en/pavilion-of-turkey-la-biennale-di-venezia/about"
-    ]
+    ],
+    "grid_ref": "Arsenale 3"
   },
   {
     "id": "UA",
@@ -2707,8 +2760,8 @@
     "venue": "Arsenale",
     "venue_label": "Sale d'Armi Bldg A 1F + public sculpture at Riva Ca' di Dio",
     "coords": {
-      "x": 680,
-      "y": 230
+      "x": 1039.3,
+      "y": 326.0
     },
     "pavilion_owner": "Sale d'Armi long-term Biennale lease",
     "artist_name": "Zhanna Kadyrova",
@@ -2760,7 +2813,8 @@
     ],
     "sources": [
       "https://www.ukrainianpavilion.org/"
-    ]
+    ],
+    "grid_ref": "Arsenale 3"
   },
   {
     "id": "AE",
@@ -2769,8 +2823,8 @@
     "venue": "Arsenale",
     "venue_label": "Sale d'Armi (permanent space leased since 2015)",
     "coords": {
-      "x": 320,
-      "y": 230
+      "x": 997.3,
+      "y": 326.0
     },
     "pavilion_owner": "La Biennale di Venezia (UAE leases space)",
     "artist_name": "Mays Albaik; Jawad Al Malhi; Farah Al Qasimi; Alaa Edris; Lamya Gargash; Taus Makhacheva",
@@ -2810,7 +2864,8 @@
       "https://nationalpavilionuae.org/art/2026/art-exhibition-2026/",
       "https://www.shf.ae/en/what-we-do/arts-culture-heritage/national-pavilion-uae-la-biennale-di-venezia/",
       "https://www.thenationalnews.com/arts-culture/art-design/2026/05/06/inside-the-uae-pavilion-at-venice-biennale-a-whisper-becomes-a-portrait-of-a-nation/"
-    ]
+    ],
+    "grid_ref": "Arsenale 3"
   },
   {
     "id": "UZ",
@@ -2819,8 +2874,8 @@
     "venue": "Arsenale",
     "venue_label": "Quarto Tesa, Arsenale (long-term lease since 2022)",
     "coords": {
-      "x": 640,
-      "y": 230
+      "x": 1034.7,
+      "y": 326.0
     },
     "pavilion_owner": "Long-term Arsenale lease (ACDF)",
     "artist_name": "Jahongir Bobokulov; Zi Kakhramonova; Aygul Sarsen; Zulfiya Spowart; Xin Liu; A.A. Murakami; Nguyen Phuong Linh",
@@ -2849,7 +2904,8 @@
     ],
     "sources": [
       "https://www.uzbekistanvenice.uz/"
-    ]
+    ],
+    "grid_ref": "Arsenale 4"
   },
   {
     "id": "BA",
@@ -2858,8 +2914,8 @@
     "venue": "off-site",
     "venue_label": "Palazzo Malipiero, San Marco",
     "coords": {
-      "x": 380,
-      "y": 150
+      "x": 597.3,
+      "y": 290.0
     },
     "pavilion_owner": "Privately owned",
     "artist_name": "Mladen Bundalo",
@@ -2888,7 +2944,8 @@
     ],
     "sources": [
       "https://srpskainfo.com/kultura/izlozba-mladena-bundala-domus-diasporica-otvara-vrata-paviljona-bih/"
-    ]
+    ],
+    "grid_ref": "4 C4"
   },
   {
     "id": "BG",
@@ -2897,8 +2954,8 @@
     "venue": "off-site",
     "venue_label": "Sala Tiziano, Centro Culturale Don Orione Artigianelli, Zattere",
     "coords": {
-      "x": 980,
-      "y": 270
+      "x": 436.5,
+      "y": 432.0
     },
     "pavilion_owner": "Don Orione religious order",
     "artist_name": "Veneta Androva; Gery Georgieva; Maria Nalbantova; Rayna Teneva",
@@ -2924,7 +2981,8 @@
     "red_flags": [],
     "sources": [
       "https://bulgarianpavilionvenice.art/en"
-    ]
+    ],
+    "grid_ref": "5 C5"
   },
   {
     "id": "CM",
@@ -2933,8 +2991,8 @@
     "venue": "off-site",
     "venue_label": "Palazzo Canal, Dorsoduro",
     "coords": {
-      "x": 850,
-      "y": 200
+      "x": 255.7,
+      "y": 413.3
     },
     "pavilion_owner": "Republic of Cameroon",
     "artist_name": "Beya Gille Gacha; Jail Time Records; Sylvie Njobati; Bienvenue Fotso; Zora Snake; Neals Niat",
@@ -2962,7 +3020,8 @@
     ],
     "sources": [
       "https://africanscolumn.com/13-african-national-pavilions-to-participate-in-the-2026-venice-biennale/"
-    ]
+    ],
+    "grid_ref": "6 C4"
   },
   {
     "id": "HR",
@@ -2971,8 +3030,8 @@
     "venue": "off-site",
     "venue_label": "Palazzo Zorzi, Castello (UNESCO Venice Office)",
     "coords": {
-      "x": 760,
-      "y": 220
+      "x": 942.6,
+      "y": 400.7
     },
     "pavilion_owner": "UNESCO Regional Bureau (hosts the Croatian Pavilion)",
     "artist_name": "Dubravka Lošić",
@@ -2998,7 +3057,8 @@
     "red_flags": [],
     "sources": [
       "https://losic.nmmu.hr/"
-    ]
+    ],
+    "grid_ref": "8 F3"
   },
   {
     "id": "CU",
@@ -3007,8 +3067,8 @@
     "venue": "off-site",
     "venue_label": "Il Giardino Bianco, Castello (Via Garibaldi)",
     "coords": {
-      "x": 600,
-      "y": 130
+      "x": 803.5,
+      "y": 367.7
     },
     "pavilion_owner": "Il Giardino Bianco (private Venice gallery)",
     "artist_name": "Juan Roberto Diago Durruthy (Roberto Diago)",
@@ -3044,7 +3104,8 @@
     ],
     "sources": [
       "https://repeatingislands.com/2026/05/09/juan-roberto-diago-hombres-libres-free-men/"
-    ]
+    ],
+    "grid_ref": "9 H4"
   },
   {
     "id": "CY",
@@ -3053,8 +3114,8 @@
     "venue": "off-site",
     "venue_label": "Associazione Culturale Spiazzi, Castello",
     "coords": {
-      "x": 700,
-      "y": 130
+      "x": 890.4,
+      "y": 367.7
     },
     "pavilion_owner": "Spiazzi (rented)",
     "artist_name": "Marina Xenofontos",
@@ -3119,7 +3180,8 @@
     ],
     "sources": [
       "https://cyprusinvenice.org.cy/wp-content/uploads/Cyprus-Pavilion_Marina-Xenofontos_Press-Release_260406_English.pdf"
-    ]
+    ],
+    "grid_ref": "10 F4"
   },
   {
     "id": "CD",
@@ -3128,8 +3190,8 @@
     "venue": "off-site",
     "venue_label": "Antico Refettorio, Scuola Grande di San Marco",
     "coords": {
-      "x": 990,
-      "y": 150
+      "x": 450.4,
+      "y": 400.0
     },
     "pavilion_owner": "Democratic Republic of the Congo",
     "artist_name": "Sammy Baloji, Arlette Bashizi, Patrick Bongoy, Damso, Gosette Lubondo, Nelson Makengo, Aimé Mpané, Léonard Pongo, Géraldine Tobé",
@@ -3155,7 +3217,8 @@
     "red_flags": [],
     "sources": [
       "https://www.artrabbit.com/events/congo-pavilion-2026-simba-moto-seize-the-fire"
-    ]
+    ],
+    "grid_ref": "7 E3"
   },
   {
     "id": "SV",
@@ -3164,8 +3227,8 @@
     "venue": "off-site",
     "venue_label": "Palazzo Mora, Cannaregio (European Cultural Centre)",
     "coords": {
-      "x": 130,
-      "y": 180
+      "x": 255.5,
+      "y": 172.0
     },
     "pavilion_owner": "European Cultural Centre / GAA Foundation",
     "artist_name": "J. Oscar Molina",
@@ -3208,7 +3271,8 @@
     ],
     "sources": [
       "https://elsalvadorpavilion.art/"
-    ]
+    ],
+    "grid_ref": "12 D2"
   },
   {
     "id": "GQ",
@@ -3217,8 +3281,8 @@
     "venue": "off-site",
     "venue_label": "Palazzo Donà dalle Rose, Cannaregio",
     "coords": {
-      "x": 200,
-      "y": 220
+      "x": 323.1,
+      "y": 181.3
     },
     "pavilion_owner": "With patronage of Embassy of Paraguay in Italy",
     "artist_name": "Fernando Nguema Madja (posthumous), Modest Gené Roig, Ingrid Seall, plus ~24 international",
@@ -3249,7 +3313,8 @@
     ],
     "sources": [
       "https://www.finestresullarte.info/en/exhibitions/equatorial-guinea-debuts-at-the-venice-biennale-with-paraguayan-artist-ingrid-seall-and-the-theme-of-undergrowth"
-    ]
+    ],
+    "grid_ref": "13 E1"
   },
   {
     "id": "EE",
@@ -3258,8 +3323,8 @@
     "venue": "off-site",
     "venue_label": "Patronato Salesiano Leone XIII, Castello (near Giardini)",
     "coords": {
-      "x": 750,
-      "y": 130
+      "x": 933.9,
+      "y": 367.7
     },
     "pavilion_owner": "Salesian Catholic order",
     "artist_name": "Merike Estna",
@@ -3285,7 +3350,8 @@
     "red_flags": [],
     "sources": [
       "https://cca.ee/en/venice-biennale/2026-merike-estna"
-    ]
+    ],
+    "grid_ref": "14 G5"
   },
   {
     "id": "ET",
@@ -3294,8 +3360,8 @@
     "venue": "off-site",
     "venue_label": "Palazzo Bollani, Castello",
     "coords": {
-      "x": 600,
-      "y": 200
+      "x": 803.5,
+      "y": 393.3
     },
     "pavilion_owner": "Federal Democratic Republic of Ethiopia",
     "artist_name": "Tegene Kunbi",
@@ -3333,7 +3399,8 @@
     ],
     "sources": [
       "https://www.ethiopianpavilion.com/"
-    ]
+    ],
+    "grid_ref": "15 F4"
   },
   {
     "id": "GE",
@@ -3342,8 +3409,8 @@
     "venue": "off-site",
     "venue_label": "Palazzo Querini, Dorsoduro",
     "coords": {
-      "x": 920,
-      "y": 180
+      "x": 353.0,
+      "y": 408.0
     },
     "pavilion_owner": "Privately leased palazzo",
     "artist_name": "17 artists (group): Darchiashvili, Mindadze, Nikoladze, Mikeladze, Okrostsvaridze, Patiachvili, Tsetskhladze, Buliskiria, Borjas, Ferrucci, Lahusen, Ramboz, Turrillo, Morales, Sakata, Marcenaro, Rubino",
@@ -3372,7 +3439,8 @@
     ],
     "sources": [
       "https://www.artrabbit.com/events/georgian-pavilion-2026-modern-argonauts-georgian-crossroads"
-    ]
+    ],
+    "grid_ref": "16 B5"
   },
   {
     "id": "GD",
@@ -3381,8 +3449,8 @@
     "venue": "off-site",
     "venue_label": "Spazio Berlendis, Cannaregio (also hosts Guatemala 2026)",
     "coords": {
-      "x": 180,
-      "y": 270
+      "x": 303.8,
+      "y": 193.0
     },
     "pavilion_owner": "Spazio Berlendis (Italian gallery/event space)",
     "artist_name": "Edward Bowen, Arthur Daniel, Josine Dupont, Alexandra Kordas, Lilo Nido, Chris Mast, Jeverson Ramirez, Russell Watson, plus Holzwege Group (Italian collective)",
@@ -3443,7 +3511,8 @@
     "sources": [
       "https://grenadavenice.org/",
       "https://hyperallergic.com/692261/grenada-artist-must-fundraise-250k-to-represent-his-country-at-the-venice-biennale/"
-    ]
+    ],
+    "grid_ref": "17 E2"
   },
   {
     "id": "GT",
@@ -3452,8 +3521,8 @@
     "venue": "off-site",
     "venue_label": "Spazio Berlendis, Cannaregio (shared with Grenada)",
     "coords": {
-      "x": 220,
-      "y": 270
+      "x": 342.4,
+      "y": 193.0
     },
     "pavilion_owner": "Spazio Berlendis",
     "artist_name": "ARKEO, Luana Bottallo, Jorge Chavarría, Manuel Navichoc, Ana Lorena Núñez, SOY group, Elsie Wunderlich",
@@ -3483,7 +3552,8 @@
     ],
     "sources": [
       "http://www.biennaleguatemala.com/en/"
-    ]
+    ],
+    "grid_ref": "18 E2"
   },
   {
     "id": "GN",
@@ -3492,8 +3562,8 @@
     "venue": "off-site",
     "venue_label": "Isola di San Servolo",
     "coords": {
-      "x": 850,
-      "y": 280
+      "x": 255.7,
+      "y": 434.7
     },
     "pavilion_owner": "Republic of Guinea",
     "artist_name": "60+ exhibitors, mostly Italian (Galliani, Ceccobelli, Celiberti, Cascella, Donzelli) + Guinean artists",
@@ -3522,7 +3592,8 @@
     ],
     "sources": [
       "https://artafricamagazine.org/echoes-from-the-margins-guineas-debut-pavilion-resonates-in-venice/"
-    ]
+    ],
+    "grid_ref": "off the map"
   },
   {
     "id": "HT",
@@ -3531,8 +3602,8 @@
     "venue": "off-site",
     "venue_label": "Palazzo Albrizzi-Capello, Cannaregio",
     "coords": {
-      "x": 80,
-      "y": 270
+      "x": 207.2,
+      "y": 193.0
     },
     "pavilion_owner": "Associazione Culturale Italo-Tedesca",
     "artist_name": "Enock Placide",
@@ -3561,7 +3632,8 @@
     ],
     "sources": [
       "https://www.adriaticonews.it/2026/04/16/nomina-curatore-del-padiglione-haiti-alla-biennale-darte-di-venezia-2026/"
-    ]
+    ],
+    "grid_ref": "19 E2"
   },
   {
     "id": "VA",
@@ -3570,8 +3642,8 @@
     "venue": "off-site",
     "venue_label": "Giardino Mistico dei Carmelitani Scalzi (Cannaregio) + Complesso di Santa Maria Ausiliatrice (Castello)",
     "coords": {
-      "x": 100,
-      "y": 150
+      "x": 226.6,
+      "y": 165.0
     },
     "pavilion_owner": "Holy See / Carmelite community (venues borrowed)",
     "artist_name": "24 contributors incl. Brian Eno, FKA twigs, Patti Smith, Jim Jarmusch, Holly Herndon, Alexander Kluge (final film, posthumous), Benedictine Nuns of Eibingen",
@@ -3607,7 +3679,8 @@
       "https://www.vaticannews.va/en/vatican-city/news/2026-05/holy-see-pavilion-venice-biennale-cardinal-de-mendoca-moraglia.html",
       "https://www.designboom.com/art/holy-see-pavilion-rhythm-venice-art-biennale-deep-listening-2026/",
       "https://www.theartnewspaper.com/2026/05/07/sound-based-holy-see-pavilion-opens-venice-biennale-vatican-contemporary-art-ambitions-grow"
-    ]
+    ],
+    "grid_ref": "20 H4 + 20 B2"
   },
   {
     "id": "IS",
@@ -3616,8 +3689,8 @@
     "venue": "off-site",
     "venue_label": "Docks Cantieri Cucchini, San Pietro di Castello",
     "coords": {
-      "x": 760,
-      "y": 200
+      "x": 942.6,
+      "y": 393.3
     },
     "pavilion_owner": "Private rental (former shipyard)",
     "artist_name": "Ásta Fanney Sigurðardóttir",
@@ -3643,7 +3716,8 @@
     "red_flags": [],
     "sources": [
       "https://www.icelandicartcenter.is/biennale-arte/icelandic-pavilion-2026"
-    ]
+    ],
+    "grid_ref": "21 H4"
   },
   {
     "id": "ID",
@@ -3652,8 +3726,8 @@
     "venue": "off-site",
     "venue_label": "Scuola Internazionale di Grafica, Cannaregio",
     "coords": {
-      "x": 70,
-      "y": 220
+      "x": 197.6,
+      "y": 181.3
     },
     "pavilion_owner": "Rented from Scuola Internazionale di Grafica",
     "artist_name": "Agus Suwage, Syahrizal Pahlevi, R.E. Hartanto, Theresia Agustina Sitompul, Mariam Sofrina, others",
@@ -3682,7 +3756,8 @@
     ],
     "sources": [
       "https://www.artasiapacific.com/news/indonesia-returns-to-2026-venice-biennale/"
-    ]
+    ],
+    "grid_ref": "22 C2"
   },
   {
     "id": "KZ",
@@ -3691,8 +3766,8 @@
     "venue": "off-site",
     "venue_label": "Museo Storico Navale, Castello (since 2022)",
     "coords": {
-      "x": 720,
-      "y": 200
+      "x": 907.8,
+      "y": 393.3
     },
     "pavilion_owner": "Italian state museum (leased)",
     "artist_name": "Group of 9: Mukanova, Tattibayeva, Ligay (ADYR-ASPAN), Aubakir, Kadyrkhanova, Bayaliyev, Nurakhmet, Smagambetov, Kaboke",
@@ -3718,7 +3793,8 @@
     "red_flags": [],
     "sources": [
       "https://www.artasiapacific.com/news/kazakhstan-presents-qonyr-archive-of-silence-at-venice-biennale/"
-    ]
+    ],
+    "grid_ref": "23 G4"
   },
   {
     "id": "XK",
@@ -3727,8 +3803,8 @@
     "venue": "off-site",
     "venue_label": "Chiesa di Santa Maria del Pianto, Castello (newly reactivated 17th-century church)",
     "coords": {
-      "x": 580,
-      "y": 240
+      "x": 786.1,
+      "y": 408.0
     },
     "pavilion_owner": "Religious/civic; reactivated for cultural use",
     "artist_name": "Brilant Milazimi",
@@ -3786,7 +3862,8 @@
     ],
     "sources": [
       "https://hardteeth.pavilionofkosovo.com/about-kosovo-pavilion"
-    ]
+    ],
+    "grid_ref": "25 F3"
   },
   {
     "id": "KG",
@@ -3795,8 +3872,8 @@
     "venue": "off-site",
     "venue_label": "Ex Chiesa di Santa Caterina, Convitto Foscarini, Cannaregio",
     "coords": {
-      "x": 240,
-      "y": 130
+      "x": 361.7,
+      "y": 160.3
     },
     "pavilion_owner": "Italian state school complex (leased)",
     "artist_name": "Alexey Morosov",
@@ -3824,7 +3901,8 @@
     ],
     "sources": [
       "https://www.artasiapacific.com/news/alexey-morosov-to-represent-kyrgyzstan-at-2026-venice-biennale/"
-    ]
+    ],
+    "grid_ref": "24 E2"
   },
   {
     "id": "LT",
@@ -3833,8 +3911,8 @@
     "venue": "off-site",
     "venue_label": "SUMUS – Fucina del Futuro, Castello",
     "coords": {
-      "x": 640,
-      "y": 220
+      "x": 838.3,
+      "y": 400.7
     },
     "pavilion_owner": "Privately operated venue",
     "artist_name": "Eglė Budvytytė",
@@ -3870,7 +3948,8 @@
     ],
     "sources": [
       "https://www.lndm.lt/61-ojoje-venecijos-meno-bienaleje-lietuvai-atstovaus-egle-budvytyte/?lang=en"
-    ]
+    ],
+    "grid_ref": "26 F3"
   },
   {
     "id": "MD",
@@ -3879,8 +3958,8 @@
     "venue": "off-site",
     "venue_label": "Spazio Santa Veneranda, SS. Geremia e Lucia, Cannaregio",
     "coords": {
-      "x": 130,
-      "y": 240
+      "x": 255.5,
+      "y": 186.0
     },
     "pavilion_owner": "Patriarchate of Venice (Catholic Church)",
     "artist_name": "Pavel Brăila",
@@ -3924,7 +4003,8 @@
     ],
     "sources": [
       "https://www.romania-insider.com/moldova-la-biennale-di-venezia-2026"
-    ]
+    ],
+    "grid_ref": "27 C2"
   },
   {
     "id": "MN",
@@ -3933,8 +4013,8 @@
     "venue": "off-site",
     "venue_label": "Squero Castello (programmed by Zuecca Projects)",
     "coords": {
-      "x": 660,
-      "y": 270
+      "x": 855.7,
+      "y": 419.0
     },
     "pavilion_owner": "Hosted/produced by Zuecca Projects",
     "artist_name": "Nomin Bold; Gerelkhuu Ganbold; Tuguldur Yondonjamts; Dorjderem Davaa",
@@ -3978,7 +4058,8 @@
     ],
     "sources": [
       "http://www.zueccaprojects.org/project/mongolia-pavilion-biennale-arte-2026/"
-    ]
+    ],
+    "grid_ref": "28 H4"
   },
   {
     "id": "ME",
@@ -3987,8 +4068,8 @@
     "venue": "off-site",
     "venue_label": "Artenova, Castello",
     "coords": {
-      "x": 690,
-      "y": 250
+      "x": 881.7,
+      "y": 411.7
     },
     "pavilion_owner": "Privately operated",
     "artist_name": "Siniša Radulović",
@@ -4014,7 +4095,8 @@
     "red_flags": [],
     "sources": [
       "https://www.e-flux.com/announcements/6786415/sini-a-radulovi-out-of-the-blue-i-m-swept-away"
-    ]
+    ],
+    "grid_ref": "29 F3"
   },
   {
     "id": "NR",
@@ -4023,8 +4105,8 @@
     "venue": "off-site",
     "venue_label": "Spazio Castello 3683",
     "coords": {
-      "x": 580,
-      "y": 280
+      "x": 786.1,
+      "y": 422.7
     },
     "pavilion_owner": "Privately operated",
     "artist_name": "Kauw Tsitsi (Nauru) plus 9 international artists incl. CPS, Patricia Jacomella Bonola, Sylvia Grace Borda, Khaled Hafez, Stefano Cagol",
@@ -4068,7 +4150,8 @@
     ],
     "sources": [
       "https://www.nauru-biennalevenezia.com/"
-    ]
+    ],
+    "grid_ref": "30 F4"
   },
   {
     "id": "NZ",
@@ -4077,8 +4160,8 @@
     "venue": "off-site",
     "venue_label": "Istituto Provinciale per l'Infanzia Santa Maria della Pietà, Castello (since 2017)",
     "coords": {
-      "x": 620,
-      "y": 260
+      "x": 820.9,
+      "y": 415.3
     },
     "pavilion_owner": "Istituto Provinciale per l'Infanzia (Veneto regional institution; leased)",
     "artist_name": "Fiona Pardington (Kāi Tahu, Kāti Mamoe, Ngāti Kahungunu)",
@@ -4115,7 +4198,8 @@
     ],
     "sources": [
       "https://www.nzatvenice.com/"
-    ]
+    ],
+    "grid_ref": "31 F4"
   },
   {
     "id": "MK",
@@ -4124,8 +4208,8 @@
     "venue": "off-site",
     "venue_label": "Ex Cappella Buon Pastore, Castello",
     "coords": {
-      "x": 740,
-      "y": 240
+      "x": 925.2,
+      "y": 408.0
     },
     "pavilion_owner": "Patriarchate of Venice (former Catholic religious institution)",
     "artist_name": "Velimir Zhernovski",
@@ -4153,7 +4237,8 @@
     ],
     "sources": [
       "https://24.mk/details/makedonskiot-paviljon-na-61-venecisko-bienale-kje-bide-otvoren-utrevecher-so-proektot-na-umetnikot-velimir-zhernovski"
-    ]
+    ],
+    "grid_ref": "32 H4"
   },
   {
     "id": "PK",
@@ -4162,8 +4247,8 @@
     "venue": "off-site",
     "venue_label": "Ex Farmacia Solveni, Dorsoduro Museum Mile",
     "coords": {
-      "x": 950,
-      "y": 220
+      "x": 394.8,
+      "y": 418.7
     },
     "pavilion_owner": "Rented private historic space",
     "artist_name": "Faiza Butt",
@@ -4191,7 +4276,8 @@
     ],
     "sources": [
       "https://tribune.com.pk/story/2604957/pakistan-returns-to-venice-biennale-spotlight"
-    ]
+    ],
+    "grid_ref": "33 C5"
   },
   {
     "id": "PT",
@@ -4200,8 +4286,8 @@
     "venue": "off-site",
     "venue_label": "Palazzo Fondaco Marcello, Grand Canal (since 2007)",
     "coords": {
-      "x": 880,
-      "y": 240
+      "x": 297.4,
+      "y": 424.0
     },
     "pavilion_owner": "Private historic Grand Canal warehouse, leased",
     "artist_name": "Alexandre Estrela",
@@ -4229,7 +4315,8 @@
     ],
     "sources": [
       "https://www.dgartes.gov.pt/pt/noticia/9346"
-    ]
+    ],
+    "grid_ref": "35 C4"
   },
   {
     "id": "SM",
@@ -4238,8 +4325,8 @@
     "venue": "off-site",
     "venue_label": "Tana Art Space, Castello (between Arsenale and Giardini)",
     "coords": {
-      "x": 750,
-      "y": 270
+      "x": 933.9,
+      "y": 419.0
     },
     "pavilion_owner": "Private (Tana Art Space)",
     "artist_name": "Mark Francis",
@@ -4283,7 +4370,8 @@
     ],
     "sources": [
       "https://www.finestresullarte.info/en/contemporary-art/abstract-painter-mark-francis-will-represent-san-marino-at-the-venice-art-biennale-2026"
-    ]
+    ],
+    "grid_ref": "37 G4"
   },
   {
     "id": "SN",
@@ -4292,8 +4380,8 @@
     "venue": "off-site",
     "venue_label": "Palazzo Navagero, Castello",
     "coords": {
-      "x": 670,
-      "y": 200
+      "x": 864.3,
+      "y": 393.3
     },
     "pavilion_owner": "Republic of Senegal",
     "artist_name": "Caroline Gueye",
@@ -4319,7 +4407,8 @@
     "red_flags": [],
     "sources": [
       "https://artafricamagazine.org/wurus-light-catches-before-form-does/"
-    ]
+    ],
+    "grid_ref": "38 F4"
   },
   {
     "id": "SL",
@@ -4328,8 +4417,8 @@
     "venue": "off-site",
     "venue_label": "Liceo Artistico Guggenheim, Dorsoduro",
     "coords": {
-      "x": 980,
-      "y": 200
+      "x": 436.5,
+      "y": 413.3
     },
     "pavilion_owner": "Republic of Sierra Leone (Office of the First Lady)",
     "artist_name": "Hawa-Jane Bangura, Ayesha Feisal, Hickmatu Bintu Leigh, Abu Bakarr Mansaray + 11 international",
@@ -4358,7 +4447,8 @@
     ],
     "sources": [
       "https://artafricamagazine.org/minor-keys-major-shifts-sierra-leones-resonant-debut-in-venice/"
-    ]
+    ],
+    "grid_ref": "39 B4"
   },
   {
     "id": "SO",
@@ -4367,8 +4457,8 @@
     "venue": "off-site",
     "venue_label": "Palazzo Caboto, Via Garibaldi, Castello",
     "coords": {
-      "x": 580,
-      "y": 200
+      "x": 786.1,
+      "y": 393.3
     },
     "pavilion_owner": "Federal Republic of Somalia",
     "artist_name": "Ayan Farah, Asmaa Jama, Warsan Shire",
@@ -4415,7 +4505,8 @@
     ],
     "sources": [
       "https://www.artnews.com/art-news/news/venice-biennale-somali-pavilion-controversy-1234781181/"
-    ]
+    ],
+    "grid_ref": "40 G5"
   },
   {
     "id": "SY",
@@ -4424,8 +4515,8 @@
     "venue": "off-site",
     "venue_label": "IUAV Cotonificio campus, Dorsoduro",
     "coords": {
-      "x": 910,
-      "y": 270
+      "x": 339.1,
+      "y": 432.0
     },
     "pavilion_owner": "IUAV (Italian state university) — leased",
     "artist_name": "Sara Shamma",
@@ -4463,7 +4554,8 @@
     ],
     "sources": [
       "https://www.thenationalnews.com/arts-culture/art-design/2026/05/07/sara-shamma-syria-pavilion-cultural-renewal-to-venice-biennale-2026/"
-    ]
+    ],
+    "grid_ref": "41 A5"
   },
   {
     "id": "TZ",
@@ -4472,8 +4564,8 @@
     "venue": "off-site",
     "venue_label": "Gervasuti Foundation – Palazzo Canova / Supernova, Cannaregio",
     "coords": {
-      "x": 250,
-      "y": 250
+      "x": 371.4,
+      "y": 188.3
     },
     "pavilion_owner": "Gervasuti Foundation (Bortolato family) / Supernova",
     "artist_name": "Turakella Editha Gyindo, Lazaro Samuel, Valerie Asiimwe Amani, Amani Abeid + 13 Italian invitees",
@@ -4502,7 +4594,8 @@
     ],
     "sources": [
       "https://www.artribune.com/arte-contemporanea-2/2026/05/padiglione-tanzania-biennale-venezia-programma-artisti/"
-    ]
+    ],
+    "grid_ref": "42 E2 + 42 D2"
   },
   {
     "id": "BS",
@@ -4511,8 +4604,8 @@
     "venue": "off-site",
     "venue_label": "San Trovaso Art Space, Dorsoduro",
     "coords": {
-      "x": 880,
-      "y": 130
+      "x": 297.4,
+      "y": 394.7
     },
     "pavilion_owner": "Private (rented Venetian art space)",
     "artist_name": "John Beadle (1964–2024) and Lavar Munroe (b. 1982) — posthumous collaboration",
@@ -4555,7 +4648,8 @@
     ],
     "sources": [
       "https://www.bahamasvenicebiennale.org/"
-    ]
+    ],
+    "grid_ref": "3 C5"
   },
   {
     "id": "UG",
@@ -4564,8 +4658,8 @@
     "venue": "off-site",
     "venue_label": "Palazzo Navagero Gallery, Castello",
     "coords": {
-      "x": 700,
-      "y": 250
+      "x": 890.4,
+      "y": 411.7
     },
     "pavilion_owner": "Privately operated commercial gallery space",
     "artist_name": "Stacey Gillian Abe, Joseph Ntensibe, Lilian Mary Nabulime, Ronex Ahimbisibwe, Lakwena Maciver, Sheila Nakitende, Aloka Trevor",
@@ -4593,7 +4687,8 @@
     ],
     "sources": [
       "https://www.ugandapavilion.org/"
-    ]
+    ],
+    "grid_ref": "43 F4"
   },
   {
     "id": "VN",
@@ -4602,8 +4697,8 @@
     "venue": "off-site",
     "venue_label": "Ca' Faccanon, San Marco",
     "coords": {
-      "x": 450,
-      "y": 180
+      "x": 654.5,
+      "y": 296.0
     },
     "pavilion_owner": "Private/Italian heritage palazzo",
     "artist_name": "Group of 13 lacquer artists incl. Le Huu Hieu",
@@ -4632,7 +4727,8 @@
     ],
     "sources": [
       "https://en.vietnamplus.vn/vietnam-to-make-debut-at-venice-art-biennale-post340061.vnp"
-    ]
+    ],
+    "grid_ref": "44 E3"
   },
   {
     "id": "ZW",
@@ -4641,8 +4737,8 @@
     "venue": "off-site",
     "venue_label": "Santa Maria della Pietà / Chiesa della Visitazione, Castello",
     "coords": {
-      "x": 730,
-      "y": 270
+      "x": 916.5,
+      "y": 419.0
     },
     "pavilion_owner": "Church/foundation venue rented",
     "artist_name": "Gideon Gomo, Eva Raath, Felix Shumba, Franklyn Dzingai, Pardon Mapondera",
@@ -4685,6 +4781,7 @@
     ],
     "sources": [
       "https://pavilionofzimbabwe.com/"
-    ]
+    ],
+    "grid_ref": "45 F4"
   }
 ]

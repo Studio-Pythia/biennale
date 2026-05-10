@@ -224,8 +224,39 @@ em { font-style: italic; }
 .map-zone {
   background: var(--paper);
   border: 1px solid var(--rule);
-  padding: 1.5rem;
+  padding: 1rem;
   border-radius: 4px;
+}
+
+.map-zone-venice {
+  padding: 0;
+  overflow: hidden;
+  background: #d4e8f2;
+}
+.map-zone-venice .venue-map {
+  width: 100%;
+  height: auto;
+  max-height: 80vh;
+}
+
+.map-detail-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+.map-zone-detail {
+  padding: 1rem;
+  background: var(--paper);
+}
+.map-zone-detail .venue-map {
+  width: 100%;
+  height: auto;
+  max-height: 70vh;
+  background: #d4e8f2;
+}
+@media (max-width: 768px) {
+  .map-detail-row { grid-template-columns: 1fr; }
 }
 
 .zone-title {
@@ -279,12 +310,13 @@ em { font-style: italic; }
 }
 
 .venue-water {
-  fill: #d6e3ec;
-  opacity: 0.5;
+  fill: #d4e8f2;
+  opacity: 1;
 }
 
 .venue-ground {
-  fill: var(--paper-warm);
+  fill: #d8d2c2;
+  opacity: 0.85;
 }
 
 .venue-region-label {
