@@ -44,11 +44,18 @@ export type VenueFilter = "all" | "Giardini" | "Arsenale" | "Off-site";
 export type SelectionMethodFilter = "all" | "open_call" | "panel" | "ministerial" | "invitation";
 export type BudgetTransparencyFilter = "all" | "disclosed" | "undisclosed";
 export type FlagSeverityFilter = "all" | "red" | "clean";
+export type ContinentFilter = "all" | "Africa" | "Asia" | "Europe" | "North America" | "South America" | "Oceania";
 export type FunderType = Funder["type"];
-export type SortKey = "country" | "budget_desc" | "red_flags_desc" | "private_funders_desc";
+export type SortKey =
+  | "random"
+  | "country"
+  | "budget_desc"
+  | "red_flags_desc"
+  | "private_funders_desc";
 
 export interface PavilionFilters {
   venue: VenueFilter;
+  continent: ContinentFilter;
   selectionMethod: SelectionMethodFilter;
   funderTypes: FunderType[];
   budgetTransparency: BudgetTransparencyFilter;
