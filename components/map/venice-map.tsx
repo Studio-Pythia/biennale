@@ -14,6 +14,7 @@ import "@xyflow/react/dist/style.css";
 
 import { PavilionNode } from "./pavilion-node";
 import { VenueZoneNode } from "./venue-zone-node";
+import { MapImageNode } from "./map-image-node";
 import {
   useMapStore,
   getPavilionsByFunder,
@@ -24,20 +25,21 @@ import { getVenueColor } from "@/lib/data";
 const nodeTypes = {
   pavilion: PavilionNode,
   venueZone: VenueZoneNode,
+  mapImage: MapImageNode,
 };
 
-// The map image dimensions - we'll scale nodes to match
+// The map image dimensions
 const MAP_WIDTH = 1566;
 const MAP_HEIGHT = 890;
 
-// Grid coordinates on the map image
+// Grid coordinates on the map image (measured from the PNG)
 // Columns A-H: A starts at x=62, each column ~187px wide
 // Rows 1-6: Row 1 starts at y=30, each row ~143px tall
 const GRID = {
   colStart: 62,
   colWidth: 187,
-  rowStart: 30,
-  rowHeight: 143,
+  rowStart: 45,
+  rowHeight: 140,
 };
 
 // Convert grid reference (e.g., "E3") to map coordinates
@@ -71,29 +73,31 @@ function parseGridRef(gridRef: string): { x: number; y: number } | null {
     return gridToCoords(col, parseInt(row));
   }
   
-  // Off the map venues (San Servolo island - bottom left)
+  // Off the map venues (San Servolo island - bottom left area)
   if (gridRef.toLowerCase().includes("off the map") || 
       gridRef.toLowerCase().includes("san servolo")) {
-    return { x: 150, y: 750 };
+    return { x: 100, y: 800 };
   }
   
   return null;
 }
 
-// Arsenale zone position on the map (orange outline in image)
+// Arsenale zone - measured from map image (orange outlined area)
+// Located at approximately G3-H3 on the grid
 const ARSENALE_ZONE = {
-  x: 1180,
-  y: 380,
-  width: 120,
-  height: 100,
+  x: 1200,  // Right side, east of Castello
+  y: 380,   // Upper-middle area (row 3)
+  width: 180,
+  height: 90,
 };
 
-// Giardini zone position on the map (orange outline in image)
+// Giardini zone - measured from map image (orange outlined area)  
+// Located at approximately G4-H5 on the grid
 const GIARDINI_ZONE = {
-  x: 1280,
-  y: 520,
-  width: 140,
-  height: 120,
+  x: 1280,  // Far right
+  y: 560,   // Lower area (rows 4-5)
+  width: 180,
+  height: 140,
 };
 
 function createNodesFromPavilions(
@@ -103,6 +107,25 @@ function createNodesFromPavilions(
   const nodes: Node[] = [];
 
   if (currentView === "main") {
+    // Add map image as background node (not draggable)
+    nodes.push({
+      id: "map-background",
+      type: "mapImage",
+      position: { x: 0, y: 0 },
+      data: {
+        src: "/images/venice-main-map.png",
+        width: MAP_WIDTH,
+        height: MAP_HEIGHT,
+      },
+      draggable: false,
+      selectable: false,
+      zIndex: 0,
+    });
+
+    // Get pavilions for each venue to display flags
+    const arsenalePavilions = pavilions.filter(p => p.venue === "Arsenale");
+    const giardiniPavilions = pavilions.filter(p => p.venue === "Giardini");
+
     // Add Arsenale clickable zone
     nodes.push({
       id: "zone-arsenale",
@@ -112,10 +135,11 @@ function createNodesFromPavilions(
         venue: "Arsenale",
         width: ARSENALE_ZONE.width,
         height: ARSENALE_ZONE.height,
-        count: pavilions.filter(p => p.venue === "Arsenale").length,
+        count: arsenalePavilions.length,
+        pavilions: arsenalePavilions,
       },
       draggable: false,
-      zIndex: 5,
+      zIndex: 10,
     });
 
     // Add Giardini clickable zone
@@ -127,10 +151,11 @@ function createNodesFromPavilions(
         venue: "Giardini",
         width: GIARDINI_ZONE.width,
         height: GIARDINI_ZONE.height,
-        count: pavilions.filter(p => p.venue === "Giardini").length,
+        count: giardiniPavilions.length,
+        pavilions: giardiniPavilions,
       },
       draggable: false,
-      zIndex: 5,
+      zIndex: 10,
     });
 
     // Add only off-site pavilions to the main map
@@ -145,7 +170,8 @@ function createNodesFromPavilions(
           type: "pavilion",
           position: coords,
           data: { pavilion },
-          zIndex: 10,
+          draggable: false,
+          zIndex: 20,
         });
       }
     });
@@ -206,7 +232,7 @@ export function VeniceMap({ pavilions: allPavilions }: VeniceMapProps) {
     return source.filter((p) => {
       if (filters.venue !== "all" && p.venue !== filters.venue) return false;
       if (filters.selectionMethod !== "all" && p.selection_method !== filters.selectionMethod) return false;
-      if (filters.redFlagsOnly && p.red_flags.length === 0) return false;
+      if (filters.redFlagsOnly && (!p.red_flags || p.red_flags.length === 0)) return false;
 
       const budget = p.total_budget_amount_usd || 0;
       if (budget < filters.budgetRange[0] || budget > filters.budgetRange[1]) return false;
@@ -218,8 +244,9 @@ export function VeniceMap({ pavilions: allPavilions }: VeniceMapProps) {
           p.artist_name,
           p.curator_name,
           p.show_title,
-          ...p.private_funders.map((f) => f.name),
+          ...(p.private_funders || []).map((f) => f.name),
         ]
+          .filter(Boolean)
           .join(" ")
           .toLowerCase();
         if (!searchableText.includes(searchLower)) return false;
@@ -268,7 +295,6 @@ export function VeniceMap({ pavilions: allPavilions }: VeniceMapProps) {
       if (node.type === "pavilion") {
         selectPavilion(node.id);
       } else if (node.type === "venueZone") {
-        // TODO: Navigate to sub-map when images are uploaded
         const venue = (node.data as { venue: string }).venue;
         if (venue === "Arsenale") {
           setCurrentView("arsenale");
@@ -284,15 +310,8 @@ export function VeniceMap({ pavilions: allPavilions }: VeniceMapProps) {
     selectPavilion(null);
   }, [selectPavilion]);
 
-  // Get the background image based on current view
-  const backgroundImage = currentView === "main" 
-    ? "/images/venice-main-map.png"
-    : currentView === "arsenale"
-    ? "/images/arsenale-map.jpg"
-    : "/images/giardini-map.jpg";
-
   return (
-    <div className="w-full h-full relative">
+    <div className="w-full h-full relative" style={{ backgroundColor: "#87CEEB" }}>
       {/* Back button when in sub-view */}
       {currentView !== "main" && (
         <button
@@ -321,21 +340,22 @@ export function VeniceMap({ pavilions: allPavilions }: VeniceMapProps) {
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
         nodeTypes={nodeTypes as any}
         fitView
-        fitViewOptions={{ padding: 0.05 }}
+        fitViewOptions={{ 
+          padding: 0.02,
+          minZoom: 0.5,
+          maxZoom: 1,
+        }}
         minZoom={0.3}
         maxZoom={4}
         proOptions={{ hideAttribution: true }}
-        style={{
-          backgroundImage: `url(${backgroundImage})`,
-          backgroundSize: "contain",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-          backgroundColor: "#87CEEB", // Light blue to match water color
+        defaultEdgeOptions={{
+          type: "smoothstep",
         }}
       >
         <Controls showInteractive={false} />
         <MiniMap
           nodeColor={(node) => {
+            if (node.type === "mapImage") return "transparent";
             if (node.type === "venueZone") {
               const venue = (node.data as { venue: string }).venue;
               return getVenueColor(venue as "Giardini" | "Arsenale" | "Off-site");
