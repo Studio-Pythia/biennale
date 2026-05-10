@@ -67,58 +67,60 @@ function GridContainerInner({
   return (
     <>
       <header
-        className="grid grid-cols-[1fr_auto_1fr] items-center px-4 py-3 flex-shrink-0 gap-4"
+        className="flex items-center justify-between gap-4 px-4 py-3 flex-shrink-0"
         style={{
           backgroundColor: "var(--card)",
           borderBottom: "1px solid var(--border)",
         }}
       >
-        <div className="justify-self-start">
+        <div className="min-w-0">
           <h1
-            className="font-serif text-xl font-bold tracking-tight leading-none"
+            className="font-serif text-base sm:text-xl font-bold tracking-tight leading-none truncate"
             style={{ color: "var(--foreground)" }}
           >
             Venice Biennale 2026
           </h1>
           <p
-            className="text-[11px] uppercase tracking-[0.18em] mt-1.5"
+            className="text-[10px] sm:text-[11px] uppercase tracking-[0.18em] mt-1.5"
             style={{ color: "var(--primary)" }}
           >
             Who pays · who picks · who shows
           </p>
         </div>
 
-        <a
-          href="https://russ-jones.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="justify-self-center flex items-center gap-2.5 px-3 py-1.5 rounded-full transition-colors hover:bg-[var(--muted)] group"
-          aria-label="Russ Jones — open russ-jones.com in a new tab"
-        >
-          <img
-            src="/pythia-logo.png"
-            alt=""
-            width={28}
-            height={28}
-            className="opacity-90 group-hover:opacity-100 transition-opacity"
-          />
-          <span
-            className="font-serif text-sm tracking-wide group-hover:underline"
-            style={{ color: "var(--foreground)" }}
-          >
-            Russ Jones
-          </span>
-        </a>
+        <div className="flex items-center gap-4 flex-shrink-0">
+          <div className="hidden md:flex items-center gap-4 text-xs">
+            <Stat label="Pavilions" value={pavilions.length} />
+            <Stat label="Budget disclosed" value={stats.disclosed} />
+            <Stat label="Private funders" value={stats.privateFunderCount} />
+            <Stat
+              label="Red-flagged"
+              value={stats.redFlagged}
+              color="var(--primary)"
+            />
+          </div>
 
-        <div className="hidden md:flex items-center gap-4 text-xs justify-self-end">
-          <Stat label="Pavilions" value={pavilions.length} />
-          <Stat label="Budget disclosed" value={stats.disclosed} />
-          <Stat label="Private funders" value={stats.privateFunderCount} />
-          <Stat
-            label="Red-flagged"
-            value={stats.redFlagged}
-            color="var(--primary)"
-          />
+          <a
+            href="https://russ-jones.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 px-2.5 py-1.5 rounded-full transition-colors hover:bg-[var(--muted)] group"
+            aria-label="Russ Jones — open russ-jones.com in a new tab"
+          >
+            <span
+              className="font-serif text-sm tracking-wide group-hover:underline hidden sm:inline"
+              style={{ color: "var(--foreground)" }}
+            >
+              Russ Jones
+            </span>
+            <img
+              src="/pythia-logo.png"
+              alt="Russ Jones"
+              width={26}
+              height={26}
+              className="opacity-90 group-hover:opacity-100 transition-opacity"
+            />
+          </a>
         </div>
       </header>
 
