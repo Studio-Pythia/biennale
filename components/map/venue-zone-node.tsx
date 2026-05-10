@@ -15,83 +15,95 @@ interface VenueZoneData {
 }
 
 function VenueZoneNodeComponent({ data }: NodeProps) {
-  const { venue, width, height, count, pavilions } = data as VenueZoneData;
+  const { venue, width, height, pavilions } = data as VenueZoneData;
   
   const color = getVenueColor(venue);
-  const safeWidth = width || 180;
-  const safeHeight = height || 120;
+  const safeWidth = width || 200;
+  const safeHeight = height || 140;
   
-  // Get first 12 flags to display (more would be too crowded)
-  const flagsToShow = (pavilions || []).slice(0, 12);
-  const remainingCount = Math.max(0, (pavilions || []).length - 12);
+  // Get flags to display - show all in a grid
+  const flagsToShow = (pavilions || []).slice(0, 28); // 7 columns x 4 rows max
+  const remainingCount = Math.max(0, (pavilions || []).length - 28);
   
   return (
     <>
       <Handle type="target" position={Position.Top} style={{ visibility: "hidden" }} />
       
       <div
-        className="relative cursor-pointer transition-all duration-300 hover:scale-105 group"
+        className="relative cursor-pointer transition-all duration-200 hover:scale-[1.02] group"
         style={{
           width: safeWidth,
           height: safeHeight,
         }}
       >
-        {/* Solid background with border */}
+        {/* Semi-transparent background matching the map's orange outline style */}
         <div
-          className="absolute inset-0 rounded-xl border-3 transition-all duration-300 group-hover:shadow-lg"
+          className="absolute inset-0 rounded-lg transition-all duration-200"
           style={{
-            borderColor: color,
-            borderWidth: 3,
-            backgroundColor: `rgba(0, 0, 0, 0.85)`,
-            boxShadow: `0 0 20px ${color}40`,
+            border: `3px solid ${color}`,
+            backgroundColor: `${color}20`,
+            boxShadow: `0 0 30px ${color}50`,
+          }}
+        />
+        
+        {/* Hover overlay */}
+        <div
+          className="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200"
+          style={{
+            backgroundColor: `${color}30`,
           }}
         />
         
         {/* Content */}
-        <div className="absolute inset-0 flex flex-col items-center justify-center p-2">
-          {/* Venue name */}
+        <div className="absolute inset-0 flex flex-col items-center justify-center p-3">
+          {/* Venue name - large and bold */}
           <span
-            className="text-base font-bold uppercase tracking-wider mb-1"
-            style={{ color }}
+            className="text-xl font-black uppercase tracking-wide mb-2 drop-shadow-lg"
+            style={{ 
+              color,
+              textShadow: "0 2px 4px rgba(0,0,0,0.8)",
+            }}
           >
             {venue}
           </span>
           
-          {/* Flags grid */}
-          <div className="flex flex-wrap justify-center gap-0.5 max-w-full px-1">
+          {/* Flags grid - larger and more visible */}
+          <div 
+            className="flex flex-wrap justify-center items-center gap-1 px-2"
+            style={{ maxWidth: safeWidth - 20 }}
+          >
             {flagsToShow.map((p) => (
               <span
                 key={p.id}
-                className="text-sm leading-none"
+                className="text-lg leading-none drop-shadow"
                 title={p.country}
+                style={{ filter: "drop-shadow(0 1px 2px rgba(0,0,0,0.5))" }}
               >
                 {getFlagEmoji(p.id)}
               </span>
             ))}
             {remainingCount > 0 && (
               <span
-                className="text-xs font-medium ml-1"
-                style={{ color: "var(--muted-foreground)" }}
+                className="text-sm font-bold px-1.5 py-0.5 rounded"
+                style={{ 
+                  backgroundColor: color,
+                  color: "#000",
+                }}
               >
                 +{remainingCount}
               </span>
             )}
           </div>
           
-          {/* Pavilion count */}
+          {/* Click prompt - always visible, more prominent on hover */}
           <span
-            className="text-xs mt-1 opacity-80"
-            style={{ color }}
+            className="text-sm mt-2 font-semibold transition-all duration-200 group-hover:scale-110"
+            style={{ 
+              color,
+              textShadow: "0 1px 3px rgba(0,0,0,0.8)",
+            }}
           >
-            {count} pavilions
-          </span>
-          
-          {/* Click prompt */}
-          <span
-            className="text-xs mt-1 opacity-0 group-hover:opacity-100 transition-opacity font-medium"
-            style={{ color }}
-          >
-            Click to explore →
+            Click to explore
           </span>
         </div>
       </div>

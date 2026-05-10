@@ -82,22 +82,24 @@ function parseGridRef(gridRef: string): { x: number; y: number } | null {
   return null;
 }
 
-// Arsenale zone - measured from map image (orange outlined area)
-// Located at approximately G3-H3 on the grid
+// Arsenale zone - measured from map image (orange outlined L-shaped area)
+// Located at approximately G3-H3 on the grid, east of Castello
+// The orange shape on the map is at roughly x:1180-1380, y:330-450
 const ARSENALE_ZONE = {
-  x: 1200,  // Right side, east of Castello
-  y: 380,   // Upper-middle area (row 3)
-  width: 180,
-  height: 90,
+  x: 1180,  // Left edge of the Arsenale outline
+  y: 340,   // Top edge
+  width: 200,
+  height: 120,
 };
 
-// Giardini zone - measured from map image (orange outlined area)  
-// Located at approximately G4-H5 on the grid
+// Giardini zone - measured from map image (orange outlined pentagon area)  
+// Located at approximately G4-H5 on the grid, southeast of Arsenale
+// The orange shape on the map is at roughly x:1280-1480, y:540-700
 const GIARDINI_ZONE = {
-  x: 1280,  // Far right
-  y: 560,   // Lower area (rows 4-5)
-  width: 180,
-  height: 140,
+  x: 1280,
+  y: 540,
+  width: 200,
+  height: 160,
 };
 
 function createNodesFromPavilions(

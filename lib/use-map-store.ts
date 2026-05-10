@@ -3,11 +3,15 @@
 import { create } from "zustand";
 import type { Pavilion, MapFilters, VenueFilter, SelectionMethodFilter } from "./types";
 
+// Map view states: main Venice view, or zoomed into Arsenale/Giardini
+type MapView = "venice" | "arsenale" | "giardini";
+
 interface MapState {
   pavilions: Pavilion[];
   selectedPavilionId: string | null;
   highlightedFunder: string | null;
   filters: MapFilters;
+  currentView: MapView;
   setPavilions: (pavilions: Pavilion[]) => void;
   selectPavilion: (id: string | null) => void;
   highlightFunder: (funderName: string | null) => void;
@@ -17,6 +21,8 @@ interface MapState {
   setSearch: (search: string) => void;
   setBudgetRange: (range: [number, number]) => void;
   resetFilters: () => void;
+  setCurrentView: (view: MapView) => void;
+  goBack: () => void;
 }
 
 const defaultFilters: MapFilters = {
@@ -32,6 +38,7 @@ export const useMapStore = create<MapState>((set) => ({
   selectedPavilionId: null,
   highlightedFunder: null,
   filters: defaultFilters,
+  currentView: "venice",
   setPavilions: (pavilions) => set({ pavilions }),
   selectPavilion: (id) => set({ selectedPavilionId: id }),
   highlightFunder: (funderName) => set({ highlightedFunder: funderName }),
@@ -46,6 +53,8 @@ export const useMapStore = create<MapState>((set) => ({
   setBudgetRange: (range) =>
     set((state) => ({ filters: { ...state.filters, budgetRange: range } })),
   resetFilters: () => set({ filters: defaultFilters }),
+  setCurrentView: (view) => set({ currentView: view }),
+  goBack: () => set({ currentView: "venice" }),
 }));
 
 export function useFilteredPavilions() {

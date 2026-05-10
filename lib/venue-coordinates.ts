@@ -43,47 +43,55 @@ export const GIARDINI_POSITIONS: Record<number, { x: number; y: number; label: s
 };
 
 // Arsenale building zones (numbered 1-6 from the official map)
-export const ARSENALE_ZONES: Record<number, { x: number; y: number; label: string; countries: string[] }> = {
+// Coordinates are relative to the arsenale-detail-map.png image (1024x890 approx)
+export const ARSENALE_ZONES: Record<number, { x: number; y: number; label: string; countryCodes: string[] }> = {
   1: { 
-    x: 780, y: 620, 
+    x: 340, y: 430, 
     label: "Corderie", 
-    countries: ["In Minor Keys (Central Exhibition)"] 
+    countryCodes: [] // Central Exhibition "In Minor Keys" - no individual pavilions
   },
   2: { 
-    x: 820, y: 580, 
+    x: 420, y: 360, 
     label: "Artiglierie",
-    countries: [
-      "Chile", "India", "Ireland", "Latvia", "Lebanon", "Malta", 
-      "Philippines", "Morocco", "Oman", "Slovenia", "Timor Leste",
-      "Armenia", "Bahamas", "Kyrgyz Republic", "Lithuania", "Montenegro",
-      "North Macedonia", "Pakistan", "Saudi Arabia", "Turkey", "Ukraine"
+    countryCodes: [
+      "CL", "IN", "IE", "LV", "LB", "MT", 
+      "PH", "MA", "OM", "SI", "TL"
     ]
   },
   3: { 
-    x: 860, y: 540, 
+    x: 450, y: 320, 
     label: "Sale d'Armi",
-    countries: [
-      "Albania", "Argentina", "Luxembourg", "Israel", "Mexico", 
-      "Peru", "Saudi Arabia", "Singapore", "Turkey", "Ukraine", 
-      "UAE", "Syria", "Kosovo"
+    countryCodes: [
+      "AL", "AR", "LU", "IL", "MX", 
+      "PE", "SA", "SG", "TR", "UA", "AE"
     ]
   },
   4: { 
-    x: 900, y: 500, 
+    x: 520, y: 190, 
     label: "Tese del Cinquecento",
-    countries: ["Uzbekistan"] 
+    countryCodes: ["UZ"]
   },
   5: { 
-    x: 940, y: 460, 
+    x: 560, y: 200, 
     label: "Padiglione Italia",
-    countries: ["Italy"] 
+    countryCodes: ["IT"]
   },
   6: { 
-    x: 980, y: 420, 
+    x: 600, y: 160, 
     label: "Magazzino delle cisterne",
-    countries: ["China"] 
+    countryCodes: ["CN"]
   },
 };
+
+// Get Arsenale zone number for a country code
+export function getArsenaleZone(countryCode: string): number | null {
+  for (const [zone, data] of Object.entries(ARSENALE_ZONES)) {
+    if (data.countryCodes.includes(countryCode)) {
+      return parseInt(zone);
+    }
+  }
+  return null;
+}
 
 // Grid reference to coordinate mapping for off-site venues
 // Based on the full Venice city map grid (columns 1-6, rows A-H)
