@@ -1,5 +1,5 @@
 import { getPavilions, getPavilionById } from "@/lib/data";
-import { MapContainer } from "@/components/map-container";
+import { GridContainer } from "@/components/grid-container";
 
 interface PageProps {
   searchParams: Promise<{ pavilion?: string }>;
@@ -15,7 +15,7 @@ export default async function Page({ searchParams }: PageProps) {
 
   return (
     <main className="h-screen w-screen flex flex-col overflow-hidden">
-      <MapContainer
+      <GridContainer
         pavilions={pavilions}
         initialSelectedId={initialSelectedId}
         initialPavilion={initialPavilion}
