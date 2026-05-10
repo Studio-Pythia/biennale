@@ -67,13 +67,13 @@ function GridContainerInner({
   return (
     <>
       <header
-        className="flex items-center justify-between px-4 py-3 flex-shrink-0"
+        className="grid grid-cols-[1fr_auto_1fr] items-center px-4 py-3 flex-shrink-0 gap-4"
         style={{
           backgroundColor: "var(--card)",
           borderBottom: "1px solid var(--border)",
         }}
       >
-        <div>
+        <div className="justify-self-start">
           <h1
             className="font-serif text-xl font-bold tracking-tight leading-none"
             style={{ color: "var(--foreground)" }}
@@ -87,7 +87,30 @@ function GridContainerInner({
             Who pays · who picks · who shows
           </p>
         </div>
-        <div className="hidden md:flex items-center gap-4 text-xs">
+
+        <a
+          href="https://russ-jones.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="justify-self-center flex items-center gap-2.5 px-3 py-1.5 rounded-full transition-colors hover:bg-[var(--muted)] group"
+          aria-label="Russ Jones — open russ-jones.com in a new tab"
+        >
+          <img
+            src="/pythia-logo.png"
+            alt=""
+            width={28}
+            height={28}
+            className="opacity-90 group-hover:opacity-100 transition-opacity"
+          />
+          <span
+            className="font-serif text-sm tracking-wide group-hover:underline"
+            style={{ color: "var(--foreground)" }}
+          >
+            Russ Jones
+          </span>
+        </a>
+
+        <div className="hidden md:flex items-center gap-4 text-xs justify-self-end">
           <Stat label="Pavilions" value={pavilions.length} />
           <Stat label="Budget disclosed" value={stats.disclosed} />
           <Stat label="Private funders" value={stats.privateFunderCount} />
