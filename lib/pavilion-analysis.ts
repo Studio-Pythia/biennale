@@ -6,13 +6,6 @@ export interface PavilionAnalysis {
   redFlags: string[];
   fundingSummary: string[];
   selectionSummary: string[];
-  dataProfile: {
-    transparencyScore: number;
-    evidenceStrength: "strong" | "moderate" | "weak";
-    fundingMix: "public_only" | "private_only" | "mixed" | "undisclosed";
-    selectionRisk: "low" | "medium" | "high";
-    sourceCount: number;
-  };
 }
 
 export function analyzePavilion(pavilion: Pavilion): PavilionAnalysis {
