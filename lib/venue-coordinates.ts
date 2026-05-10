@@ -10,37 +10,49 @@
  */
 
 // Giardini pavilion positions (numbered 1-29 from the official map)
-export const GIARDINI_POSITIONS: Record<number, { x: number; y: number; label: string }> = {
-  1: { x: 920, y: 520, label: "Spain" },
-  2: { x: 950, y: 480, label: "Belgium" },
-  3: { x: 980, y: 440, label: "Netherlands" },
-  4: { x: 1020, y: 400, label: "Central Pavilion" },
-  5: { x: 1060, y: 380, label: "Finland" },
-  6: { x: 1100, y: 360, label: "Hungary" },
-  7: { x: 1080, y: 480, label: "United States" },
-  8: { x: 1100, y: 520, label: "Nordic Countries" },
-  9: { x: 1060, y: 540, label: "Denmark" },
-  10: { x: 1040, y: 500, label: "Qatar" },
-  11: { x: 1000, y: 560, label: "Switzerland" },
-  12: { x: 1020, y: 580, label: "Russia" },
-  13: { x: 1060, y: 600, label: "Japan" },
-  14: { x: 1100, y: 620, label: "Korea" },
-  15: { x: 1140, y: 600, label: "Germany" },
-  16: { x: 1180, y: 620, label: "Canada" },
-  17: { x: 1220, y: 580, label: "Great Britain" },
-  18: { x: 1200, y: 520, label: "France" },
-  19: { x: 1180, y: 500, label: "Czech & Slovak Rep." },
-  20: { x: 1220, y: 480, label: "Australia" },
-  21: { x: 1200, y: 440, label: "Uruguay" },
-  22: { x: 1180, y: 420, label: "Brazil" },
-  23: { x: 1140, y: 380, label: "Austria" },
-  24: { x: 1160, y: 340, label: "Serbia" },
-  25: { x: 1200, y: 360, label: "Egypt" },
-  26: { x: 1240, y: 380, label: "Venice Pavilion" },
-  27: { x: 1240, y: 420, label: "Poland" },
-  28: { x: 1280, y: 400, label: "Romania" },
-  29: { x: 1280, y: 360, label: "Greece" },
+// Coordinates are relative to giardini-detail-map.png image
+// The image shows pavilions 1-29 arranged in the gardens with yellow building footprints
+export const GIARDINI_POSITIONS: Record<number, { x: number; y: number; label: string; countryCode: string }> = {
+  1:  { x: 255, y: 410, label: "Spain", countryCode: "ES" },
+  2:  { x: 220, y: 330, label: "Belgium", countryCode: "BE" },
+  3:  { x: 260, y: 270, label: "Netherlands", countryCode: "NL" },
+  4:  { x: 380, y: 215, label: "Central Pavilion", countryCode: "" }, // Main exhibition
+  5:  { x: 450, y: 200, label: "Finland", countryCode: "FI" },
+  6:  { x: 530, y: 180, label: "Hungary", countryCode: "HU" },
+  7:  { x: 530, y: 330, label: "United States", countryCode: "US" },
+  8:  { x: 460, y: 370, label: "Nordic Countries", countryCode: "NO" }, // Norway+Sweden+Finland shared
+  9:  { x: 410, y: 420, label: "Denmark", countryCode: "DK" },
+  10: { x: 440, y: 320, label: "Qatar", countryCode: "QA" },
+  11: { x: 350, y: 480, label: "Switzerland", countryCode: "CH" },
+  12: { x: 420, y: 490, label: "Russia", countryCode: "RU" },
+  13: { x: 530, y: 500, label: "Japan", countryCode: "JP" },
+  14: { x: 600, y: 500, label: "Korea", countryCode: "KR" },
+  15: { x: 680, y: 480, label: "Germany", countryCode: "DE" },
+  16: { x: 780, y: 490, label: "Canada", countryCode: "CA" },
+  17: { x: 820, y: 410, label: "Great Britain", countryCode: "GB" },
+  18: { x: 720, y: 380, label: "France", countryCode: "FR" },
+  19: { x: 680, y: 380, label: "Czech & Slovak Rep.", countryCode: "CZ" },
+  20: { x: 720, y: 330, label: "Australia", countryCode: "AU" },
+  21: { x: 680, y: 290, label: "Uruguay", countryCode: "UY" },
+  22: { x: 620, y: 230, label: "Brazil", countryCode: "BR" },
+  23: { x: 540, y: 120, label: "Austria", countryCode: "AT" },
+  24: { x: 600, y: 100, label: "Serbia", countryCode: "RS" },
+  25: { x: 680, y: 130, label: "Egypt", countryCode: "EG" },
+  26: { x: 720, y: 180, label: "Venice Pavilion", countryCode: "" },
+  27: { x: 750, y: 210, label: "Poland", countryCode: "PL" },
+  28: { x: 800, y: 180, label: "Romania", countryCode: "RO" },
+  29: { x: 820, y: 240, label: "Greece", countryCode: "GR" },
 };
+
+// Get Giardini position number for a country code
+export function getGiardiniPosition(countryCode: string): number | null {
+  for (const [pos, data] of Object.entries(GIARDINI_POSITIONS)) {
+    if (data.countryCode === countryCode) {
+      return parseInt(pos);
+    }
+  }
+  return null;
+}
 
 // Arsenale building zones (numbered 1-6 from the official map)
 // Coordinates are relative to the arsenale-detail-map.png image (1024x890 approx)
