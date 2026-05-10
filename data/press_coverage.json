@@ -461,8 +461,27 @@
   "EG": {
     "id": "EG",
     "country": "Egypt",
-    "scraped_at": "2026-05-10T19:40:23+00:00",
-    "entries": []
+    "scraped_at": "2026-05-10T21:21:44+00:00",
+    "entries": [
+      {
+        "outlet": "art_newspaper",
+        "outlet_label": "The Art Newspaper",
+        "url": "https://www.theartnewspaper.com/2026/05/08/venice-biennale-strike-sees-nearly-20-pavilions-temporarily-close",
+        "headline": "Venice Biennale strike sees more than 15 pavilions temporarily or partially close",
+        "published_at": "2026-05-08",
+        "snippet": "The Egypt national pavilion was among approximately 18 pavilions that participated in full or partial closures on May 8 as part of a strike organized by the Art Not Genocide Alliance in protest against Israel's participation in the Venice Biennale 2026.",
+        "sentiment": "mixed",
+        "key_phrases": [
+          "Egypt pavilion closure",
+          "protest action",
+          "Art Not Genocide Alliance strike",
+          "May 8 2026",
+          "temporary closure"
+        ],
+        "validated": true,
+        "validation_notes": "The article contains substantive and specific reporting on the Egypt pavilion's participation in the May 8 strike at the 2026 Venice Biennale, citing official sources."
+      }
+    ]
   },
   "FI": {
     "id": "FI",
@@ -1721,8 +1740,42 @@
   "UY": {
     "id": "UY",
     "country": "Uruguay",
-    "scraped_at": "2026-05-10T19:45:24+00:00",
-    "entries": []
+    "scraped_at": "2026-05-10T21:21:56+00:00",
+    "entries": [
+      {
+        "outlet": "art_newspaper",
+        "outlet_label": "The Art Newspaper",
+        "url": "https://www.theartnewspaper.com/2026/04/28/venice-biennale-2026-all-the-national-pavilions-artists-and-curators-so-far",
+        "headline": "Venice Biennale 2026: all the national pavilions, artists and curators so far",
+        "published_at": "2026-04-28",
+        "snippet": "Uruguay's pavilion features artists ARKEO, Luana Bottallo, Jorge Chavarría, Manuel Navichoc, Ana Lorena Núñez, SOY artistic group and Elsie Wunderlich, with organizers Stefania Pieralice and Elsie Wunderlich from the Ministry of Culture and Sports.",
+        "sentiment": "unknown",
+        "key_phrases": [
+          "national pavilion announcement",
+          "artist and curator list",
+          "Ministry of Culture and Sports",
+          "Latin American representation"
+        ],
+        "validated": true,
+        "validation_notes": "The Art Newspaper's comprehensive pavilion preview lists Uruguay's 2026 Biennale pavilion with artists and organizers, providing substantive information about the country's participation."
+      },
+      {
+        "outlet": "hyperallergic",
+        "outlet_label": "Hyperallergic",
+        "url": "https://hyperallergic.com/hyperallergics-guide-to-the-2026-venice-biennale/",
+        "headline": "Hyperallergic's Guide to the 2026 Venice Biennale",
+        "published_at": "2026-04-24",
+        "snippet": "Artist Margaret Whyte will represent Uruguay at the 2026 Venice Biennale, focusing on the concept of antifragility developed by Nassim Taleb.",
+        "sentiment": "neutral",
+        "key_phrases": [
+          "Margaret Whyte representing Uruguay",
+          "antifragility concept",
+          "2026 pavilion"
+        ],
+        "validated": true,
+        "validation_notes": "Hyperallergic's comprehensive guide to 2026 Biennale contains a substantive mention of the Uruguay pavilion with artist Margaret Whyte and her thematic focus on antifragility."
+      }
+    ]
   },
   "VE": {
     "id": "VE",
@@ -1929,7 +1982,7 @@
   "CN": {
     "id": "CN",
     "country": "China",
-    "scraped_at": "2026-05-10T19:47:22+00:00",
+    "scraped_at": "2026-05-10T21:22:09+00:00",
     "entries": []
   },
   "IN": {
@@ -2135,7 +2188,7 @@
   "IT": {
     "id": "IT",
     "country": "Italy",
-    "scraped_at": "2026-05-10T19:48:26+00:00",
+    "scraped_at": "2026-05-10T21:22:21+00:00",
     "entries": []
   },
   "LV": {
@@ -2388,7 +2441,7 @@
   "PA": {
     "id": "PA",
     "country": "Panama",
-    "scraped_at": "2026-05-10T19:50:34+00:00",
+    "scraped_at": "2026-05-10T21:22:34+00:00",
     "entries": []
   },
   "PE": {
@@ -2907,19 +2960,19 @@
   "CM": {
     "id": "CM",
     "country": "Cameroon",
-    "scraped_at": "2026-05-10T19:54:01+00:00",
+    "scraped_at": "2026-05-10T21:22:45+00:00",
     "entries": []
   },
   "HR": {
     "id": "HR",
     "country": "Croatia",
-    "scraped_at": "2026-05-10T19:54:24+00:00",
+    "scraped_at": "2026-05-10T21:22:56+00:00",
     "entries": []
   },
   "CU": {
     "id": "CU",
     "country": "Cuba",
-    "scraped_at": "2026-05-10T19:54:43+00:00",
+    "scraped_at": "2026-05-10T21:23:07+00:00",
     "entries": []
   },
   "CY": {
@@ -3198,32 +3251,64 @@
   "GE": {
     "id": "GE",
     "country": "Georgia",
-    "scraped_at": "2026-05-10T19:56:34+00:00",
+    "scraped_at": "2026-05-10T21:23:18+00:00",
     "entries": []
   },
   "GD": {
     "id": "GD",
     "country": "Grenada",
-    "scraped_at": "2026-05-10T19:56:48+00:00",
-    "entries": []
+    "scraped_at": "2026-05-10T21:23:29+00:00",
+    "entries": [
+      {
+        "outlet": "artnews",
+        "outlet_label": "ARTnews",
+        "url": "https://www.artnews.com/art-news/news/odds-ends-a-rolling-log-of-sights-and-observations-from-venice-12507/",
+        "headline": "Odds & Ends: A Rolling Log of Sights and Observations from Venice",
+        "published_at": "2019-11-21",
+        "snippet": "",
+        "sentiment": "unknown",
+        "key_phrases": [],
+        "validated": false,
+        "validation_notes": "Article mentions Grenada Pavilion from 2019 Venice Biennale (58th edition), not 2026 Biennale. No substantive 2026 Grenada pavilion coverage found on artnews.com despite three targeted searches."
+      }
+    ]
   },
   "GT": {
     "id": "GT",
     "country": "Guatemala",
-    "scraped_at": "2026-05-10T19:57:07+00:00",
+    "scraped_at": "2026-05-10T21:23:42+00:00",
     "entries": []
   },
   "GN": {
     "id": "GN",
     "country": "Guinea",
-    "scraped_at": "2026-05-10T19:57:23+00:00",
+    "scraped_at": "2026-05-10T21:23:54+00:00",
     "entries": []
   },
   "HT": {
     "id": "HT",
     "country": "Haiti",
-    "scraped_at": "2026-05-10T19:57:37+00:00",
-    "entries": []
+    "scraped_at": "2026-05-10T21:24:05+00:00",
+    "entries": [
+      {
+        "outlet": "hyperallergic",
+        "outlet_label": "Hyperallergic",
+        "url": "https://hyperallergic.com/in-minor-keys-hits-all-the-right-notes/",
+        "headline": "\"In Minor Keys\" Hits All the Right Notes",
+        "published_at": "2026-05-07",
+        "snippet": "Edouard Duval-Carrié, a Haitian-born artist, created a large pillar titled \"Poto Mitan\" (2026) alongside paintings and bronze sculptures that highlight Haiti's spiritual traditions and histories central to the country's self-image.",
+        "sentiment": "positive",
+        "key_phrases": [
+          "Haitian spiritual traditions",
+          "Poto Mitan pillar installation",
+          "bronze sculptures",
+          "Edouard Duval-Carrié",
+          "self-image retelling"
+        ],
+        "validated": true,
+        "validation_notes": "Article substantively discusses Haiti's representation at Venice Biennale 2026 through Haitian artist Edouard Duval-Carrié's work in the main exhibition In Minor Keys."
+      }
+    ]
   },
   "VA": {
     "id": "VA",
@@ -3349,14 +3434,52 @@
   "ID": {
     "id": "ID",
     "country": "Indonesia",
-    "scraped_at": "2026-05-10T19:58:18+00:00",
-    "entries": []
+    "scraped_at": "2026-05-10T21:24:19+00:00",
+    "entries": [
+      {
+        "outlet": "artnews",
+        "outlet_label": "ARTnews",
+        "url": "https://www.artnews.com/art-news/artists/natasha-tontey-venice-biennale-phantom-combatants-commission-1234782444/",
+        "headline": "Video: Natasha Tontey Unveils New Immersive Installation Exploring Indigenous Resistance During Venice Biennale",
+        "published_at": "2026-05-08",
+        "snippet": "Indonesian artist Natasha Tontey's immersive installation 'The Phantom Combatants and the Metabolism of Disobedient Organs' explores Indigenous identity, cosmologies, and political autonomy through video, sound, light, and sculptural elements.",
+        "sentiment": "positive",
+        "key_phrases": [
+          "immersive installation",
+          "Indigenous identity",
+          "political autonomy",
+          "reimagines resistance fighter",
+          "darkly humorous"
+        ],
+        "validated": false,
+        "validation_notes": "While Tontey is Indonesian, the article focuses on her work as an independent artist at a collateral venue (Ateneo Veneto), not the official Indonesia national pavilion at the Biennale."
+      }
+    ]
   },
   "KZ": {
     "id": "KZ",
     "country": "Kazakhstan",
-    "scraped_at": "2026-05-10T19:58:35+00:00",
-    "entries": []
+    "scraped_at": "2026-05-10T21:24:30+00:00",
+    "entries": [
+      {
+        "outlet": "e_flux",
+        "outlet_label": "e-flux",
+        "url": "https://www.e-flux.com/announcements/606715/jer-iyq-journey-beyond-the-horizon",
+        "headline": "Jerūiyq: Journey Beyond the Horizon",
+        "published_at": null,
+        "snippet": "The Kazakhstan Pavilion at the Venice Biennale presents Jerūiyq, a collection of works by Kazakh artists exploring utopian imagination through pieces ranging from 1970s artworks to contemporary works based on artificial intelligence, addressing historical trauma and reimagining ideal worlds.",
+        "sentiment": "positive",
+        "key_phrases": [
+          "Kazakh utopian imagination",
+          "contemporary Kazakh artists",
+          "reimagining ideal worlds",
+          "decolonizing the future",
+          "nomadic mysticism meets modernity"
+        ],
+        "validated": true,
+        "validation_notes": "A substantive e-flux announcement specifically about the Kazakhstan Pavilion at the Venice Biennale 2026 was found, describing the exhibition concept and participating artists."
+      }
+    ]
   },
   "XK": {
     "id": "XK",
@@ -3512,7 +3635,7 @@
   "MN": {
     "id": "MN",
     "country": "Mongolia",
-    "scraped_at": "2026-05-10T19:59:48+00:00",
+    "scraped_at": "2026-05-10T21:24:40+00:00",
     "entries": []
   },
   "ME": {
@@ -3609,7 +3732,7 @@
   "MK": {
     "id": "MK",
     "country": "North Macedonia",
-    "scraped_at": "2026-05-10T20:00:48+00:00",
+    "scraped_at": "2026-05-10T21:24:53+00:00",
     "entries": []
   },
   "PK": {
@@ -3665,19 +3788,19 @@
   "SM": {
     "id": "SM",
     "country": "San Marino",
-    "scraped_at": "2026-05-10T20:01:31+00:00",
+    "scraped_at": "2026-05-10T21:25:06+00:00",
     "entries": []
   },
   "SN": {
     "id": "SN",
     "country": "Senegal",
-    "scraped_at": "2026-05-10T20:01:51+00:00",
+    "scraped_at": "2026-05-10T21:25:18+00:00",
     "entries": []
   },
   "SL": {
     "id": "SL",
     "country": "Sierra Leone",
-    "scraped_at": "2026-05-10T20:02:02+00:00",
+    "scraped_at": "2026-05-10T21:25:28+00:00",
     "entries": []
   },
   "SO": {
@@ -3733,7 +3856,7 @@
   "TZ": {
     "id": "TZ",
     "country": "Tanzania",
-    "scraped_at": "2026-05-10T20:02:45+00:00",
+    "scraped_at": "2026-05-10T21:25:38+00:00",
     "entries": []
   },
   "BS": {
@@ -3800,19 +3923,37 @@
   "UG": {
     "id": "UG",
     "country": "Uganda",
-    "scraped_at": "2026-05-10T20:03:21+00:00",
+    "scraped_at": "2026-05-10T21:25:49+00:00",
     "entries": []
   },
   "VN": {
     "id": "VN",
     "country": "Vietnam",
-    "scraped_at": "2026-05-10T20:03:36+00:00",
+    "scraped_at": "2026-05-10T21:26:00+00:00",
     "entries": []
   },
   "ZW": {
     "id": "ZW",
     "country": "Zimbabwe",
-    "scraped_at": "2026-05-10T20:03:58+00:00",
-    "entries": []
+    "scraped_at": "2026-05-10T21:26:11+00:00",
+    "entries": [
+      {
+        "outlet": "frieze",
+        "outlet_label": "Frieze",
+        "url": "https://www.frieze.com/article/africa-venice",
+        "headline": "Africa in Venice",
+        "published_at": null,
+        "snippet": "The article discusses African pavilions at the Venice Biennale, including the Zimbabwe Pavilion curated by Raphael Chikukwa. It describes a room featuring Michele Mathison's installation of burnt tree stumps juxtaposed against Rashid Jogee's black painting, which dramatizes Chikukwa's theme of faith while depicting Zimbabwe's political decline.",
+        "sentiment": "negative",
+        "key_phrases": [
+          "Zimbabwe Pavilion curator Raphael Chikukwa",
+          "burnt tree stumps installation",
+          "political slide into ruin",
+          "continuity and stability"
+        ],
+        "validated": false,
+        "validation_notes": "This article discusses the 2013 Venice Biennale, not the 2026 Biennale. It is a historical retrospective and does not constitute substantive coverage of the Zimbabwe pavilion at Biennale 2026."
+      }
+    ]
   }
 }
