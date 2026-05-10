@@ -75,13 +75,16 @@ function GridContainerInner({
       >
         <div>
           <h1
-            className="text-lg font-bold tracking-tight"
+            className="font-serif text-xl font-bold tracking-tight leading-none"
             style={{ color: "var(--foreground)" }}
           >
             Venice Biennale 2026
           </h1>
-          <p className="text-xs" style={{ color: "var(--primary)" }}>
-            Who pays, who picks, who shows
+          <p
+            className="text-[11px] uppercase tracking-[0.18em] mt-1.5"
+            style={{ color: "var(--primary)" }}
+          >
+            Who pays · who picks · who shows
           </p>
         </div>
         <div className="hidden md:flex items-center gap-4 text-xs">

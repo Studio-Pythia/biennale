@@ -7,6 +7,13 @@ import type { Pavilion } from "@/lib/types";
 import { getFlagEmoji } from "@/lib/country-flags";
 import { FUNDER_TYPE_COLORS } from "@/lib/funder-style";
 import { analyzePavilion } from "@/lib/pavilion-analysis";
+import {
+  getValidatedEntries,
+  PRESS_OUTLET_COUNT,
+  SENTIMENT_COLORS,
+  SENTIMENT_LABELS,
+  type PressEntry,
+} from "@/lib/press";
 
 function FunderCard({
   funder,
@@ -51,6 +58,68 @@ function FunderCard({
   );
 }
 
+function PressCard({ entry }: { entry: PressEntry }) {
+  const sentimentColor = SENTIMENT_COLORS[entry.sentiment] ?? SENTIMENT_COLORS.unknown;
+  return (
+    <a
+      href={entry.url}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="block p-3 rounded-lg transition-colors hover:bg-[var(--muted)] group"
+      style={{ border: "1px solid var(--border)" }}
+    >
+      <div className="flex items-start justify-between gap-2 mb-1.5">
+        <span
+          className="text-[10px] uppercase tracking-wider font-medium"
+          style={{ color: "var(--muted-foreground)" }}
+        >
+          {entry.outlet_label}
+          {entry.published_at ? ` · ${entry.published_at}` : ""}
+        </span>
+        <span
+          className="text-[10px] px-1.5 py-0.5 rounded-full capitalize flex-shrink-0"
+          style={{
+            backgroundColor: `${sentimentColor}20`,
+            color: sentimentColor,
+          }}
+        >
+          {SENTIMENT_LABELS[entry.sentiment] ?? entry.sentiment}
+        </span>
+      </div>
+      <div
+        className="text-sm font-medium leading-snug group-hover:underline"
+        style={{ color: "var(--foreground)" }}
+      >
+        {entry.headline}
+      </div>
+      {entry.snippet && (
+        <p
+          className="text-xs mt-1.5 leading-relaxed"
+          style={{ color: "var(--muted-foreground)" }}
+        >
+          {entry.snippet}
+        </p>
+      )}
+      {entry.key_phrases.length > 0 && (
+        <div className="flex flex-wrap gap-1 mt-2">
+          {entry.key_phrases.slice(0, 4).map((phrase) => (
+            <span
+              key={phrase}
+              className="text-[10px] px-1.5 py-0.5 rounded"
+              style={{
+                backgroundColor: "var(--muted)",
+                color: "var(--muted-foreground)",
+              }}
+            >
+              {phrase}
+            </span>
+          ))}
+        </div>
+      )}
+    </a>
+  );
+}
+
 function RedFlagBadge({ flag }: { flag: string }) {
   return (
     <div
@@ -73,6 +142,7 @@ interface DetailPanelProps {
 export function DetailPanel({ pavilion }: DetailPanelProps) {
   const selectPavilion = usePavilionStore((s) => s.selectPavilion);
   const analysis = pavilion ? analyzePavilion(pavilion) : null;
+  const pressEntries = pavilion ? getValidatedEntries(pavilion.id) : [];
 
   return (
     <AnimatePresence mode="wait">
@@ -113,7 +183,7 @@ export function DetailPanel({ pavilion }: DetailPanelProps) {
                   </span>
                 </div>
                 <h2
-                  className="text-xl font-bold mt-1"
+                  className="font-serif text-2xl font-bold mt-1 leading-tight"
                   style={{ color: "var(--foreground)" }}
                 >
                   {pavilion.country}
@@ -152,7 +222,7 @@ export function DetailPanel({ pavilion }: DetailPanelProps) {
                 Exhibition
               </h3>
               <div
-                className="text-lg font-semibold"
+                className="font-serif text-lg italic leading-snug"
                 style={{ color: "var(--foreground)" }}
               >
                 {pavilion.show_title}
@@ -269,6 +339,32 @@ export function DetailPanel({ pavilion }: DetailPanelProps) {
                 <div className="space-y-2">
                   {pavilion.private_funders.map((funder, i) => (
                     <FunderCard key={i} funder={funder} />
+                  ))}
+                </div>
+              </section>
+            )}
+
+            {/* Press Coverage */}
+            {pressEntries.length > 0 && (
+              <section>
+                <h3
+                  className="text-xs uppercase tracking-wider mb-2 flex items-center justify-between"
+                  style={{ color: "var(--muted-foreground)" }}
+                >
+                  <span>Press</span>
+                  <span
+                    className="text-[10px] font-normal px-1.5 py-0.5 rounded-full"
+                    style={{
+                      backgroundColor: "var(--muted)",
+                      color: "var(--foreground)",
+                    }}
+                  >
+                    {pressEntries.length}/{PRESS_OUTLET_COUNT} outlets
+                  </span>
+                </h3>
+                <div className="space-y-2">
+                  {pressEntries.map((entry) => (
+                    <PressCard key={entry.url} entry={entry} />
                   ))}
                 </div>
               </section>
