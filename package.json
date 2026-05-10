@@ -1,6 +1,7 @@
 {
   "name": "biennale-map",
   "version": "1.0.0",
+  "type": "module",
   "description": "Interactive node-based map of the 2026 Venice Art Biennale financing architecture",
   "scripts": {
     "dev": "next dev --turbopack",

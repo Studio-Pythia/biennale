@@ -22,7 +22,7 @@ import {
   getPavilionsByFunder,
 } from "@/lib/use-map-store";
 import type { Pavilion } from "@/lib/types";
-import { getVenueColor } from "@/lib/data";
+import { getVenueColor, getPavilionCoords, getGiardiniPositions, getArsenaleZones } from "@/lib/data";
 
 const nodeTypes = {
   pavilion: PavilionNode,
@@ -30,52 +30,92 @@ const nodeTypes = {
 };
 
 // Scaling factor to spread nodes across the canvas
-const SCALE_X = 3;
-const SCALE_Y = 3;
-const OFFSET_X = -3200;
-const OFFSET_Y = -1100;
+const SCALE = 1.5;
+const OFFSET_X = -200;
+const OFFSET_Y = -100;
 
 function createNodesFromPavilions(pavilions: Pavilion[]): Node[] {
   const nodes: Node[] = [];
 
-  // Group pavilions by venue for labels
-  const venueGroups = pavilions.reduce((acc, p) => {
-    if (!acc[p.venue]) acc[p.venue] = [];
-    acc[p.venue].push(p);
-    return acc;
-  }, {} as Record<string, Pavilion[]>);
-
-  // Add venue label nodes
-  const venueLabelPositions: Record<string, { x: number; y: number }> = {
-    Giardini: { x: 1200 * SCALE_X + OFFSET_X, y: 400 * SCALE_Y + OFFSET_Y },
-    Arsenale: { x: 1050 * SCALE_X + OFFSET_X, y: 580 * SCALE_Y + OFFSET_Y },
-    "Off-site": { x: 900 * SCALE_X + OFFSET_X, y: 350 * SCALE_Y + OFFSET_Y },
-  };
-
-  Object.entries(venueGroups).forEach(([venue, venuePavilions]) => {
-    const pos = venueLabelPositions[venue] || { x: 0, y: 0 };
+  // Add Giardini position labels
+  const giardiniPositions = getGiardiniPositions();
+  Object.entries(giardiniPositions).forEach(([num, pos]) => {
     nodes.push({
-      id: `venue-${venue}`,
+      id: `giardini-pos-${num}`,
       type: "venueLabel",
-      position: pos,
+      position: {
+        x: pos.x * SCALE + OFFSET_X - 10,
+        y: pos.y * SCALE + OFFSET_Y - 40,
+      },
       data: {
-        label: venue,
-        venue: venue,
-        count: venuePavilions.length,
+        label: num,
+        venue: "Giardini",
+        isPositionNumber: true,
       },
       draggable: false,
       selectable: false,
     });
   });
 
-  // Add pavilion nodes
+  // Add Arsenale zone labels
+  const arsenaleZones = getArsenaleZones();
+  Object.entries(arsenaleZones).forEach(([num, zone]) => {
+    nodes.push({
+      id: `arsenale-zone-${num}`,
+      type: "venueLabel",
+      position: {
+        x: zone.x * SCALE + OFFSET_X,
+        y: zone.y * SCALE + OFFSET_Y - 50,
+      },
+      data: {
+        label: zone.label,
+        venue: "Arsenale",
+        count: zone.countries.length,
+      },
+      draggable: false,
+      selectable: false,
+    });
+  });
+
+  // Add main venue area labels
+  const venueLabels = [
+    { id: "venue-giardini", label: "GIARDINI", x: 1100, y: 300, venue: "Giardini" },
+    { id: "venue-arsenale", label: "ARSENALE", x: 850, y: 450, venue: "Arsenale" },
+    { id: "venue-offsite", label: "OFF-SITE VENUES", x: 400, y: 300, venue: "Off-site" },
+  ];
+
+  venueLabels.forEach((v) => {
+    nodes.push({
+      id: v.id,
+      type: "venueLabel",
+      position: {
+        x: v.x * SCALE + OFFSET_X,
+        y: v.y * SCALE + OFFSET_Y,
+      },
+      data: {
+        label: v.label,
+        venue: v.venue,
+        isMainLabel: true,
+      },
+      draggable: false,
+      selectable: false,
+    });
+  });
+
+  // Add pavilion nodes using accurate coordinates
   pavilions.forEach((pavilion) => {
+    const coords = getPavilionCoords(pavilion);
+    
+    // Add slight random offset for pavilions in same zone to prevent overlap
+    const jitterX = (Math.random() - 0.5) * 30;
+    const jitterY = (Math.random() - 0.5) * 30;
+    
     nodes.push({
       id: pavilion.id,
       type: "pavilion",
       position: {
-        x: pavilion.coords.x * SCALE_X + OFFSET_X,
-        y: pavilion.coords.y * SCALE_Y + OFFSET_Y,
+        x: coords.x * SCALE + OFFSET_X + jitterX,
+        y: coords.y * SCALE + OFFSET_Y + jitterY,
       },
       data: { pavilion },
     });
@@ -175,14 +215,14 @@ export function VeniceMap({ pavilions: allPavilions }: VeniceMapProps) {
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
         nodeTypes={nodeTypes as any}
         fitView
-        fitViewOptions={{ padding: 0.2 }}
-        minZoom={0.1}
-        maxZoom={2}
+        fitViewOptions={{ padding: 0.3 }}
+        minZoom={0.3}
+        maxZoom={3}
         proOptions={{ hideAttribution: true }}
       >
         <Background
           variant={BackgroundVariant.Dots}
-          gap={40}
+          gap={30}
           size={1}
           color="var(--border)"
         />
