@@ -81,5 +81,6 @@ The app renders fallback styling when image files are missing, so development ca
 - `merge_tier3.py` — appended the Tier 3 light-touch country research onto the Tier 1+2 deep-research seed.
 - `remap_coords.py` — remapped the original three-zone schematic coordinates onto a unified 1320×660 viewBox for the single-Venice-silhouette layout.
 - `add_grid_refs.py` — populated the `grid_ref` field from the Il Giornale dell'Arte / Allemandi guide.
+- `data_quality_agent.py` — automated QA agent that scans funding/selection/source quality and writes a prioritized report to `reports/`.
 
 Re-run any script in place: `python3 scripts/<name>.py`.
