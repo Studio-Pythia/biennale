@@ -1,30 +1,21 @@
 "use client";
 
 import { motion, AnimatePresence } from "framer-motion";
-import { useMapStore } from "@/lib/use-map-store";
+import { usePavilionStore } from "@/lib/use-pavilion-store";
 import { formatBudget, getVenueColor, getSelectionMethodLabel } from "@/lib/data";
 import type { Pavilion } from "@/lib/types";
 import { getFlagEmoji } from "@/lib/country-flags";
+import { FUNDER_TYPE_COLORS } from "@/lib/funder-style";
 import { analyzePavilion } from "@/lib/pavilion-analysis";
 
 function FunderCard({
   funder,
-  onHighlight,
 }: {
   funder: Pavilion["private_funders"][0];
-  onHighlight: (name: string) => void;
 }) {
-  const typeColors: Record<string, string> = {
-    individual: "#a78bfa",
-    foundation: "#60a5fa",
-    corporate: "#fbbf24",
-    gallery: "#f472b6",
-  };
-
   return (
-    <button
-      onClick={() => onHighlight(funder.name)}
-      className="w-full text-left p-3 rounded-lg transition-colors hover:bg-[var(--muted)]"
+    <div
+      className="w-full text-left p-3 rounded-lg"
       style={{ border: "1px solid var(--border)" }}
     >
       <div className="flex items-start justify-between gap-2">
@@ -39,8 +30,8 @@ function FunderCard({
         <span
           className="text-xs px-2 py-0.5 rounded-full capitalize"
           style={{
-            backgroundColor: `${typeColors[funder.type] || "#6b7280"}20`,
-            color: typeColors[funder.type] || "#6b7280",
+            backgroundColor: `${FUNDER_TYPE_COLORS[funder.type] || "#6b7280"}20`,
+            color: FUNDER_TYPE_COLORS[funder.type] || "#6b7280",
           }}
         >
           {funder.type}
@@ -56,7 +47,7 @@ function FunderCard({
           {funder.notes}
         </div>
       )}
-    </button>
+    </div>
   );
 }
 
@@ -80,16 +71,8 @@ interface DetailPanelProps {
 }
 
 export function DetailPanel({ pavilion }: DetailPanelProps) {
-  const { selectPavilion, highlightFunder, highlightedFunder } = useMapStore();
+  const selectPavilion = usePavilionStore((s) => s.selectPavilion);
   const analysis = pavilion ? analyzePavilion(pavilion) : null;
-
-  const handleFunderHighlight = (funderName: string) => {
-    if (highlightedFunder === funderName) {
-      highlightFunder(null);
-    } else {
-      highlightFunder(funderName);
-    }
-  };
 
   return (
     <AnimatePresence mode="wait">
@@ -282,23 +265,10 @@ export function DetailPanel({ pavilion }: DetailPanelProps) {
                   style={{ color: "var(--muted-foreground)" }}
                 >
                   Private Funders
-                  {highlightedFunder && (
-                    <button
-                      onClick={() => highlightFunder(null)}
-                      className="ml-2 text-xs underline"
-                      style={{ color: "var(--primary)" }}
-                    >
-                      Clear highlight
-                    </button>
-                  )}
                 </h3>
                 <div className="space-y-2">
                   {pavilion.private_funders.map((funder, i) => (
-                    <FunderCard
-                      key={i}
-                      funder={funder}
-                      onHighlight={handleFunderHighlight}
-                    />
+                    <FunderCard key={i} funder={funder} />
                   ))}
                 </div>
               </section>
@@ -464,7 +434,7 @@ export function DetailPanel({ pavilion }: DetailPanelProps) {
               </svg>
             </div>
             <p style={{ color: "var(--muted-foreground)" }}>
-              Click a pavilion on the map to view details
+              Select a pavilion to view its funding breakdown
             </p>
           </div>
         </motion.div>

@@ -42,11 +42,16 @@ export interface Pavilion {
 
 export type VenueFilter = "all" | "Giardini" | "Arsenale" | "Off-site";
 export type SelectionMethodFilter = "all" | "open_call" | "panel" | "ministerial" | "invitation";
+export type BudgetTransparencyFilter = "all" | "disclosed" | "undisclosed";
+export type FlagSeverityFilter = "all" | "red" | "clean";
+export type FunderType = Funder["type"];
+export type SortKey = "country" | "budget_desc" | "red_flags_desc" | "private_funders_desc";
 
-export interface MapFilters {
+export interface PavilionFilters {
   venue: VenueFilter;
   selectionMethod: SelectionMethodFilter;
-  redFlagsOnly: boolean;
+  funderTypes: FunderType[];
+  budgetTransparency: BudgetTransparencyFilter;
+  flagSeverity: FlagSeverityFilter;
   search: string;
-  budgetRange: [number, number];
 }
