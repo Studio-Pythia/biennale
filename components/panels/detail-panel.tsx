@@ -5,6 +5,7 @@ import { useMapStore } from "@/lib/use-map-store";
 import { formatBudget, getVenueColor, getSelectionMethodLabel } from "@/lib/data";
 import type { Pavilion } from "@/lib/types";
 import { getFlagEmoji } from "@/lib/country-flags";
+import { analyzePavilion } from "@/lib/pavilion-analysis";
 
 function FunderCard({
   funder,
@@ -80,6 +81,7 @@ interface DetailPanelProps {
 
 export function DetailPanel({ pavilion }: DetailPanelProps) {
   const { selectPavilion, highlightFunder, highlightedFunder } = useMapStore();
+  const analysis = pavilion ? analyzePavilion(pavilion) : null;
 
   const handleFunderHighlight = (funderName: string) => {
     if (highlightedFunder === funderName) {
@@ -302,8 +304,91 @@ export function DetailPanel({ pavilion }: DetailPanelProps) {
               </section>
             )}
 
+            {/* Funding & Selection Analysis */}
+            {analysis && (
+              <section>
+                <h3
+                  className="text-xs uppercase tracking-wider mb-2"
+                  style={{ color: "var(--muted-foreground)" }}
+                >
+                  Funding & Selection Analysis
+                </h3>
+                <div className="mb-3 p-3 rounded-lg" style={{ border: "1px solid var(--border)", backgroundColor: "var(--muted)" }}>
+                  <div className="flex items-center justify-between text-xs mb-2" style={{ color: "var(--muted-foreground)" }}>
+                    <span>Transparency Score</span>
+                    <span>{analysis.dataProfile.transparencyScore}/100</span>
+                  </div>
+                  <div className="w-full h-2 rounded-full" style={{ backgroundColor: "rgba(255,255,255,0.08)" }}>
+                    <div
+                      className="h-2 rounded-full"
+                      style={{
+                        width: `${analysis.dataProfile.transparencyScore}%`,
+                        backgroundColor: analysis.dataProfile.transparencyScore >= 70 ? "rgb(34,197,94)" : analysis.dataProfile.transparencyScore >= 45 ? "rgb(250,204,21)" : "rgb(244,63,94)",
+                      }}
+                    />
+                  </div>
+                  <div className="mt-2 text-xs" style={{ color: "var(--foreground)" }}>
+                    Evidence: <strong>{analysis.dataProfile.evidenceStrength}</strong> · Funding mix: <strong>{analysis.dataProfile.fundingMix.replace("_", " ")}</strong> · Selection risk: <strong>{analysis.dataProfile.selectionRisk}</strong> · Sources: <strong>{analysis.dataProfile.sourceCount}</strong>
+                  </div>
+                </div>
+                <ul className="space-y-1">
+                  {[...analysis.fundingSummary, ...analysis.selectionSummary].map((line) => (
+                    <li key={line} className="text-sm" style={{ color: "var(--foreground)" }}>
+                      • {line}
+                    </li>
+                  ))}
+                </ul>
+              </section>
+            )}
+
+            {analysis && analysis.greenFlags.length > 0 && (
+              <section>
+                <h3 className="text-xs uppercase tracking-wider mb-2" style={{ color: "rgb(34, 197, 94)" }}>
+                  Green Flags
+                </h3>
+                <div className="space-y-2">
+                  {analysis.greenFlags.map((flag, i) => (
+                    <div
+                      key={`${flag}-${i}`}
+                      className="p-3 rounded-lg text-sm"
+                      style={{
+                        backgroundColor: "rgba(34, 197, 94, 0.12)",
+                        border: "1px solid rgba(34, 197, 94, 0.3)",
+                        color: "rgb(22, 163, 74)",
+                      }}
+                    >
+                      {flag}
+                    </div>
+                  ))}
+                </div>
+              </section>
+            )}
+
+            {analysis && analysis.yellowFlags.length > 0 && (
+              <section>
+                <h3 className="text-xs uppercase tracking-wider mb-2" style={{ color: "rgb(202, 138, 4)" }}>
+                  Yellow Flags
+                </h3>
+                <div className="space-y-2">
+                  {analysis.yellowFlags.map((flag, i) => (
+                    <div
+                      key={`${flag}-${i}`}
+                      className="p-3 rounded-lg text-sm"
+                      style={{
+                        backgroundColor: "rgba(250, 204, 21, 0.12)",
+                        border: "1px solid rgba(250, 204, 21, 0.3)",
+                        color: "rgb(161, 98, 7)",
+                      }}
+                    >
+                      {flag}
+                    </div>
+                  ))}
+                </div>
+              </section>
+            )}
+
             {/* Red Flags */}
-            {pavilion.red_flags.length > 0 && (
+            {analysis && analysis.redFlags.length > 0 && (
               <section>
                 <h3
                   className="text-xs uppercase tracking-wider mb-2 flex items-center gap-2"
@@ -316,7 +401,7 @@ export function DetailPanel({ pavilion }: DetailPanelProps) {
                   Red Flags
                 </h3>
                 <div className="space-y-2">
-                  {pavilion.red_flags.map((flag, i) => (
+                  {analysis.redFlags.map((flag, i) => (
                     <RedFlagBadge key={i} flag={flag} />
                   ))}
                 </div>

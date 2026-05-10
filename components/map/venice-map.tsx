@@ -146,38 +146,54 @@ function createNodesFromPavilions(pavilions: Pavilion[]): Node[] {
   const arsenalePavilions = pavilions.filter(p => p.venue === "Arsenale");
   const offsitePavilions = pavilions.filter(p => p.venue === "Off-site");
 
-  // Position Giardini pavilions in a grid layout
+  // Position Giardini pavilions from coordinate mapping with a bounded fallback
   giardiniPavilions.forEach((pavilion, index) => {
+    const coords = getPavilionCoords(pavilion);
+    const jitter = getStableJitter(pavilion.id, 15);
     const cols = 6;
     const row = Math.floor(index / cols);
     const col = index % cols;
-    const jitter = getStableJitter(pavilion.id, 15);
-    
+    const fallback = {
+      x: LAYOUT.giardini.x + col * 80,
+      y: LAYOUT.giardini.y + row * 70,
+    };
+
+    const mappedX = LAYOUT.giardini.x + (coords.x * 0.45) + jitter.x;
+    const mappedY = LAYOUT.giardini.y + (coords.y * 0.4) + jitter.y;
+
     nodes.push({
       id: pavilion.id,
       type: "pavilion",
       position: {
-        x: LAYOUT.giardini.x + col * 80 + jitter.x,
-        y: LAYOUT.giardini.y + row * 70 + jitter.y,
+        x: Number.isFinite(mappedX) ? mappedX : fallback.x + jitter.x,
+        y: Number.isFinite(mappedY) ? mappedY : fallback.y + jitter.y,
       },
       data: { pavilion },
       zIndex: 10,
     });
   });
 
-  // Position Arsenale pavilions in rows
+  // Position Arsenale pavilions from coordinate mapping with a bounded fallback
   arsenalePavilions.forEach((pavilion, index) => {
+    const coords = getPavilionCoords(pavilion);
+    const jitter = getStableJitter(pavilion.id, 12);
     const cols = 5;
     const row = Math.floor(index / cols);
     const col = index % cols;
-    const jitter = getStableJitter(pavilion.id, 12);
-    
+    const fallback = {
+      x: LAYOUT.arsenale.x + col * 70,
+      y: LAYOUT.arsenale.y + row * 60,
+    };
+
+    const mappedX = LAYOUT.arsenale.x + (coords.x * 0.3) + jitter.x;
+    const mappedY = LAYOUT.arsenale.y + (coords.y * 0.25) + jitter.y;
+
     nodes.push({
       id: pavilion.id,
       type: "pavilion",
       position: {
-        x: LAYOUT.arsenale.x + col * 70 + jitter.x,
-        y: LAYOUT.arsenale.y + row * 60 + jitter.y,
+        x: Number.isFinite(mappedX) ? mappedX : fallback.x + jitter.x,
+        y: Number.isFinite(mappedY) ? mappedY : fallback.y + jitter.y,
       },
       data: { pavilion },
       zIndex: 10,

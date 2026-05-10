@@ -1,0 +1,582 @@
+{
+  "records_scanned": 97,
+  "issues_found": 72,
+  "issues": [
+    {
+      "pavilion_id": "EG",
+      "country": "Egypt",
+      "severity": "medium",
+      "category": "sources",
+      "message": "Fewer than 2 source links.",
+      "fix_hint": "Add at least two corroborating sources (official + independent)."
+    },
+    {
+      "pavilion_id": "HU",
+      "country": "Hungary",
+      "severity": "medium",
+      "category": "sources",
+      "message": "Fewer than 2 source links.",
+      "fix_hint": "Add at least two corroborating sources (official + independent)."
+    },
+    {
+      "pavilion_id": "RO",
+      "country": "Romania",
+      "severity": "medium",
+      "category": "sources",
+      "message": "Fewer than 2 source links.",
+      "fix_hint": "Add at least two corroborating sources (official + independent)."
+    },
+    {
+      "pavilion_id": "CH",
+      "country": "Switzerland",
+      "severity": "medium",
+      "category": "sources",
+      "message": "Fewer than 2 source links.",
+      "fix_hint": "Add at least two corroborating sources (official + independent)."
+    },
+    {
+      "pavilion_id": "UY",
+      "country": "Uruguay",
+      "severity": "medium",
+      "category": "sources",
+      "message": "Fewer than 2 source links.",
+      "fix_hint": "Add at least two corroborating sources (official + independent)."
+    },
+    {
+      "pavilion_id": "VE",
+      "country": "Venezuela",
+      "severity": "medium",
+      "category": "budget",
+      "message": "Budget amount present but total_budget_disclosed is false.",
+      "fix_hint": "Set total_budget_disclosed=true or remove amount if uncertain."
+    },
+    {
+      "pavilion_id": "VE",
+      "country": "Venezuela",
+      "severity": "high",
+      "category": "funding",
+      "message": "No public or private funding sources listed.",
+      "fix_hint": "Add at least one funding source or explain non-disclosure in notes."
+    },
+    {
+      "pavilion_id": "VE",
+      "country": "Venezuela",
+      "severity": "medium",
+      "category": "sources",
+      "message": "Fewer than 2 source links.",
+      "fix_hint": "Add at least two corroborating sources (official + independent)."
+    },
+    {
+      "pavilion_id": "AL",
+      "country": "Albania",
+      "severity": "medium",
+      "category": "sources",
+      "message": "Fewer than 2 source links.",
+      "fix_hint": "Add at least two corroborating sources (official + independent)."
+    },
+    {
+      "pavilion_id": "AR",
+      "country": "Argentina",
+      "severity": "medium",
+      "category": "sources",
+      "message": "Fewer than 2 source links.",
+      "fix_hint": "Add at least two corroborating sources (official + independent)."
+    },
+    {
+      "pavilion_id": "AM",
+      "country": "Armenia",
+      "severity": "medium",
+      "category": "sources",
+      "message": "Fewer than 2 source links.",
+      "fix_hint": "Add at least two corroborating sources (official + independent)."
+    },
+    {
+      "pavilion_id": "AZ",
+      "country": "Azerbaijan",
+      "severity": "medium",
+      "category": "sources",
+      "message": "Fewer than 2 source links.",
+      "fix_hint": "Add at least two corroborating sources (official + independent)."
+    },
+    {
+      "pavilion_id": "CL",
+      "country": "Chile",
+      "severity": "medium",
+      "category": "sources",
+      "message": "Fewer than 2 source links.",
+      "fix_hint": "Add at least two corroborating sources (official + independent)."
+    },
+    {
+      "pavilion_id": "IN",
+      "country": "India",
+      "severity": "medium",
+      "category": "sources",
+      "message": "Fewer than 2 source links.",
+      "fix_hint": "Add at least two corroborating sources (official + independent)."
+    },
+    {
+      "pavilion_id": "IE",
+      "country": "Ireland",
+      "severity": "medium",
+      "category": "budget",
+      "message": "Budget amount present but total_budget_disclosed is false.",
+      "fix_hint": "Set total_budget_disclosed=true or remove amount if uncertain."
+    },
+    {
+      "pavilion_id": "IE",
+      "country": "Ireland",
+      "severity": "medium",
+      "category": "sources",
+      "message": "Fewer than 2 source links.",
+      "fix_hint": "Add at least two corroborating sources (official + independent)."
+    },
+    {
+      "pavilion_id": "IT",
+      "country": "Italy",
+      "severity": "medium",
+      "category": "sources",
+      "message": "Fewer than 2 source links.",
+      "fix_hint": "Add at least two corroborating sources (official + independent)."
+    },
+    {
+      "pavilion_id": "LV",
+      "country": "Latvia",
+      "severity": "medium",
+      "category": "sources",
+      "message": "Fewer than 2 source links.",
+      "fix_hint": "Add at least two corroborating sources (official + independent)."
+    },
+    {
+      "pavilion_id": "LB",
+      "country": "Lebanon",
+      "severity": "medium",
+      "category": "sources",
+      "message": "Fewer than 2 source links.",
+      "fix_hint": "Add at least two corroborating sources (official + independent)."
+    },
+    {
+      "pavilion_id": "LU",
+      "country": "Luxembourg",
+      "severity": "medium",
+      "category": "sources",
+      "message": "Fewer than 2 source links.",
+      "fix_hint": "Add at least two corroborating sources (official + independent)."
+    },
+    {
+      "pavilion_id": "MT",
+      "country": "Malta",
+      "severity": "medium",
+      "category": "sources",
+      "message": "Fewer than 2 source links.",
+      "fix_hint": "Add at least two corroborating sources (official + independent)."
+    },
+    {
+      "pavilion_id": "MX",
+      "country": "Mexico",
+      "severity": "medium",
+      "category": "sources",
+      "message": "Fewer than 2 source links.",
+      "fix_hint": "Add at least two corroborating sources (official + independent)."
+    },
+    {
+      "pavilion_id": "MA",
+      "country": "Morocco",
+      "severity": "medium",
+      "category": "sources",
+      "message": "Fewer than 2 source links.",
+      "fix_hint": "Add at least two corroborating sources (official + independent)."
+    },
+    {
+      "pavilion_id": "OM",
+      "country": "Oman",
+      "severity": "medium",
+      "category": "sources",
+      "message": "Fewer than 2 source links.",
+      "fix_hint": "Add at least two corroborating sources (official + independent)."
+    },
+    {
+      "pavilion_id": "PA",
+      "country": "Panama",
+      "severity": "medium",
+      "category": "sources",
+      "message": "Fewer than 2 source links.",
+      "fix_hint": "Add at least two corroborating sources (official + independent)."
+    },
+    {
+      "pavilion_id": "PE",
+      "country": "Peru",
+      "severity": "medium",
+      "category": "sources",
+      "message": "Fewer than 2 source links.",
+      "fix_hint": "Add at least two corroborating sources (official + independent)."
+    },
+    {
+      "pavilion_id": "PH",
+      "country": "Philippines",
+      "severity": "medium",
+      "category": "sources",
+      "message": "Fewer than 2 source links.",
+      "fix_hint": "Add at least two corroborating sources (official + independent)."
+    },
+    {
+      "pavilion_id": "SG",
+      "country": "Singapore",
+      "severity": "medium",
+      "category": "sources",
+      "message": "Fewer than 2 source links.",
+      "fix_hint": "Add at least two corroborating sources (official + independent)."
+    },
+    {
+      "pavilion_id": "SI",
+      "country": "Slovenia",
+      "severity": "medium",
+      "category": "sources",
+      "message": "Fewer than 2 source links.",
+      "fix_hint": "Add at least two corroborating sources (official + independent)."
+    },
+    {
+      "pavilion_id": "TL",
+      "country": "Timor-Leste",
+      "severity": "medium",
+      "category": "sources",
+      "message": "Fewer than 2 source links.",
+      "fix_hint": "Add at least two corroborating sources (official + independent)."
+    },
+    {
+      "pavilion_id": "TR",
+      "country": "Türkiye",
+      "severity": "medium",
+      "category": "sources",
+      "message": "Fewer than 2 source links.",
+      "fix_hint": "Add at least two corroborating sources (official + independent)."
+    },
+    {
+      "pavilion_id": "UA",
+      "country": "Ukraine",
+      "severity": "medium",
+      "category": "sources",
+      "message": "Fewer than 2 source links.",
+      "fix_hint": "Add at least two corroborating sources (official + independent)."
+    },
+    {
+      "pavilion_id": "UZ",
+      "country": "Uzbekistan",
+      "severity": "medium",
+      "category": "sources",
+      "message": "Fewer than 2 source links.",
+      "fix_hint": "Add at least two corroborating sources (official + independent)."
+    },
+    {
+      "pavilion_id": "BA",
+      "country": "Bosnia and Herzegovina",
+      "severity": "medium",
+      "category": "sources",
+      "message": "Fewer than 2 source links.",
+      "fix_hint": "Add at least two corroborating sources (official + independent)."
+    },
+    {
+      "pavilion_id": "BG",
+      "country": "Bulgaria",
+      "severity": "medium",
+      "category": "sources",
+      "message": "Fewer than 2 source links.",
+      "fix_hint": "Add at least two corroborating sources (official + independent)."
+    },
+    {
+      "pavilion_id": "CM",
+      "country": "Cameroon",
+      "severity": "medium",
+      "category": "sources",
+      "message": "Fewer than 2 source links.",
+      "fix_hint": "Add at least two corroborating sources (official + independent)."
+    },
+    {
+      "pavilion_id": "HR",
+      "country": "Croatia",
+      "severity": "medium",
+      "category": "sources",
+      "message": "Fewer than 2 source links.",
+      "fix_hint": "Add at least two corroborating sources (official + independent)."
+    },
+    {
+      "pavilion_id": "CU",
+      "country": "Cuba",
+      "severity": "medium",
+      "category": "sources",
+      "message": "Fewer than 2 source links.",
+      "fix_hint": "Add at least two corroborating sources (official + independent)."
+    },
+    {
+      "pavilion_id": "CY",
+      "country": "Cyprus",
+      "severity": "medium",
+      "category": "sources",
+      "message": "Fewer than 2 source links.",
+      "fix_hint": "Add at least two corroborating sources (official + independent)."
+    },
+    {
+      "pavilion_id": "CD",
+      "country": "Democratic Republic of the Congo",
+      "severity": "medium",
+      "category": "sources",
+      "message": "Fewer than 2 source links.",
+      "fix_hint": "Add at least two corroborating sources (official + independent)."
+    },
+    {
+      "pavilion_id": "SV",
+      "country": "El Salvador",
+      "severity": "medium",
+      "category": "sources",
+      "message": "Fewer than 2 source links.",
+      "fix_hint": "Add at least two corroborating sources (official + independent)."
+    },
+    {
+      "pavilion_id": "GQ",
+      "country": "Equatorial Guinea",
+      "severity": "medium",
+      "category": "sources",
+      "message": "Fewer than 2 source links.",
+      "fix_hint": "Add at least two corroborating sources (official + independent)."
+    },
+    {
+      "pavilion_id": "EE",
+      "country": "Estonia",
+      "severity": "medium",
+      "category": "sources",
+      "message": "Fewer than 2 source links.",
+      "fix_hint": "Add at least two corroborating sources (official + independent)."
+    },
+    {
+      "pavilion_id": "ET",
+      "country": "Ethiopia",
+      "severity": "medium",
+      "category": "sources",
+      "message": "Fewer than 2 source links.",
+      "fix_hint": "Add at least two corroborating sources (official + independent)."
+    },
+    {
+      "pavilion_id": "GE",
+      "country": "Georgia",
+      "severity": "medium",
+      "category": "sources",
+      "message": "Fewer than 2 source links.",
+      "fix_hint": "Add at least two corroborating sources (official + independent)."
+    },
+    {
+      "pavilion_id": "GT",
+      "country": "Guatemala",
+      "severity": "medium",
+      "category": "sources",
+      "message": "Fewer than 2 source links.",
+      "fix_hint": "Add at least two corroborating sources (official + independent)."
+    },
+    {
+      "pavilion_id": "GN",
+      "country": "Guinea",
+      "severity": "medium",
+      "category": "sources",
+      "message": "Fewer than 2 source links.",
+      "fix_hint": "Add at least two corroborating sources (official + independent)."
+    },
+    {
+      "pavilion_id": "HT",
+      "country": "Haiti",
+      "severity": "medium",
+      "category": "sources",
+      "message": "Fewer than 2 source links.",
+      "fix_hint": "Add at least two corroborating sources (official + independent)."
+    },
+    {
+      "pavilion_id": "IS",
+      "country": "Iceland",
+      "severity": "medium",
+      "category": "sources",
+      "message": "Fewer than 2 source links.",
+      "fix_hint": "Add at least two corroborating sources (official + independent)."
+    },
+    {
+      "pavilion_id": "ID",
+      "country": "Indonesia",
+      "severity": "medium",
+      "category": "sources",
+      "message": "Fewer than 2 source links.",
+      "fix_hint": "Add at least two corroborating sources (official + independent)."
+    },
+    {
+      "pavilion_id": "KZ",
+      "country": "Kazakhstan",
+      "severity": "medium",
+      "category": "sources",
+      "message": "Fewer than 2 source links.",
+      "fix_hint": "Add at least two corroborating sources (official + independent)."
+    },
+    {
+      "pavilion_id": "XK",
+      "country": "Kosovo",
+      "severity": "medium",
+      "category": "sources",
+      "message": "Fewer than 2 source links.",
+      "fix_hint": "Add at least two corroborating sources (official + independent)."
+    },
+    {
+      "pavilion_id": "KG",
+      "country": "Kyrgyz Republic",
+      "severity": "medium",
+      "category": "sources",
+      "message": "Fewer than 2 source links.",
+      "fix_hint": "Add at least two corroborating sources (official + independent)."
+    },
+    {
+      "pavilion_id": "LT",
+      "country": "Lithuania",
+      "severity": "medium",
+      "category": "sources",
+      "message": "Fewer than 2 source links.",
+      "fix_hint": "Add at least two corroborating sources (official + independent)."
+    },
+    {
+      "pavilion_id": "MD",
+      "country": "Moldova",
+      "severity": "medium",
+      "category": "sources",
+      "message": "Fewer than 2 source links.",
+      "fix_hint": "Add at least two corroborating sources (official + independent)."
+    },
+    {
+      "pavilion_id": "MN",
+      "country": "Mongolia",
+      "severity": "medium",
+      "category": "sources",
+      "message": "Fewer than 2 source links.",
+      "fix_hint": "Add at least two corroborating sources (official + independent)."
+    },
+    {
+      "pavilion_id": "ME",
+      "country": "Montenegro",
+      "severity": "medium",
+      "category": "sources",
+      "message": "Fewer than 2 source links.",
+      "fix_hint": "Add at least two corroborating sources (official + independent)."
+    },
+    {
+      "pavilion_id": "NR",
+      "country": "Nauru",
+      "severity": "medium",
+      "category": "sources",
+      "message": "Fewer than 2 source links.",
+      "fix_hint": "Add at least two corroborating sources (official + independent)."
+    },
+    {
+      "pavilion_id": "NZ",
+      "country": "New Zealand / Aotearoa",
+      "severity": "medium",
+      "category": "sources",
+      "message": "Fewer than 2 source links.",
+      "fix_hint": "Add at least two corroborating sources (official + independent)."
+    },
+    {
+      "pavilion_id": "MK",
+      "country": "North Macedonia",
+      "severity": "medium",
+      "category": "sources",
+      "message": "Fewer than 2 source links.",
+      "fix_hint": "Add at least two corroborating sources (official + independent)."
+    },
+    {
+      "pavilion_id": "PK",
+      "country": "Pakistan",
+      "severity": "medium",
+      "category": "sources",
+      "message": "Fewer than 2 source links.",
+      "fix_hint": "Add at least two corroborating sources (official + independent)."
+    },
+    {
+      "pavilion_id": "PT",
+      "country": "Portugal",
+      "severity": "medium",
+      "category": "sources",
+      "message": "Fewer than 2 source links.",
+      "fix_hint": "Add at least two corroborating sources (official + independent)."
+    },
+    {
+      "pavilion_id": "SM",
+      "country": "San Marino",
+      "severity": "medium",
+      "category": "sources",
+      "message": "Fewer than 2 source links.",
+      "fix_hint": "Add at least two corroborating sources (official + independent)."
+    },
+    {
+      "pavilion_id": "SN",
+      "country": "Senegal",
+      "severity": "medium",
+      "category": "sources",
+      "message": "Fewer than 2 source links.",
+      "fix_hint": "Add at least two corroborating sources (official + independent)."
+    },
+    {
+      "pavilion_id": "SL",
+      "country": "Sierra Leone",
+      "severity": "medium",
+      "category": "sources",
+      "message": "Fewer than 2 source links.",
+      "fix_hint": "Add at least two corroborating sources (official + independent)."
+    },
+    {
+      "pavilion_id": "SO",
+      "country": "Somalia",
+      "severity": "medium",
+      "category": "sources",
+      "message": "Fewer than 2 source links.",
+      "fix_hint": "Add at least two corroborating sources (official + independent)."
+    },
+    {
+      "pavilion_id": "SY",
+      "country": "Syrian Arab Republic",
+      "severity": "medium",
+      "category": "sources",
+      "message": "Fewer than 2 source links.",
+      "fix_hint": "Add at least two corroborating sources (official + independent)."
+    },
+    {
+      "pavilion_id": "TZ",
+      "country": "Tanzania",
+      "severity": "medium",
+      "category": "sources",
+      "message": "Fewer than 2 source links.",
+      "fix_hint": "Add at least two corroborating sources (official + independent)."
+    },
+    {
+      "pavilion_id": "BS",
+      "country": "The Bahamas",
+      "severity": "medium",
+      "category": "sources",
+      "message": "Fewer than 2 source links.",
+      "fix_hint": "Add at least two corroborating sources (official + independent)."
+    },
+    {
+      "pavilion_id": "UG",
+      "country": "Uganda",
+      "severity": "medium",
+      "category": "sources",
+      "message": "Fewer than 2 source links.",
+      "fix_hint": "Add at least two corroborating sources (official + independent)."
+    },
+    {
+      "pavilion_id": "VN",
+      "country": "Vietnam",
+      "severity": "medium",
+      "category": "sources",
+      "message": "Fewer than 2 source links.",
+      "fix_hint": "Add at least two corroborating sources (official + independent)."
+    },
+    {
+      "pavilion_id": "ZW",
+      "country": "Zimbabwe",
+      "severity": "medium",
+      "category": "sources",
+      "message": "Fewer than 2 source links.",
+      "fix_hint": "Add at least two corroborating sources (official + independent)."
+    }
+  ]
+}
