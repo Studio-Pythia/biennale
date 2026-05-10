@@ -8,6 +8,7 @@ import {
 } from "@/lib/funder-style";
 import type {
   BudgetTransparencyFilter,
+  ContinentFilter,
   FlagSeverityFilter,
   SelectionMethodFilter,
   SortKey,
@@ -42,7 +43,18 @@ const flagOptions: { value: FlagSeverityFilter; label: string }[] = [
   { value: "clean", label: "Clean only" },
 ];
 
+const continentOptions: { value: ContinentFilter; label: string }[] = [
+  { value: "all", label: "All continents" },
+  { value: "Africa", label: "Africa" },
+  { value: "Asia", label: "Asia" },
+  { value: "Europe", label: "Europe" },
+  { value: "North America", label: "North America" },
+  { value: "South America", label: "South America" },
+  { value: "Oceania", label: "Oceania" },
+];
+
 const sortOptions: { value: SortKey; label: string }[] = [
+  { value: "random", label: "Shuffled" },
   { value: "country", label: "Country A–Z" },
   { value: "budget_desc", label: "Budget high → low" },
   { value: "red_flags_desc", label: "Most red flags" },
@@ -59,6 +71,7 @@ export function FilterBar({ total, shown }: FilterBarProps) {
   const sortKey = usePavilionStore((s) => s.sortKey);
   const setSearch = usePavilionStore((s) => s.setSearch);
   const setVenueFilter = usePavilionStore((s) => s.setVenueFilter);
+  const setContinentFilter = usePavilionStore((s) => s.setContinentFilter);
   const setSelectionMethodFilter = usePavilionStore(
     (s) => s.setSelectionMethodFilter
   );
@@ -66,10 +79,12 @@ export function FilterBar({ total, shown }: FilterBarProps) {
   const setFlagSeverity = usePavilionStore((s) => s.setFlagSeverity);
   const toggleFunderType = usePavilionStore((s) => s.toggleFunderType);
   const setSortKey = usePavilionStore((s) => s.setSortKey);
+  const reshuffle = usePavilionStore((s) => s.reshuffle);
   const resetFilters = usePavilionStore((s) => s.resetFilters);
 
   const hasActiveFilters =
     filters.venue !== "all" ||
+    filters.continent !== "all" ||
     filters.selectionMethod !== "all" ||
     filters.budgetTransparency !== "all" ||
     filters.flagSeverity !== "all" ||
@@ -133,6 +148,12 @@ export function FilterBar({ total, shown }: FilterBarProps) {
       </div>
 
       <Select
+        value={filters.continent}
+        onChange={(v) => setContinentFilter(v as ContinentFilter)}
+        options={continentOptions}
+      />
+
+      <Select
         value={filters.selectionMethod}
         onChange={(v) => setSelectionMethodFilter(v as SelectionMethodFilter)}
         options={selectionOptions}
@@ -193,6 +214,20 @@ export function FilterBar({ total, shown }: FilterBarProps) {
           options={sortOptions}
           prefix="Sort:"
         />
+
+        <button
+          onClick={reshuffle}
+          className="px-3 py-1.5 text-xs rounded-lg flex items-center gap-1.5 transition-colors hover:bg-[var(--muted)]"
+          style={{
+            color: sortKey === "random" ? "var(--foreground)" : "var(--muted-foreground)",
+            border: "1px solid var(--border)",
+          }}
+          aria-label="Shuffle pavilion order"
+          title="Shuffle pavilion order"
+        >
+          <span aria-hidden="true">🎲</span>
+          Shuffle
+        </button>
 
         {hasActiveFilters && (
           <button
