@@ -238,39 +238,65 @@ export const COUNTRY_GRID_REFS: Record<string, string> = {
 };
 
 // Parse grid reference to get coordinates
+// Format examples: "Giardini 20", "Arsenale 3", "4 C4", "42 E2 + 42 D2"
 export function parseGridRef(gridRef: string): { x: number; y: number } | null {
   if (!gridRef) return null;
   
-  // Check for Giardini position
-  const giardiniMatch = gridRef.match(/Giardini (\d+)/);
+  // Check for Giardini position (e.g., "Giardini 20")
+  const giardiniMatch = gridRef.match(/Giardini (\d+)/i);
   if (giardiniMatch) {
     const position = parseInt(giardiniMatch[1]);
     return GIARDINI_POSITIONS[position] || null;
   }
   
-  // Check for Arsenale zone
-  const arsenaleMatch = gridRef.match(/Arsenale (\d)/);
+  // Check for Arsenale zone (e.g., "Arsenale 3" or "Arsenale, Sale d'Armi")
+  const arsenaleMatch = gridRef.match(/Arsenale\s*(\d)/i);
   if (arsenaleMatch) {
     const zone = parseInt(arsenaleMatch[1]);
     return ARSENALE_ZONES[zone] || null;
   }
   
-  // Check for grid reference
-  const gridMatch = gridRef.match(/(\d+)\s*([A-H])(\d)/);
+  // Check for Arsenale Militare (special case for Armenia)
+  if (gridRef.toLowerCase().includes("arsenale militare")) {
+    // Position near Arsenale area
+    return { x: 750, y: 580 };
+  }
+  
+  // Off the map (San Servolo island, etc.)
+  if (gridRef.toLowerCase().includes("off the map") || gridRef.toLowerCase().includes("san servolo")) {
+    return { x: 200, y: 700 };
+  }
+  
+  // Check for grid reference (e.g., "4 C4", "42 E2", "20 H4")
+  // Format is: NUMBER LETTER+NUMBER where LETTER is column (A-H), second NUMBER is row (1-6)
+  const gridMatch = gridRef.match(/(\d+)\s+([A-H])(\d)/i);
   if (gridMatch) {
-    const [, num, row, col] = gridMatch;
-    // Convert grid to approximate coordinates
-    const colNum = parseInt(col);
-    const rowNum = row.charCodeAt(0) - 'A'.charCodeAt(0);
+    const [, , col, row] = gridMatch;
+    // Convert grid to coordinates
+    // Columns A-H map to x positions across Venice (west to east)
+    // Rows 1-6 map to y positions (north to south)
+    const colIndex = col.toUpperCase().charCodeAt(0) - 'A'.charCodeAt(0); // 0-7
+    const rowIndex = parseInt(row) - 1; // 0-5
+    
+    // Map to canvas coordinates
+    // Venice map is roughly 1600x900, with off-site venues scattered across the city
+    // The grid covers the main Venice area (not Giardini/Arsenale which are in the east)
     return {
-      x: 200 + colNum * 180,
-      y: 200 + rowNum * 80,
+      x: 150 + colIndex * 70, // A=150, B=220, C=290, D=360, E=430, F=500, G=570, H=640
+      y: 250 + rowIndex * 80, // Row 1=250, 2=330, 3=410, 4=490, 5=570, 6=650
     };
   }
   
-  // Off the map
-  if (gridRef.toLowerCase().includes("off the map") || gridRef.toLowerCase().includes("san servolo")) {
-    return { x: 200, y: 700 };
+  // If nothing matched, try to extract just a grid code without the entry number
+  const simpleGridMatch = gridRef.match(/([A-H])(\d)/i);
+  if (simpleGridMatch) {
+    const [, col, row] = simpleGridMatch;
+    const colIndex = col.toUpperCase().charCodeAt(0) - 'A'.charCodeAt(0);
+    const rowIndex = parseInt(row) - 1;
+    return {
+      x: 150 + colIndex * 70,
+      y: 250 + rowIndex * 80,
+    };
   }
   
   return null;

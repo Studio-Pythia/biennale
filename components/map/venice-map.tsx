@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useMemo } from "react";
+import { useCallback, useEffect, useMemo, useRef } from "react";
 import {
   ReactFlow,
   Background,
@@ -18,7 +18,6 @@ import { PavilionNode } from "./pavilion-node";
 import { VenueLabelNode } from "./venue-label-node";
 import {
   useMapStore,
-  useFilteredPavilions,
   getPavilionsByFunder,
 } from "@/lib/use-map-store";
 import type { Pavilion } from "@/lib/types";
@@ -33,6 +32,20 @@ const nodeTypes = {
 const SCALE = 1.5;
 const OFFSET_X = -200;
 const OFFSET_Y = -100;
+
+// Pre-compute stable jitter values per pavilion ID
+function getStableJitter(id: string): { x: number; y: number } {
+  let hash = 0;
+  for (let i = 0; i < id.length; i++) {
+    const char = id.charCodeAt(i);
+    hash = ((hash << 5) - hash) + char;
+    hash = hash & hash;
+  }
+  return {
+    x: ((hash % 60) - 30),
+    y: (((hash >> 8) % 60) - 30),
+  };
+}
 
 function createNodesFromPavilions(pavilions: Pavilion[]): Node[] {
   const nodes: Node[] = [];
@@ -106,16 +119,15 @@ function createNodesFromPavilions(pavilions: Pavilion[]): Node[] {
   pavilions.forEach((pavilion) => {
     const coords = getPavilionCoords(pavilion);
     
-    // Add slight random offset for pavilions in same zone to prevent overlap
-    const jitterX = (Math.random() - 0.5) * 30;
-    const jitterY = (Math.random() - 0.5) * 30;
+    // Use stable jitter based on ID instead of random
+    const jitter = getStableJitter(pavilion.id);
     
     nodes.push({
       id: pavilion.id,
       type: "pavilion",
       position: {
-        x: coords.x * SCALE + OFFSET_X + jitterX,
-        y: coords.y * SCALE + OFFSET_Y + jitterY,
+        x: coords.x * SCALE + OFFSET_X + jitter.x,
+        y: coords.y * SCALE + OFFSET_Y + jitter.y,
       },
       data: { pavilion },
     });
@@ -153,17 +165,75 @@ interface VeniceMapProps {
 }
 
 export function VeniceMap({ pavilions: allPavilions }: VeniceMapProps) {
-  const { selectPavilion, highlightedFunder, setPavilions } = useMapStore();
-  const filteredPavilions = useFilteredPavilions();
+  const selectPavilion = useMapStore((s) => s.selectPavilion);
+  const highlightedFunder = useMapStore((s) => s.highlightedFunder);
+  const setPavilions = useMapStore((s) => s.setPavilions);
+  const filters = useMapStore((s) => s.filters);
+  const pavilionsInStore = useMapStore((s) => s.pavilions);
+  
+  // Track if we've initialized
+  const initialized = useRef(false);
 
-  // Initialize store with pavilions
+  // Initialize store with pavilions only once
   useEffect(() => {
-    setPavilions(allPavilions);
+    if (!initialized.current && allPavilions.length > 0) {
+      setPavilions(allPavilions);
+      initialized.current = true;
+    }
   }, [allPavilions, setPavilions]);
+
+  // Filter pavilions with useMemo to avoid recalculating on every render
+  const filteredPavilions = useMemo(() => {
+    const source = pavilionsInStore.length > 0 ? pavilionsInStore : allPavilions;
+    
+    return source.filter((p) => {
+      // Venue filter
+      if (filters.venue !== "all" && p.venue !== filters.venue) return false;
+
+      // Selection method filter
+      if (
+        filters.selectionMethod !== "all" &&
+        p.selection_method !== filters.selectionMethod
+      )
+        return false;
+
+      // Red flags filter
+      if (filters.redFlagsOnly && p.red_flags.length === 0) return false;
+
+      // Budget filter
+      const budget = p.total_budget_amount_usd || 0;
+      if (budget < filters.budgetRange[0] || budget > filters.budgetRange[1])
+        return false;
+
+      // Search filter
+      if (filters.search) {
+        const searchLower = filters.search.toLowerCase();
+        const searchableText = [
+          p.country,
+          p.artist_name,
+          p.curator_name,
+          p.show_title,
+          ...p.private_funders.map((f) => f.name),
+        ]
+          .join(" ")
+          .toLowerCase();
+        if (!searchableText.includes(searchLower)) return false;
+      }
+
+      return true;
+    });
+  }, [pavilionsInStore, allPavilions, filters]);
+
+  // Create a stable key for filtered pavilions
+  const filteredIds = useMemo(
+    () => filteredPavilions.map((p) => p.id).join(","),
+    [filteredPavilions]
+  );
 
   const initialNodes = useMemo(
     () => createNodesFromPavilions(filteredPavilions),
-    [filteredPavilions]
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [filteredIds]
   );
 
   const initialEdges = useMemo(() => {
@@ -176,10 +246,11 @@ export function VeniceMap({ pavilions: allPavilions }: VeniceMapProps) {
   const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
   const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
 
-  // Update nodes when filtered pavilions change
+  // Update nodes when filters change (using stable filteredIds)
   useEffect(() => {
     setNodes(createNodesFromPavilions(filteredPavilions));
-  }, [filteredPavilions, setNodes]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [filteredIds, setNodes]);
 
   // Update edges when highlighted funder changes
   useEffect(() => {
