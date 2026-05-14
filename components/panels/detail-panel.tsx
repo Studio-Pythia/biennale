@@ -379,6 +379,24 @@ export function DetailPanel({ pavilion }: DetailPanelProps) {
                 >
                   Funding & Selection Analysis
                 </h3>
+                <div className="mb-3 p-3 rounded-lg" style={{ border: "1px solid var(--border)", backgroundColor: "var(--muted)" }}>
+                  <div className="flex items-center justify-between text-xs mb-2" style={{ color: "var(--muted-foreground)" }}>
+                    <span>Transparency Score</span>
+                    <span>{analysis.dataProfile.transparencyScore}/100</span>
+                  </div>
+                  <div className="w-full h-2 rounded-full" style={{ backgroundColor: "rgba(255,255,255,0.08)" }}>
+                    <div
+                      className="h-2 rounded-full"
+                      style={{
+                        width: `${analysis.dataProfile.transparencyScore}%`,
+                        backgroundColor: analysis.dataProfile.transparencyScore >= 70 ? "rgb(34,197,94)" : analysis.dataProfile.transparencyScore >= 45 ? "rgb(250,204,21)" : "rgb(244,63,94)",
+                      }}
+                    />
+                  </div>
+                  <div className="mt-2 text-xs" style={{ color: "var(--foreground)" }}>
+                    Evidence: <strong>{analysis.dataProfile.evidenceStrength}</strong> · Funding mix: <strong>{analysis.dataProfile.fundingMix.replace("_", " ")}</strong> · Selection risk: <strong>{analysis.dataProfile.selectionRisk}</strong> · Sources: <strong>{analysis.dataProfile.sourceCount}</strong>
+                  </div>
+                </div>
                 <ul className="space-y-1">
                   {[...analysis.fundingSummary, ...analysis.selectionSummary].map((line) => (
                     <li key={line} className="text-sm" style={{ color: "var(--foreground)" }}>

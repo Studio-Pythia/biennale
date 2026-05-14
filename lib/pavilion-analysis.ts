@@ -17,6 +17,7 @@ export function analyzePavilion(pavilion: Pavilion): PavilionAnalysis {
 
   const privateCount = pavilion.private_funders.length;
   const publicCount = pavilion.public_funding_sources.length;
+  const sourceCount = pavilion.sources.length;
 
   if (pavilion.total_budget_disclosed && pavilion.total_budget_amount_usd !== null) {
     greenFlags.push("Total budget disclosed.");
@@ -55,11 +56,43 @@ export function analyzePavilion(pavilion: Pavilion): PavilionAnalysis {
     selectionSummary.push(`Selection notes: ${pavilion.selection_method_notes}`);
   }
 
+  const hasPublic = publicCount > 0;
+  const hasPrivate = privateCount > 0;
+  const fundingMix: PavilionAnalysis["dataProfile"]["fundingMix"] = hasPublic && hasPrivate
+    ? "mixed"
+    : hasPublic
+      ? "public_only"
+      : hasPrivate
+        ? "private_only"
+        : "undisclosed";
+
+  const selectionRisk: PavilionAnalysis["dataProfile"]["selectionRisk"] =
+    pavilion.selection_method === "open_call" || pavilion.selection_method === "panel"
+      ? "low"
+      : pavilion.selection_method === "unknown"
+        ? "high"
+        : "medium";
+
+  let transparencyScore = 0;
+  if (pavilion.total_budget_disclosed && pavilion.total_budget_amount_usd !== null) transparencyScore += 30;
+  if (hasPublic) transparencyScore += 20;
+  if (hasPrivate) transparencyScore += 20;
+  transparencyScore += Math.min(30, sourceCount * 10);
+  const evidenceStrength: PavilionAnalysis["dataProfile"]["evidenceStrength"] =
+    sourceCount >= 3 ? "strong" : sourceCount >= 2 ? "moderate" : "weak";
+
   return {
     greenFlags,
     yellowFlags,
     redFlags,
     fundingSummary,
     selectionSummary,
+    dataProfile: {
+      transparencyScore,
+      evidenceStrength,
+      fundingMix,
+      selectionRisk,
+      sourceCount,
+    },
   };
 }
